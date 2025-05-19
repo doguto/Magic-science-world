@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-// using Zenject;
+using Zenject;
 
 namespace Project.Scenes.Title.Scripts.Installer
 {
