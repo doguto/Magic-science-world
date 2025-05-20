@@ -2,7 +2,7 @@ using System;
 using UniRx;
 using UnityEngine;
 
-namespace Project.Commons.Scripts.View
+namespace Project.Commons.Scripts.View.UI
 {
     public interface IButton
     {

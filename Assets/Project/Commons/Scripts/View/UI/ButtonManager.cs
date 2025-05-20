@@ -2,7 +2,7 @@
 using Project.Commons.Scripts.View;
 using UnityEngine;
 
-namespace Project.Commons.Scripts.View
+namespace Project.Commons.Scripts.View.UI
 {
     public class ButtonManager
     {

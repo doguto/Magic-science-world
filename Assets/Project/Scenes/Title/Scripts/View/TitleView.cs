@@ -1,5 +1,5 @@
 using System;
-using Project.Commons.Scripts.View;
+using Project.Commons.Scripts.View.UI;
 using UniRx;
 using UnityEngine;
 
