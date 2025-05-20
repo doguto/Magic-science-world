@@ -5,12 +5,78 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9ea54af-b601-4a07-8954-a70d660c5e84" name="変更" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/Model/TitleOpenModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/Model/TitleOpenModel.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/Presenter/TitlePresenter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/Presenter/TitlePresenter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/PresenterPort/ITitlePresenter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/PresenterPort/ITitlePresenter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Magic-science-world/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Magic-science-world/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/AssemblyDifinitions/Installer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/AssemblyDifinitions/Installer/Installer.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/AssemblyDifinitions/Installer/Installer.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/AssemblyDifinitions/Presenter/Presenter.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/AssemblyDifinitions/Presenter/Presenter.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/AssemblyDifinitions/PresenterPort.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/AssemblyDifinitions/View/View.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/AssemblyDifinitions/View/View.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/AssemblyDifinitions/ViewPort.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Samples/Scripts/Installer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Samples/Scripts/Installer/Installer.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Samples/Scripts/Installer/Installer.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleBoss/Scripts/DataTransfer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleBoss/Scripts/DataTransfer/DataTransfer.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleBoss/Scripts/DataTransfer/DataTransfer.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleBoss/Scripts/Installer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleBoss/Scripts/Installer/Installer.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleBoss/Scripts/Installer/Installer.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleBoss/Scripts/PresenterPort.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleBoss/Scripts/PresenterPort/PresenterPort.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleBoss/Scripts/PresenterPort/PresenterPort.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleBoss/Scripts/ViewPort.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleBoss/Scripts/ViewPort/ViewPort.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleBoss/Scripts/ViewPort/ViewPort.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleWay/Scripts/DataTransfer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleWay/Scripts/DataTransfer/DataTransfer.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleWay/Scripts/DataTransfer/DataTransfer.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleWay/Scripts/Installer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleWay/Scripts/Installer/Installer.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleWay/Scripts/Installer/Installer.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleWay/Scripts/PresenterPort.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleWay/Scripts/PresenterPort/PresenterPort.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleWay/Scripts/PresenterPort/PresenterPort.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleWay/Scripts/ViewPort.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleWay/Scripts/ViewPort/ViewPort.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/BattleWay/Scripts/ViewPort/ViewPort.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/DataTransfer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/DataTransfer/DataTransfer.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/DataTransfer/DataTransfer.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/Installer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/Installer/Installer.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/Installer/Installer.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/Model.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/Model.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/Model/Model.asmref.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/Model/Model.asmref.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/Presenter.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/Presenter.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/Presenter/Presenter.asmref.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/Presenter/Presenter.asmref.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/PresenterPort.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/PresenterPort/PresenterPort.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/PresenterPort/PresenterPort.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/View.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/View.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/View/View.asmref.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/View/View.asmref.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/ViewPort.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/ViewPort/ViewPort.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/ViewPort/ViewPort.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Scenario/Scripts/DataTransfer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Scenario/Scripts/DataTransfer/DataTransfer.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Scenario/Scripts/DataTransfer/DataTransfer.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Scenario/Scripts/Installer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Scenario/Scripts/Installer/Installer.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Scenario/Scripts/Installer/Installer.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Scenario/Scripts/PresenterPort.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Scenario/Scripts/PresenterPort/PresenterPort.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Scenario/Scripts/PresenterPort/PresenterPort.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Scenario/Scripts/ViewPort.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Scenario/Scripts/ViewPort/ViewPort.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Scenario/Scripts/ViewPort/ViewPort.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/Installer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/Installer/Installer.asmref" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/Installer/Installer.asmref.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/Installer/TitleInstaller.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/Installer/TitleInstaller.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/View/TitleView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/View/TitleView.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,19 +98,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;title-togi&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "issue-6-rebuild-architecture",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Unity エディターにアタッチ.Unity エディターにアタッチ">
     <configuration name="ユニットテスト (バッチモード)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.23f1\Editor\Unity.exe" />
@@ -99,6 +165,7 @@
       <updated>1746970087054</updated>
       <workItem from="1746970088203" duration="5445000" />
       <workItem from="1747652095780" duration="1613000" />
+      <workItem from="1747708195679" duration="466000" />
     </task>
     <servers />
   </component>
@@ -114,5 +181,6 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
