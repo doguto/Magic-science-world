@@ -4,18 +4,18 @@ using UnityEngine;
 
 namespace Project.Commons.Scripts.View.UI
 {
-    public interface IButton
-    {
-        void Press();
-    }
-    
-    public class ButtonBase : MonoBehaviour, IButton
+    public class ButtonBase : MonoBehaviour
     {
         bool _isPressed;
+        public bool IsActive { get; private set; } = false;
         
         readonly Subject<Unit> onPressed = new();
         public IObservable<Unit> OnPressed => onPressed;
 
+        public void SetActive(bool active)
+        {
+            IsActive = active;
+        }
         
         public void Press()
         {
