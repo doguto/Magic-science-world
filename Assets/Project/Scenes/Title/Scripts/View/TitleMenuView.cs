@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Project.Scenes.Title.Scripts.View
 {
-    public class TitleView : MonoBehaviour
+    public class TitleMenuView : MonoBehaviour
     {
         [SerializeField] ButtonList buttonList;  // 0: Start, 1: Option
 
