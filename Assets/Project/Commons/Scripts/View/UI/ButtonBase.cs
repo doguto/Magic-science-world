@@ -6,8 +6,9 @@ namespace Project.Commons.Scripts.View.UI
 {
     public class ButtonBase : MonoBehaviour
     {
+        public bool IsActive { get; private set; }
+
         bool _isPressed;
-        public bool IsActive { get; private set; } = false;
         
         readonly Subject<Unit> onPressed = new();
         public IObservable<Unit> OnPressed => onPressed;
@@ -19,6 +20,8 @@ namespace Project.Commons.Scripts.View.UI
         
         public void Press()
         {
+            if (!IsActive) return;
+            
             _isPressed = !_isPressed;
             if (!_isPressed) return;
             

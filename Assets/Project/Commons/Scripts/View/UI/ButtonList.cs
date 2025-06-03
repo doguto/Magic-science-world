@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
 
 namespace Project.Commons.Scripts.View.UI
@@ -10,6 +11,11 @@ namespace Project.Commons.Scripts.View.UI
         
         public int ButtonIndex { get; private set; }
         public bool IsActive { get; private set; }
+
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space)) PressButton();
+        }
 
         public void Init(int index)
         {
@@ -39,6 +45,20 @@ namespace Project.Commons.Scripts.View.UI
             buttons[ButtonIndex].SetActive(true);
         }
 
+        public IObservable<Unit> GetButtonEvent(int index)
+        {
+            return buttons[index].OnPressed;
+        }
+
+        public void PressButton() => PressButton(ButtonIndex);
+        public void PressButton(int index)
+        {
+            if (!IsActive) return;
+            
+            buttons[index].Press();
+        }
+
+        
         void SetButtonIndex(int index)
         {
             ButtonIndex = index % buttons.Count;
