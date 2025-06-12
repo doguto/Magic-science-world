@@ -7,7 +7,7 @@ namespace Project.Commons.DataBase.Scripts
     public class GameData : ScriptableObject
     {
         [ReadOnly]
-        public int clearedStageNumber = 0;
+        public int clearedStageNumber { get; private set; }
     }
 
     public static class CreateEnemyParamDataAssetFromCsv
