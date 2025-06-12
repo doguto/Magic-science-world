@@ -16,6 +16,16 @@ namespace Project.Scenes.Title.Scripts.View
             buttonList.Init(0);
         }
 
+        public void SetActive(bool active)
+        {
+            gameObject.SetActive(active);
+        }
+
+        public void SetBackGround(int clearedStageAmount)
+        {
+            
+        }
+
         void Update()
         {
             SwitchSelectButton();
