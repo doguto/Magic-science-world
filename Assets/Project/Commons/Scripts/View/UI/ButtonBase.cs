@@ -2,23 +2,26 @@ using System;
 using UniRx;
 using UnityEngine;
 
-namespace Project.Commons.Scripts.View
+namespace Project.Commons.Scripts.View.UI
 {
-    public interface IButton
+    public class ButtonBase : MonoBehaviour
     {
-        void Press();
-    }
-    
-    public class ButtonBase : MonoBehaviour, IButton
-    {
+        public bool IsActive { get; private set; }
+
         bool _isPressed;
         
         readonly Subject<Unit> onPressed = new();
         public IObservable<Unit> OnPressed => onPressed;
 
+        public void SetActive(bool active)
+        {
+            IsActive = active;
+        }
         
         public void Press()
         {
+            if (!IsActive) return;
+            
             _isPressed = !_isPressed;
             if (!_isPressed) return;
             
