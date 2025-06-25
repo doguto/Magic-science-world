@@ -1,6 +1,6 @@
 using UnityEngine;
 using Project.Scenes.Scenario.Scripts.Model.RuntimeDataTest;
-using Project.Scenes.Scenario.Scripts.Model.AssetMenuSample;
+// using Project.Scenes.Scenario.Scripts.Model.AssetMenuSample;
 
 namespace Project.Scenes.Scenario.Scripts.Presenter
 {
