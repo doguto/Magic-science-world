@@ -10,8 +10,8 @@ public static class ScenarioJsonImporter
     [MenuItem("Tools/Import Scenario from JSON")]
     public static void ImportAll()
     {
-        string jsonDir = "Assets/Project/Resources/Novel/convasations/";
-        string outputDir = "Assets/Project/Scenes/Scenario/Data/";
+        string jsonDir = "Assets/Editor/Novel/";
+        string outputDir = "Assets/Resources/Novel/";
 
         foreach (string path in Directory.GetFiles(jsonDir, "*.json"))
         {

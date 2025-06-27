@@ -1,23 +1,22 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Project.Scenes.Scenario.Scripts.Model;
+using Project.Scenes.Scenario.Scripts.View;
 
 namespace Project.Scenes.Scenario.Scripts.Presenter
 {
     public class ScenarioPresenter : MonoBehaviour
     {
         [SerializeField] private ScenarioView view;
-
+        [Range(1, 15)]
+        [SerializeField] private int sceneNumber = 1;
         private ScenarioModel _model;
-
-        void Start()
+        void MyFunc()
         {
+            
             // 現在のシーン名を取得（例: "Stage01"）
             // string sceneName = SceneManager.GetActiveScene().name.ToLower(); // e.g. "stage01"
-            [SerializeField]
-            [Tooltip("シーン名、後に取得ロジックを書く")]
-            string sceneNumber;
-            string resourcePath = $"Project/Scenes/Scenario/Data/conversation-{sceneNumber}";
+            string resourcePath = $"Novel/conversation-{sceneNumber}";
 
             // シーン名を取得
             string sceneName = SceneManager.GetActiveScene().name;
@@ -36,6 +35,11 @@ namespace Project.Scenes.Scenario.Scripts.Presenter
             _model = new ScenarioModel(scenarioData.scenarioLines);
             ShowNextLine(); 
         }
+
+        void Start()
+        {
+            MyFunc();
+        }
         
         void Update()
         {
@@ -46,14 +50,17 @@ namespace Project.Scenes.Scenario.Scripts.Presenter
                 if (_model.HasNext)
                     ShowNextLine();
                 else
-                    SceneManager.LoadScene("BattleWay"); // 遷移先シーン名は適宜変更！
+                {
+                    sceneNumber++;
+                    MyFunc();
+                }
             }
         }
 
         void ShowNextLine()
         {
             ScenarioLine line = _model.Next();
-            view.Display(line.character, line.content);
+            view.Display(line.character, line.content, line.faceNum);
         }
     }
 }
