@@ -616,7 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b29a70193b7b76f469527820c2d7a58f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: c83457224c360704881859dcb32d31fa, type: 2}
+  scenarioData: {fileID: 11400000, guid: 791e702d481c92843b93b980e872e964, type: 2}
 --- !u!1 &1223816780
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,6 +820,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702391910}
   m_CullTransparentMesh: 1
+--- !u!1 &1990604483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1990604484}
+  m_Layer: 0
+  m_Name: ScenarioView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1990604484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990604483}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1051.1763, y: 501.00983, z: -18.324066}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2040640892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,3 +1102,4 @@ SceneRoots:
   - {fileID: 2069735978}
   - {fileID: 213778616}
   - {fileID: 1137469997}
+  - {fileID: 1990604484}

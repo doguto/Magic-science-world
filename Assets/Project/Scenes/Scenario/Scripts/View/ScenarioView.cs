@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using Project.Scenes.Scenario.Scripts.Model;
 
 namespace Project.Scenes.Scenario.Scripts.View
 {
@@ -9,10 +8,10 @@ namespace Project.Scenes.Scenario.Scripts.View
       [SerializeField] private TextMeshProUGUI characterNameText;
       [SerializeField] private TextMeshProUGUI contentText;
 
-      public void Display(ScenarioLine line)
+      public void Display(string character, string content)
       {
-          characterNameText.text = line.character;
-          contentText.text = line.content;
+          characterNameText.text = character;
+          contentText.text = content;
       }
   }
 }
