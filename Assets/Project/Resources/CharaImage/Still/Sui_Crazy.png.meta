@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 66bc90fdc161f9845bbfc210d2bc42f0
+guid: 4083414c2e696874ba12ad16d5197d5b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4692010039865563004
-    second: crazy_default_0
+      213: 2417256198176974523
+    second: Sui_Crazy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: crazy_default_0
+      name: Sui_Crazy_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 552
-        height: 547
+        width: 710
+        height: 873
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c77d0cc954e5d1140800000000000000
-      internalID: 4692010039865563004
+      spriteID: bb6237f74b1db8120800000000000000
+      internalID: 2417256198176974523
       vertices: []
       indices: 
       edges: []

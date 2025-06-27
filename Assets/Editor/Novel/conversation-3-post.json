@@ -2,46 +2,51 @@
   {
     "character": "タツミ",
     "content": "いたたたた～ ひどいよテンくーん もうちょっとテカゲンしてくれてもいいのに～",
-    "faceNum": null
+    "faceType": "Sad"
   },
   {
     "character": "テン",
     "content": "……十分手加減したつもりだったが。",
-    "faceNum": null
+    "faceType": "Speak"
   },
   {
     "character": "タツミ",
     "content": "手厳しいなぁ、そんなんじゃモテないよ？それこそロ……",
-    "faceNum": null
+    "faceType": "Embarrassed"
   },
   {
     "character": "テン",
     "content": "その話はいい、それより、お前の考えを聞かせてくれ。次に向かうべき場所はどこだと考える？",
-    "faceNum": null
+    "faceType": "Shout"
   },
   {
     "character": "タツミ",
-    "content": "相変わらずつれないなー……。 うん、えっとね、事態がより深刻なのは、魔力を多く保有している月の国の地域。ウシトラくんのとこと、スイさんのとこ、それから、コンちゃん。",
-    "faceNum": null
+    "content": "相変わらずつれないなー……。",
+    "faceType": "Confused"
+  },
+  {
+    "character": "タツミ",
+    "content": "うん、えっとね、事態がより深刻なのは、魔力を多く保有している月の国の地域。ウシトラくんのとこと、スイさんのとこ、それから、コンちゃん。",
+    "faceType": "Default"
   },
   {
     "character": "タツミ",
     "content": "手近なところだと、ウシトラくんのとこかな。うん。ここから向かえばすぐ着くと思うよ。",
-    "faceNum": null
+    "faceType": "Default"
   },
   {
     "character": "テン",
     "content": "了解した。やはり分析力は敵わないな。助かる。",
-    "faceNum": null
+    "faceType": "Smile"
   },
   {
     "character": "タツミ",
     "content": "えへへ、普段からそのくらい素直だったらいいのに～",
-    "faceNum": null
+    "faceType": "Embarrassed"
   },
   {
     "character": "タツミ",
     "content": "……任せたよ！",
-    "faceNum": null
+    "faceType": "Default"
   }
 ]

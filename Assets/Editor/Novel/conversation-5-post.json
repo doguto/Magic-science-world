@@ -2,66 +2,66 @@
   {
     "character": "スイ",
     "content": "……驚いたな。いつの間にそんなに強くなりやがった。俺も鼻が高いぜ。",
-    "faceNum": null
+    "faceType": "Confused"
   },
   {
     "character": "テン",
     "content": "お陰様で。貴方を師と仰いだ記憶は一度たりともありませんが。",
-    "faceNum": null
+    "faceType": "Speak"
   },
   {
     "character": "スイ",
     "content": "口が達者になりやがって。あーあ、昔は可愛らしかったのによ。",
-    "faceNum": null
+    "faceType": "Default"
   },
   {
     "character": "スイ",
     "content": "さておいてだ、しかし、どうやら存外事態は悪そうだぞ。俺も相当腕に自信があったのにこのザマだ。",
-    "faceNum": null
+    "faceType": "Confused"
   },
   {
     "character": "スイ",
     "content": "なぁ、テン。もう嬢ちゃんのとこには行ったか？",
-    "faceNum": null
+    "faceType": "Default"
   },
   {
     "character": "テン",
     "content": "いや、まだです。",
-    "faceNum": null
+    "faceType": "Speak"
   },
   {
     "character": "スイ",
     "content": "そいつはちと不味いかもな。アズマもウシトラも俺も魔力には自信がある。だが、嬢ちゃんはそれよりももっと純度が高い。",
-    "faceNum": null
+    "faceType": "Confused"
   },
   {
     "character": "スイ",
     "content": "俺らよりもっと暴走の具合も酷いやもしれん。",
-    "faceNum": null
+    "faceType": "Confused"
   },
   {
     "character": "スイ",
     "content": "……そういえば、ハナレの姿を見ていないな。彼奴、もしかして嬢ちゃんのとこに単身で向かったんじゃあるまいな？",
-    "faceNum": null
+    "faceType": "Confused"
   },
   {
     "character": "テン",
     "content": "………！",
-    "faceNum": null
+    "faceType": "Shout"
   },
   {
     "character": "スイ",
     "content": "お前に頼まないといけないのはちと癪だが、時間も差し迫っていることだ。俺の魔力の回復を待つ訳にもいかねえ。",
-    "faceNum": null
+    "faceType": "Confused"
   },
   {
     "character": "スイ",
     "content": "よろしく頼む。テン。",
-    "faceNum": null
+    "faceType": "Default"
   },
   {
     "character": "テン",
     "content": "……分かりました。",
-    "faceNum": null
+    "faceType": "Speak"
   }
 ]

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Azuma1_0: 3937167521206504859
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

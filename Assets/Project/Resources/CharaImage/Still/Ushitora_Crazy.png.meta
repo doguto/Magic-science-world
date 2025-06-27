@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 0240812634417fe4ebaa3058e2b0196d
+guid: e1ffc17384196424fb4e560f6b8411c2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 840781066771125602
-    second: Kon2_0
-  - first:
-      213: -8641376600702580498
-    second: Kon2_1
-  - first:
-      213: -3118922946471765814
-    second: Kon2_2
+      213: -9084148987143793210
+    second: Ushitora_Crazy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,57 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Kon2_0
-      rect:
-        serializedVersion: 2
-        x: 341
-        y: 948
-        width: 17
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 26554c2fced0bab00800000000000000
-      internalID: 840781066771125602
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Kon2_1
-      rect:
-        serializedVersion: 2
-        x: 354
-        y: 921
-        width: 12
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ee800c004c9a31880800000000000000
-      internalID: -8641376600702580498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Kon2_2
+      name: Ushitora_Crazy_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 28
-        width: 768
-        height: 892
+        y: 0
+        width: 677
+        height: 877
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ac85cbdda1c57b4d0800000000000000
-      internalID: -3118922946471765814
+      spriteID: 6c5d19640ae9ee180800000000000000
+      internalID: -9084148987143793210
       vertices: []
       indices: 
       edges: []

@@ -11,7 +11,7 @@ public static class ScenarioJsonImporter
     public static void ImportAll()
     {
         string jsonDir = "Assets/Editor/Novel/";
-        string outputDir = "Assets/Resources/Novel/";
+        string outputDir = "Assets/Project/Resources/Novel/";
 
         foreach (string path in Directory.GetFiles(jsonDir, "*.json"))
         {
@@ -24,7 +24,17 @@ public static class ScenarioJsonImporter
             asset.scenarioLines = wrapper.lines;
 
             string fileName = Path.GetFileNameWithoutExtension(path);
-            AssetDatabase.CreateAsset(asset, $"{outputDir}/{fileName}.asset");
+            int conversationNum;
+            if (fileName.Split('-')[1].Contains("pre"))
+            {
+                conversationNum = int.Parse(fileName.Split('-')[0]) * 2 - 1;
+            }
+            else
+            {
+                conversationNum = int.Parse(fileName.Split('-')[0]) * 2;
+            }
+            string assetPath = $"{outputDir}/{conversationNum}.asset";
+            AssetDatabase.CreateAsset(asset, assetPath);
         }
 
         AssetDatabase.SaveAssets();

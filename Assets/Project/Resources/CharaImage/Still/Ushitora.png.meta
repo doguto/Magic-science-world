@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b3077ef0ae1839d4486af53178acde91
+guid: 95f98cb1c2a5f414c8765bee9a2693be
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5002512648117641574
-    second: Sui2_0
+      213: 6571242975149653151
+    second: Ushitora_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sui2_0
+      name: Ushitora_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 710
-        height: 874
+        width: 677
+        height: 877
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a9e9c804041839ab0800000000000000
-      internalID: -5002512648117641574
+      spriteID: f9c73928baeb13b50800000000000000
+      internalID: 6571242975149653151
       vertices: []
       indices: 
       edges: []

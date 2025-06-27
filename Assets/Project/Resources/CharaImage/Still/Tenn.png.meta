@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4b09a7f43353f0247894e9114197338d
+guid: d28bf76775fbaf445a8f1d6e8a332712
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2885537643428710374
-    second: Ushitora2_0
+      213: 4193931472753350287
+    second: tennstand_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ushitora2_0
+      name: tennstand_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 138
         y: 0
-        width: 677
-        height: 877
+        width: 509
+        height: 964
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a18f9613dc284f7d0800000000000000
-      internalID: -2885537643428710374
+      spriteID: f865bcd3476d33a30800000000000000
+      internalID: 4193931472753350287
       vertices: []
       indices: 
       edges: []
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tennstand_0: 4193931472753350287
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

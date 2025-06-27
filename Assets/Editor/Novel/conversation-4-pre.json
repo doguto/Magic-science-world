@@ -2,26 +2,26 @@
   {
     "character": "テン",
     "content": "しかし、ここは、こんなに荒廃した雰囲気だったか……？",
-    "faceNum": null
+    "faceType": "Default"
   },
   {
     "character": "ウシトラ",
     "content": "侵入者ヲ発見。",
-    "faceNum": null
+    "faceType": "CrazyDefault"
   },
   {
     "character": "テン",
     "content": "……お前も話が出来る状態ではなさそうだな。やはり月の国は壊滅状態か。",
-    "faceNum": null
+    "faceType": "Speak"
   },
   {
     "character": "ウシトラ",
     "content": "隊列ジュンビ、排除シマス。",
-    "faceNum": null
+    "faceType": "CrazyDefault"
   },
   {
     "character": "テン",
     "content": "一先ずは正気に戻してからか。そう容易く壊れるなよ。",
-    "faceNum": null
+    "faceType": "Shout"
   }
 ]

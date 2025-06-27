@@ -2,36 +2,36 @@
   {
     "character": "テン",
     "content": "少しは落ち着いたか？",
-    "faceNum": null
+    "faceType": "Speak"
   },
   {
     "character": "アズマ",
     "content": "おかげさまで。まさか、この歳になってまだ魔力制御に失敗するとはね……。",
-    "faceNum": null
+    "faceType": "Smile"
   },
   {
     "character": "テン",
     "content": "お前の力は魔力の比率が高い。制御を失って暴走したのはそのためだろう。",
-    "faceNum": null
+    "faceType": "Speak"
   },
   {
     "character": "アズマ",
     "content": "………なるほどね。助けてくれて感謝するよ、テン。",
-    "faceNum": null
+    "faceType": "Smile"
   },
   {
     "character": "アズマ",
     "content": "さっきまでの力、惜しかったな。あの力があればもっと強くなれるのに……。",
-    "faceNum": null
+    "faceType": "Default"
   },
   {
     "character": "テン",
     "content": "焦らなくてもいい、お前は強い。もっと鍛錬すれば、暴走に頼らずとも強くなれるはずだ。",
-    "faceNum": null
+    "faceType": "Speak"
   },
   {
     "character": "アズマ",
     "content": "………わかったよ。ありがとう。",
-    "faceNum": null
+    "faceType": "Smile"
   }
 ]

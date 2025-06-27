@@ -2,36 +2,36 @@
   {
     "character": "テン",
     "content": "おい、何をしている。",
-    "faceNum": null
+    "faceType": "Shout"
   },
   {
     "character": "アズマ",
     "content": "テン！久しぶりだね！",
-    "faceNum": null
+    "faceType": "CrazyDefault"
   },
   {
     "character": "テン",
     "content": "この雷はなんだ、お前の仕業か？",
-    "faceNum": null
+    "faceType": "Shout"
   },
   {
     "character": "アズマ",
     "content": "オレ、強くなったんだ！こんなに魔力が体中に満ち溢れてるのは初めてかもしれない！",
-    "faceNum": null
+    "faceType": "CrazyDefault"
   },
   {
     "character": "アズマ",
     "content": "今なら岩だって大地だってブチ抜いてやれるかも……！",
-    "faceNum": null
+    "faceType": "CrazyConfident"
   },
   {
     "character": "テン",
     "content": "(やはり、様子がおかしいな。彼は若いが、こんなに魔力の制御が下手ではなかった。) ",
-    "faceNum": null
+    "faceType": "Default"
   },
   {
     "character": "テン",
     "content": "それほど力が有り余っているのなら相手をしてやる。掛かってこい！",
-    "faceNum": null
+    "faceType": "Shout"
   }
 ]

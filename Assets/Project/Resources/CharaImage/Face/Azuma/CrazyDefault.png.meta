@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d28bf76775fbaf445a8f1d6e8a332712
+guid: 66bc90fdc161f9845bbfc210d2bc42f0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4193931472753350287
-    second: tennstand_0
+      213: 4692010039865563004
+    second: crazy_default_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tennstand_0
+      name: crazy_default_0
       rect:
         serializedVersion: 2
-        x: 138
+        x: 0
         y: 0
-        width: 509
-        height: 964
+        width: 552
+        height: 547
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f865bcd3476d33a30800000000000000
-      internalID: 4193931472753350287
+      spriteID: c77d0cc954e5d1140800000000000000
+      internalID: 4692010039865563004
       vertices: []
       indices: 
       edges: []
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      crazy_default_0: 4692010039865563004
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

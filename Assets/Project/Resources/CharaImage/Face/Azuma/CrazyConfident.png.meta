@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c5e121563d7778a44a802028ca7d8e37
+guid: 06db43e4357d4214ebbbb8efdac7d111
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8097004626240587494
-    second: Azuma2_0
+      213: 3728184061656914554
+    second: crazy_confident_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Azuma2_0
+      name: crazy_confident_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 25
-        width: 738
-        height: 961
+        x: 0
+        y: 0
+        width: 552
+        height: 547
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6e6c3cbcec65e5070800000000000000
-      internalID: 8097004626240587494
+      spriteID: a7a555cb6ab2db330800000000000000
+      internalID: 3728184061656914554
       vertices: []
       indices: 
       edges: []
@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      crazy_confident_0: 3728184061656914554
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

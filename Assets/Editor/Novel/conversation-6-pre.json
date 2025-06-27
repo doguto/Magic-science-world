@@ -2,46 +2,46 @@
   {
     "character": "ハナレ",
     "content": "テン、来たのですね。",
-    "faceNum": null
+    "faceType": "Warn"
   },
   {
     "character": "テン",
     "content": "月の国の中でも、酷く荒れているようですが、これは……。",
-    "faceNum": null
+    "faceType": "Speak"
   },
   {
     "character": "ハナレ",
     "content": "ここの主、コンさんは我を忘れた様子で月の魔力を吸収し続けていました。",
-    "faceNum": null
+    "faceType": "Confident"
   },
   {
     "character": "ハナレ",
     "content": "あまりに強い魔力で、私一人では近付くことも出来ず……。",
-    "faceNum": null
+    "faceType": "Confident"
   },
   {
     "character": "テン",
     "content": "……あの子はどこに？",
-    "faceNum": null
+    "faceType": "Shout"
   },
   {
     "character": "ハナレ",
     "content": "月の見える丘に。案内します。",
-    "faceNum": null
+    "faceType": "Confident"
   },
   {
     "character": "ハナレ",
     "content": "これまでとは段違いの魔力と相見えることとなるでしょう。覚悟は出来ていますか？",
-    "faceNum": null
+    "faceType": "Warn"
   },
   {
     "character": "テン",
     "content": "……勿論です。",
-    "faceNum": null
+    "faceType": "Speak"
   },
   {
     "character": "ハナレ",
     "content": "よろしい。では向かいましょう。",
-    "faceNum": null
+    "faceType": "Warn"
   }
 ]

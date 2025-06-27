@@ -2,26 +2,26 @@
   {
     "character": "コン",
     "content": "なにもみえない……。",
-    "faceNum": null
+    "faceType": "Default"
   },
   {
     "character": "コン",
     "content": "月の光で明るいはずなのに……。",
-    "faceNum": null
+    "faceType": "Speak"
   },
   {
     "character": "テン",
     "content": "………。",
-    "faceNum": null
+    "faceType": "Default"
   },
   {
     "character": "コン",
     "content": "だれかきたの……？",
-    "faceNum": null
+    "faceType": "Default"
   },
   {
     "character": "コン",
     "content": "おねがい、たすけて……！",
-    "faceNum": null
+    "faceType": "Default"
   }
 ]

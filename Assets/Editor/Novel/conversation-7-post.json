@@ -2,21 +2,21 @@
   {
     "character": "コン",
     "content": "う、あ………",
-    "faceNum": null
+    "faceType": "SecondDefault"
   },
   {
     "character": "テン",
     "content": "………！",
-    "faceNum": null
+    "faceType": "Shout"
   },
   {
     "character": "テン",
     "content": "(魔力暴走がより一層酷くなっている……。)",
-    "faceNum": null
+    "faceType": "Default"
   },
   {
     "character": "テン",
     "content": "(彼女に魔力を流し込んでいる鎖を早く断ち切らなくては！)",
-    "faceNum": null
+    "faceType": "Shout"
   }
 ]

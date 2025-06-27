@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fad49270b1e2b9849a1b128bbbe0eb39
+guid: d0e7fbdd36b0fec4291239e7c21a9541
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5907214934290785235
-    second: speaking_0
+      213: 6272359009931790748
+    second: Sui_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: speaking_0
+      name: Sui_0
       rect:
         serializedVersion: 2
-        x: 48
+        x: 0
         y: 0
-        width: 342
-        height: 367
+        width: 710
+        height: 874
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3d3e84a5fa4aaf150800000000000000
-      internalID: 5907214934290785235
+      spriteID: c9984b28945eb0750800000000000000
+      internalID: 6272359009931790748
       vertices: []
       indices: 
       edges: []
