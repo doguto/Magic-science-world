@@ -366,6 +366,8 @@ MonoBehaviour:
   characterNameText: {fileID: 90614103}
   contentText: {fileID: 2040640894}
   faceImage: {fileID: 994682741}
+  StillImageMe: {fileID: 285615074}
+  StillImageEnemy: {fileID: 1702391912}
 --- !u!224 &265901364
 RectTransform:
   m_ObjectHideFlags: 0
@@ -422,8 +424,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -277, y: -116}
-  m_SizeDelta: {x: 768, y: 1024}
+  m_AnchoredPosition: {x: -434, y: -56}
+  m_SizeDelta: {x: 1178.1263, y: 1570.835}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &285615074
 MonoBehaviour:
@@ -825,8 +827,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 271, y: -116}
-  m_SizeDelta: {x: 768, y: 1024}
+  m_AnchoredPosition: {x: 406.64215, y: -56}
+  m_SizeDelta: {x: 1178.1263, y: 1570.835}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1702391912
 MonoBehaviour:
@@ -1096,11 +1098,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 909658331}
   - {fileID: 285615073}
   - {fileID: 1702391911}
   - {fileID: 326909766}
   - {fileID: 265901364}
-  - {fileID: 909658331}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
