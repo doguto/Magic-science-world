@@ -106,8 +106,9 @@ output_unpack*/
 # Windows ignore
 vcpkg
 
-# Visual Studio Code
+# Editor
 .vscode/
+.idea/
 
 # Downloaded NDK
 ndk/

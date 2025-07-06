@@ -1,13 +1,19 @@
 using System;
-using UniRx;
+using UnityEngine;
+using Project.Commons.DataBase.Scripts;
+
 
 namespace Project.Scenes.Title.Scripts.Model
 {
-    public class TitleBackgroundModel : IDisposable
+    public class TitleBackgroundModel
     {
-        public void Dispose()
+        GameData _gameData;
+
+        public int ClearedStageAmount => _gameData.ClearedStageNumber;
+        
+        public TitleBackgroundModel()
         {
-            throw new NotImplementedException();
+            _gameData = Resources.Load<GameData>("ProjectData/GameData");
         }
     }
 }
