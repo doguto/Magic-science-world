@@ -19,6 +19,7 @@ namespace Project.Scenes.Title.Scripts.Presenter
             _titleGameStartModel = new TitleGameStartModel();
             
             titleMenuView.OnPressedStart.Subscribe(StartGame);
+            titleMenuView.OnPressedExit.Subscribe(ExitGame);
             
             titleMenuView.Init();
             
@@ -28,6 +29,15 @@ namespace Project.Scenes.Title.Scripts.Presenter
         void StartGame(Unit _)
         {
             _titleGameStartModel.StartGame();
+        }
+
+        void ExitGame(Unit _)
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();//ゲームプレイ終了
+#endif
         }
 
         void SetTitleBackGround()

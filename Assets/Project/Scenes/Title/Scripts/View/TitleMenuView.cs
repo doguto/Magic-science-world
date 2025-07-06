@@ -10,6 +10,7 @@ namespace Project.Scenes.Title.Scripts.View
         [SerializeField] ButtonList buttonList;  // 0: Start, 1: Option
 
         public IObservable<Unit> OnPressedStart => buttonList.GetButtonEvent(0);
+        public IObservable<Unit> OnPressedExit => buttonList.GetButtonEvent(1);
 
         public void Init()
         {

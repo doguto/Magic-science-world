@@ -6,16 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c9ea54af-b601-4a07-8954-a70d660c5e84" name="変更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Magic-science-world/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Magic-science-world/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Commons/DataBase/Scripts/GameData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Commons/DataBase/Scripts/GameData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Commons/Scripts/View/UI/ButtonBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Commons/Scripts/View/UI/ButtonBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Commons/Scripts/View/UI/ButtonList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Commons/Scripts/View/UI/ButtonList.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Global.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Title.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Title.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/Model/TitleBackgroundModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/Model/TitleBackgroundModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/Model/TitleGameStartModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/Model/TitleGameStartModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/Presenter/TitleScenePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/Presenter/TitleScenePresenter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/View/TitleMenuView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/View/TitleMenuView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/View/TitleSettingModalView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/View/TitleSettingModalView.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +106,7 @@
       <workItem from="1748931608006" duration="5107000" />
       <workItem from="1749735115650" duration="6802000" />
       <workItem from="1751093077153" duration="7864000" />
-      <workItem from="1751789236242" duration="3520000" />
+      <workItem from="1751789236242" duration="3843000" />
     </task>
     <servers />
   </component>
