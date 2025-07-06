@@ -10,10 +10,10 @@ namespace Project.Scenes.Title.Scripts.View
         [SerializeField] ButtonList buttonList;  // 0: Start, 1: Option
 
         public IObservable<Unit> OnPressedStart => buttonList.GetButtonEvent(0);
-        
-        void Start()
+
+        public void Init()
         {
-            buttonList.Init(0);
+            buttonList.Init(ButtonListType.Vertical, 0, true);
         }
 
         public void SetActive(bool active)
@@ -24,19 +24,6 @@ namespace Project.Scenes.Title.Scripts.View
         public void SetBackGround(int clearedStageAmount)
         {
             
-        }
-
-        void Update()
-        {
-            SwitchSelectButton();
-        }
-
-        void SwitchSelectButton()
-        {
-            if (!buttonList.IsActive) return;
-            
-            if (Input.GetKeyDown(KeyCode.UpArrow)) buttonList.MoveToNextButton();
-            if (Input.GetKeyDown(KeyCode.DownArrow)) buttonList.MoveToNextButton(false);
         }
     }
 }

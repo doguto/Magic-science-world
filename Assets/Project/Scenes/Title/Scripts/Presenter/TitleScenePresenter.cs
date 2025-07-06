@@ -11,19 +11,23 @@ namespace Project.Scenes.Title.Scripts.Presenter
         [SerializeField] TitleSettingModalView titleSettingModalView;
         
         TitleBackgroundModel _titleBackgroundModel;
+        TitleGameStartModel _titleGameStartModel;
 
         void Start()
         {
             _titleBackgroundModel = new TitleBackgroundModel();
+            _titleGameStartModel = new TitleGameStartModel();
             
             titleMenuView.OnPressedStart.Subscribe(StartGame);
+            
+            titleMenuView.Init();
             
             SetTitleBackGround();
         }
 
         void StartGame(Unit _)
         {
-            
+            _titleGameStartModel.StartGame();
         }
 
         void SetTitleBackGround()

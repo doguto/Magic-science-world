@@ -9,7 +9,7 @@ namespace Project.Scenes.Title.Scripts.Model
     {
         GameData _gameData;
 
-        public int ClearedStageAmount => _gameData.clearedStageNumber;
+        public int ClearedStageAmount => _gameData.ClearedStageNumber;
         
         public TitleBackgroundModel()
         {
