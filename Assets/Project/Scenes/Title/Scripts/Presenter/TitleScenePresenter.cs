@@ -32,6 +32,8 @@ namespace Project.Scenes.Title.Scripts.Presenter
         {
             _titleGameStartModel.StartGame();
             SceneManager.LoadScene(SceneRouterModel.QuestList, LoadSceneMode.Additive);
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneRouterModel.QuestList));
+            SceneManager.UnloadSceneAsync(gameObject.scene.name);
         }
 
         void ExitGame(Unit _)
