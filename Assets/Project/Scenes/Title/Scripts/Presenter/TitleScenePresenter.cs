@@ -1,7 +1,9 @@
+using Project.Commons.Scripts.Model;
 using Project.Scenes.Title.Scripts.Model;
 using Project.Scenes.Title.Scripts.View;
 using UniRx;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Project.Scenes.Title.Scripts.Presenter
 {
@@ -29,6 +31,7 @@ namespace Project.Scenes.Title.Scripts.Presenter
         void StartGame(Unit _)
         {
             _titleGameStartModel.StartGame();
+            SceneManager.LoadScene(SceneRouterModel.QuestList, LoadSceneMode.Additive);
         }
 
         void ExitGame(Unit _)
