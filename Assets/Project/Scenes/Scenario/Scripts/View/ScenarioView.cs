@@ -48,7 +48,6 @@ namespace Project.Scenes.Scenario.Scripts.View
         private void SetStillImage(Image image, string characterKey, string stillImageType)
         {
             string fileName;
-            Debug.Log(stillImageType);
             if (stillImageType.Contains("Crazy"))
             {
                 fileName = characterKey + "_Crazy";
@@ -57,7 +56,6 @@ namespace Project.Scenes.Scenario.Scripts.View
             {
                 fileName = characterKey;
             }
-            Debug.Log(fileName);
             string stillPath = $"CharaImage/Still/{fileName}";
             Sprite stillSprite = Resources.Load<Sprite>(stillPath);
             if (stillSprite == null)
