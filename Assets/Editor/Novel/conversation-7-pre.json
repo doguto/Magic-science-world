@@ -1,0 +1,27 @@
+[
+  {
+    "character": "コン",
+    "content": "なにもみえない……。",
+    "faceType": "Default"
+  },
+  {
+    "character": "コン",
+    "content": "月の光で明るいはずなのに……。",
+    "faceType": "Speak"
+  },
+  {
+    "character": "テン",
+    "content": "………。",
+    "faceType": "Default"
+  },
+  {
+    "character": "コン",
+    "content": "だれかきたの……？",
+    "faceType": "Default"
+  },
+  {
+    "character": "コン",
+    "content": "おねがい、たすけて……！",
+    "faceType": "Default"
+  }
+]

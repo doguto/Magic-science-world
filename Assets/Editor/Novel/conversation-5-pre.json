@@ -1,0 +1,37 @@
+[
+  {
+    "character": "スイ",
+    "content": "お前から顔見せるとは珍しいな、太陽の国の坊主。何しに来やがった？",
+    "faceType": "CrazyDefault"
+  },
+  {
+    "character": "テン",
+    "content": "……貴方なら御自分が今どういう状態にあるかお判りでしょう？",
+    "faceType": "Speak"
+  },
+  {
+    "character": "スイ",
+    "content": "カハハハハ！こいつぁ手厳しい！そうさ、俺は今魔力が飽和状態でよ、この辺ももう滅茶苦茶になってやがる。",
+    "faceType": "CrazyDefault"
+  },
+  {
+    "character": "スイ",
+    "content": "しかし、わざわざ助けに来てくれるとは育ちが良い。流石、彼奴を師に学んだだけある。",
+    "faceType": "CrazyDefault"
+  },
+  {
+    "character": "テン",
+    "content": "無駄口叩く辺り、案外余裕がありそうですが。",
+    "faceType": "Speak"
+  },
+  {
+    "character": "スイ",
+    "content": "チビの時から面倒見てきた奴が大きくなって現れたんだ。そりゃ労いの一つや二つ位くれてやらんとな。",
+    "faceType": "CrazyDefault"
+  },
+  {
+    "character": "スイ",
+    "content": "だが、こちとらもう手加減できる程余裕がねえんだ。助けに来させておいて誠に恐縮だが、ミイラ取りがミイラにならないよう気を付けるんだな！",
+    "faceType": "CrazyConfident"
+  }
+]

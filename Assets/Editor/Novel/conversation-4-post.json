@@ -1,0 +1,47 @@
+[
+  {
+    "character": "ウシトラ",
+    "content": "……僕は何を？",
+    "faceType": "Default"
+  },
+  {
+    "character": "テン",
+    "content": "戻ったか？",
+    "faceType": "Speak"
+  },
+  {
+    "character": "ウシトラ",
+    "content": "------ゴーレム制御機構再起動、システム:オールグリーン。",
+    "faceType": "Default"
+  },
+  {
+    "character": "ウシトラ",
+    "content": "なるほど。助けてくれたんだね？手間を掛けてすまないね、テン。",
+    "faceType": "Default"
+  },
+  {
+    "character": "テン",
+    "content": "問題ない。それより、アズマの所より酷くなっているようだが。",
+    "faceType": "Speak"
+  },
+  {
+    "character": "ウシトラ",
+    "content": "アズマ、彼も……。となると、悪影響が出ているのは魔力か？",
+    "faceType": "Default"
+  },
+  {
+    "character": "ウシトラ",
+    "content": "テン、確かキミは魔力を持たなかったよな。さっきからとてつもない魔力の流入を感じる。最初は月からだったが、気付いたら大地からも力を受けているようだ。",
+    "faceType": "Warn"
+  },
+  {
+    "character": "ウシトラ",
+    "content": "事態は一刻を争うのかもしれない。キミに頼りきりになって申し訳ないが、よろしく頼むよ。",
+    "faceType": "Warn"
+  },
+  {
+    "character": "テン",
+    "content": "忠告、感謝する。任せてくれ。",
+    "faceType": "Smile"
+  }
+]
