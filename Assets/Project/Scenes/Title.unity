@@ -441,6 +441,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonList: {fileID: 700492659}
+  backgroundSprites:
+  - {fileID: 6941162945126271314, guid: fae7d074caadb584087f71d23765722c, type: 3}
+  backgroundRenderer: {fileID: 326200348}
 --- !u!1 &700492657
 GameObject:
   m_ObjectHideFlags: 0
