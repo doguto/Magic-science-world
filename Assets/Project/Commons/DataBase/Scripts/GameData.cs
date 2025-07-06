@@ -7,10 +7,10 @@ namespace Project.Commons.DataBase.Scripts
     public class GameData : ScriptableObject
     {
         [ReadOnly]
-        public int clearedStageNumber { get; private set; }
+        public int ClearedStageNumber { get; set; }
     }
 
-    public static class CreateEnemyParamDataAssetFromCsv
+    public static class CreateGameData
     {
         const string AssetPath = "Assets/Resources/ProjectData/";
 
