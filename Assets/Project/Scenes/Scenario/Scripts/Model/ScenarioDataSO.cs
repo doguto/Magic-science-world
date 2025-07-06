@@ -23,6 +23,24 @@ namespace Project.Scenes.Scenario.Scripts.Model
             { "ハナレ", "Hanare" },
             { "コン", "Kon" },
         };
+
+        public static readonly Dictionary<string, string> SceneNumberToStillImage = new Dictionary<string, string>
+        {
+            { "1", "Default" },
+            { "2", "Default" },
+            { "3", "Crazy" },
+            { "4", "Default" },
+            { "5", "Default" },
+            { "6", "Default" },
+            { "7", "Crazy" },
+            { "8", "Default" },
+            { "9", "Crazy" },
+            { "10", "Default" },
+            { "11", "Default" },
+            { "12", "Default" },
+            { "13", "Default" },
+            { "14", "Crazy" },
+        };
     }
 
     [System.Serializable]
@@ -31,7 +49,7 @@ namespace Project.Scenes.Scenario.Scripts.Model
         public string character;
         [TextArea(3, 10)]
         public string content;
-        public FaceType faceType;
+        public string faceType;
     }
 
     // ヘルパー型 顔の種類

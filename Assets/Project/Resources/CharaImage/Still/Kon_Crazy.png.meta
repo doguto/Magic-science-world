@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: f63cb7e3d439b894aa716fcec295c99d
+guid: 692e7a277e213de49b270c3e150ec3d1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1656803446827181263
-    second: Kon_Crazy_0
+      213: 5472788607614178358
+    second: Kon_Crazy (2)_0
   - first:
-      213: 1198706117196918415
-    second: Kon_Crazy_1
+      213: 2140437029245504238
+    second: Kon_Crazy (2)_1
   - first:
-      213: 860586516842320192
-    second: Kon_Crazy_2
+      213: -2528914639088390079
+    second: Kon_Crazy (2)_2
+  - first:
+      213: 2012779823238519167
+    second: Kon_Crazy (2)_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -106,13 +109,35 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Kon_Crazy_0
+      name: Kon_Crazy (2)_0
       rect:
         serializedVersion: 2
-        x: 341
+        x: 339
+        y: 1000
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 634d5a71e3043fb40800000000000000
+      internalID: 5472788607614178358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kon_Crazy (2)_1
+      rect:
+        serializedVersion: 2
+        x: 336
         y: 948
-        width: 17
-        height: 68
+        width: 35
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fc4e6cee4f52ef610800000000000000
-      internalID: 1656803446827181263
+      spriteID: eea4548332c54bd10800000000000000
+      internalID: 2140437029245504238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kon_Crazy_1
+      name: Kon_Crazy (2)_2
       rect:
         serializedVersion: 2
-        x: 354
+        x: 344
         y: 921
-        width: 12
-        height: 18
+        width: 28
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f8e2c91dcd8a2a010800000000000000
-      internalID: 1198706117196918415
+      spriteID: 140f9d5d88d77ecd0800000000000000
+      internalID: -2528914639088390079
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kon_Crazy_2
+      name: Kon_Crazy (2)_3
       rect:
         serializedVersion: 2
         x: 0
@@ -165,8 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 04190e2a0ea61fb00800000000000000
-      internalID: 860586516842320192
+      spriteID: f799437c594deeb10800000000000000
+      internalID: 2012779823238519167
       vertices: []
       indices: 
       edges: []
@@ -175,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -184,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kon_Crazy (2)_0: 5472788607614178358
+      Kon_Crazy (2)_1: 2140437029245504238
+      Kon_Crazy (2)_2: -2528914639088390079
+      Kon_Crazy (2)_3: 2012779823238519167
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

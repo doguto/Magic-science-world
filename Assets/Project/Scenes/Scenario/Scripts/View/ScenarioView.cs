@@ -12,10 +12,10 @@ namespace Project.Scenes.Scenario.Scripts.View
         [SerializeField] private Image StillImageMe;
         [SerializeField] private Image StillImageEnemy;
 
-        public void InitStillImage(string characterKeyMe, string characterKeyEnemy, string faceType)
+        public void InitStillImage(string characterKeyMe, string characterKeyEnemy, string stillImageType)
         {
-            SetStillImage(StillImageMe, characterKeyMe, faceType);
-            SetStillImage(StillImageEnemy, characterKeyEnemy, faceType);
+            SetStillImage(StillImageMe, characterKeyMe, "Default");
+            SetStillImage(StillImageEnemy, characterKeyEnemy, stillImageType);
         }
         
         public class DisplayData
@@ -45,10 +45,11 @@ namespace Project.Scenes.Scenario.Scripts.View
             faceImage.sprite = faceSprite;
         }
 
-        private void SetStillImage(Image image, string characterKey, string faceType)
+        private void SetStillImage(Image image, string characterKey, string stillImageType)
         {
             string fileName;
-            if (faceType.Contains("Crazy"))
+            Debug.Log(stillImageType);
+            if (stillImageType.Contains("Crazy"))
             {
                 fileName = characterKey + "_Crazy";
             }
@@ -56,6 +57,7 @@ namespace Project.Scenes.Scenario.Scripts.View
             {
                 fileName = characterKey;
             }
+            Debug.Log(fileName);
             string stillPath = $"CharaImage/Still/{fileName}";
             Sprite stillSprite = Resources.Load<Sprite>(stillPath);
             if (stillSprite == null)

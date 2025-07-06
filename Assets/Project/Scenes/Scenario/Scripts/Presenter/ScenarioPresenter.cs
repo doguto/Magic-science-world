@@ -38,7 +38,8 @@ namespace Project.Scenes.Scenario.Scripts.Presenter
             ScenarioLine line = _model.GetCurrentLine();
             string mainCharacterKey = _model.GetMainCharacterKey();
             string enemyCharacterKey = _model.GetEnemyCharacterKey();
-            view.InitStillImage(mainCharacterKey, enemyCharacterKey, line.faceType.ToString());
+            string stillImageType = ScenarioDataSO.SceneNumberToStillImage[sceneNumber.ToString()];
+            view.InitStillImage(mainCharacterKey, enemyCharacterKey, stillImageType);
         }
         
         void Update()

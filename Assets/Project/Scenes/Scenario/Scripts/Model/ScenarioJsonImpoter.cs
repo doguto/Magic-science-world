@@ -25,15 +25,15 @@ public static class ScenarioJsonImporter
 
             string fileName = Path.GetFileNameWithoutExtension(path);
             int conversationNum;
-            if (fileName.Split('-')[1].Contains("pre"))
+            if (fileName.Split('-')[2].Contains("pre"))
             {
-                conversationNum = int.Parse(fileName.Split('-')[0]) * 2 - 1;
+                conversationNum = int.Parse(fileName.Split('-')[1]) * 2 - 1;
             }
             else
             {
-                conversationNum = int.Parse(fileName.Split('-')[0]) * 2;
+                conversationNum = int.Parse(fileName.Split('-')[1]) * 2;
             }
-            string assetPath = $"{outputDir}/{conversationNum}.asset";
+            string assetPath = $"{outputDir}/conversation-{conversationNum}.asset";
             AssetDatabase.CreateAsset(asset, assetPath);
         }
 

@@ -15,16 +15,16 @@ MonoBehaviour:
   scenarioLines:
   - character: "\u30B3\u30F3"
     content: "\u306A\u306B\u3082\u307F\u3048\u306A\u3044\u2026\u2026\u3002"
-    faceNum: 0
+    faceType: Default
   - character: "\u30B3\u30F3"
     content: "\u6708\u306E\u5149\u3067\u660E\u308B\u3044\u306F\u305A\u306A\u306E\u306B\u2026\u2026\u3002"
-    faceNum: 0
+    faceType: Speak
   - character: "\u30C6\u30F3"
     content: "\u2026\u2026\u2026\u3002"
-    faceNum: 0
+    faceType: Default
   - character: "\u30B3\u30F3"
     content: "\u3060\u308C\u304B\u304D\u305F\u306E\u2026\u2026\uFF1F"
-    faceNum: 0
+    faceType: Default
   - character: "\u30B3\u30F3"
     content: "\u304A\u306D\u304C\u3044\u3001\u305F\u3059\u3051\u3066\u2026\u2026\uFF01"
-    faceNum: 0
+    faceType: Default
