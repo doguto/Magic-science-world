@@ -5,29 +5,8 @@ using UnityEngine;
 
 namespace Project.Commons.Scripts.View.UI
 {
-    public class ButtonList : MonoBehaviour
+    public class ButtonList : ButtonListBase
     {
-        [SerializeField] List<ButtonBase> buttons;
-        
-        ButtonListType _buttonListType;
-        
-        public int ButtonIndex { get; private set; }
-        public bool IsActive { get; private set; }
-
-        bool MoveNextFlag => _buttonListType switch
-        {
-            ButtonListType.Vertical => Input.GetKeyDown(KeyCode.UpArrow),
-            ButtonListType.Horizontal => Input.GetKeyDown(KeyCode.RightArrow),
-            _ => false
-        };
-        
-        bool MoveBackFlag => _buttonListType switch
-        {
-            ButtonListType.Vertical => Input.GetKeyDown(KeyCode.DownArrow),
-            ButtonListType.Horizontal => Input.GetKeyDown(KeyCode.LeftArrow),
-            _ => false
-        };
-
         void Update()
         {
             if (!IsActive) return;
@@ -37,19 +16,14 @@ namespace Project.Commons.Scripts.View.UI
             if (Input.GetKeyDown(KeyCode.Space)) PressButton();
         }
 
-        public void Init(ButtonListType buttonListType, int index = 0, bool isActive = false)
+        public override void Init(ButtonListType buttonListType, int index = 0, bool isActive = false)
         {
-            _buttonListType = buttonListType;
+            this.buttonListType = buttonListType;
             
             SetButtonIndex(index);
             buttons[ButtonIndex].SetActive(true);
             
             SetActive(isActive);
-        }
-
-        public void SetActive(bool active)
-        {
-            IsActive = active;
         }
         
         public void SetActiveButton(int index, bool isActive = false)
@@ -77,16 +51,5 @@ namespace Project.Commons.Scripts.View.UI
             
             buttons[index].Press();
         }
-        
-        void SetButtonIndex(int index)
-        {
-            ButtonIndex = (index + buttons.Count) % buttons.Count;
-        }
-    }
-
-    public enum ButtonListType
-    {
-        Vertical,
-        Horizontal,
     }
 }
