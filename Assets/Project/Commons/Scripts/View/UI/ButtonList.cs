@@ -25,31 +25,12 @@ namespace Project.Commons.Scripts.View.UI
             
             SetActive(isActive);
         }
-        
-        public void SetActiveButton(int index, bool isActive = false)
-        {
-            SetButtonIndex(index);
-            buttons[ButtonIndex].SetActive(isActive);
-        }
 
-        public void MoveNext(bool isUp = true)
+        public override void MoveNext(bool isUp = true)
         {
             buttons[ButtonIndex].SetActive(false);
             SetButtonIndex( isUp ? ButtonIndex - 1 : ButtonIndex + 1 );
             buttons[ButtonIndex].SetActive(true);
-        }
-
-        public IObservable<Unit> GetButtonEvent(int index)
-        {
-            return buttons[index].OnPressed;
-        }
-
-        public void PressButton() => PressButton(ButtonIndex);
-        public void PressButton(int index)
-        {
-            if (!IsActive) return;
-            
-            buttons[index].Press();
         }
     }
 }

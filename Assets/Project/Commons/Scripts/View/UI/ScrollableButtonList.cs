@@ -6,5 +6,10 @@ namespace Project.Commons.Scripts.View.UI
         {
             
         }
+
+        public override void MoveNext(bool isUp = true)
+        {
+            
+        }
     }
 }

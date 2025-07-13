@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
 
 namespace Project.Commons.Scripts.View.UI
@@ -25,6 +27,7 @@ namespace Project.Commons.Scripts.View.UI
             ButtonListType.Horizontal => Input.GetKeyDown(KeyCode.LeftArrow),
             _ => false
         };
+        
 
         public virtual void Init(ButtonListType buttonListType, int index = 0, bool isActive = false)
         {
@@ -40,6 +43,27 @@ namespace Project.Commons.Scripts.View.UI
         {
             IsActive = active;
         }
+
+        public void SetActiveButton(int index, bool isActive = false)
+        {
+            SetButtonIndex(index);
+            buttons[ButtonIndex].SetActive(isActive);
+        }
+        
+        public IObservable<Unit> GetButtonEvent(int index)
+        {
+            return buttons[index].OnPressed;
+        }
+        
+        public void PressButton() => PressButton(ButtonIndex);
+        public void PressButton(int index)
+        {
+            if (!IsActive) return;
+            
+            buttons[index].Press();
+        }
+        
+        public abstract void MoveNext(bool isUp = true);
         
         protected void SetButtonIndex(int index)
         {
