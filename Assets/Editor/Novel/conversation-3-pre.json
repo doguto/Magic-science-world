@@ -1,0 +1,47 @@
+[
+  {
+    "character": "タツミ",
+    "content": "テン！",
+    "faceType": "Default"
+  },
+  {
+    "character": "テン",
+    "content": "(いつにも増してウルサイな………。)",
+    "faceType": "Default"
+  },
+  {
+    "character": "タツミ",
+    "content": "なにしに来たの？あ、分かった！この異常事態についての見解を訊きに来たんでしょー？教えてあげるよ！",
+    "faceType": "Default"
+  },
+  {
+    "character": "テン",
+    "content": "察しが良いところだけは助かる。お前も魔力暴走には気付いてたんだな？",
+    "faceType": "Speak"
+  },
+  {
+    "character": "タツミ",
+    "content": "あったりまえじゃん！ふふん、私ってかしこいからね～ えへへ～",
+    "faceType": "Default"
+  },
+  {
+    "character": "テン",
+    "content": "………。",
+    "faceType": "Default"
+  },
+  {
+    "character": "テン",
+    "content": "それで、お前自身は大丈夫なのか？",
+    "faceType": "Speak"
+  },
+  {
+    "character": "タツミ",
+    "content": "え、気付いちゃった？実はわたしも結構魔力供給過剰気味でさー……。助けてくれる？",
+    "faceType": "Confused"
+  },
+  {
+    "character": "テン",
+    "content": "もとよりそのつもりだ。多少痛くても我慢しろよ。",
+    "faceType": "Shout"
+  }
+]

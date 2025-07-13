@@ -1,0 +1,32 @@
+[
+  {
+    "character": "ロコ",
+    "content": "いたた、けっこう手荒にやるね……。",
+    "faceType": "Embarrassed"
+  },
+  {
+    "character": "テン",
+    "content": "すまない、不器用でな。",
+    "faceType": "Speak"
+  },
+  {
+    "character": "ロコ",
+    "content": "いいよ、私たちのためでしょ？",
+    "faceType": "Default"
+  },
+  {
+    "character": "ロコ",
+    "content": "ところで、さっきから妙に雷の音がうるさいね？",
+    "faceType": "Confused"
+  },
+  {
+    "character": "テン",
+    "content": "雷……。アズマか、あいつのところにも向かわねばならんな。",
+    "faceType": "Speak"
+  },
+  {
+    "character": "ロコ",
+    "content": "気を付けて、早く帰ってくるんだよ。",
+    "faceType": "Confused"
+  }
+]
