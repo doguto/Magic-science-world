@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 95f98cb1c2a5f414c8765bee9a2693be
+guid: 255da169ae5c99a4bbbee99113900e50
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6571242975149653151
-    second: Ushitora_0
+      213: 673323460401555453
+    second: Tatsumi_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ushitora_0
+      name: Tatsumi_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 677
-        height: 877
+        x: 71
+        y: 24
+        width: 607
+        height: 913
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f9c73928baeb13b50800000000000000
-      internalID: 6571242975149653151
+      spriteID: df7eb2cae10285900800000000000000
+      internalID: 673323460401555453
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ushitora_0: 6571242975149653151
+      Tatsumi_0: 673323460401555453
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

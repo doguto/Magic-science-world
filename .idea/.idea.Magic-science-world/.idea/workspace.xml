@@ -5,19 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9ea54af-b601-4a07-8954-a70d660c5e84" name="変更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Magic-science-world/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Magic-science-world/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Commons/Scripts/Model/Model.asmref" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Commons/Scripts/Model/Model.asmref.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Global.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/Model/Model.asmref" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/Model/Model.asmref.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/Presenter/Presenter.asmref" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/Presenter/Presenter.asmref.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/View/View.asmref" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Global/Scripts/View/View.asmref.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/Presenter/TitleScenePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Scenes/Title/Scripts/Presenter/TitleScenePresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Dot/azuma.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Dot/azuma.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Dot/azuma_attack.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Dot/azuma_attack.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Dot/roko.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Dot/roko.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Dot/roko_attack.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Dot/roko_attack.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Face/Kon/SecondDefault.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Face/Kon/SecondDefault.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Face/Kon/_originalsize.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Face/Kon/_originalsize.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Face/Ushitora/CrazyDefault.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Face/Ushitora/CrazyDefault.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Still/Hanare.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Still/Hanare.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Still/Kon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Still/Kon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Still/Loco.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Still/Loco.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Still/Sui.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Still/Sui.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Still/Sui_Crazy.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Still/Sui_Crazy.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Still/Tatsumi.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Still/Tatsumi.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Still/Ushitora.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Still/Ushitora.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Still/Ushitora_Crazy.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/CharaImage/Still/Ushitora_Crazy.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Project/Resources/UIImage/Scenario/box_blue.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Project/Resources/UIImage/Scenario/box_blue.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,19 +48,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/title-scene&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "dev",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Unity エディターにアタッチ.Unity エディターにアタッチ">
     <configuration name="ユニットテスト (バッチモード)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.23f1\Editor\Unity.exe" />
