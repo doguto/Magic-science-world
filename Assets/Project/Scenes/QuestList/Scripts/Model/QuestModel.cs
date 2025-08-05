@@ -9,10 +9,8 @@ namespace Project.Scenes.QuestList.Scripts.Model
     {
         public async UniTask<Sprite> GetCharaImage(int stageNumber)
         {
-            Debug.Log("GetCharaImage");
-            var sprite = await Addressables.LoadAssetsAsync<Sprite>("Assets/Project/Textures/CharaImage/Tatsumi.png").Task;
-            
-            return sprite.First();
+            var sprite = await Addressables.LoadAssetAsync<Sprite>("Assets/Project/Textures/CharaImage/Tatsumi.png").Task;
+            return sprite;
         }
     }
 }
