@@ -27,5 +27,6 @@ EditorBuildSettings:
     path: Assets/Project/Scenes/BattleWay.unity
     guid: 95eca52eca80edd449ce9ff723c54a1b
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 83350165e20eee74aade26dde0b38586, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
