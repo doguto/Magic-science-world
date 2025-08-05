@@ -14,19 +14,28 @@ namespace Project.Commons.Scripts.View.UI
         public int ButtonIndex { get; protected set; }
         public bool IsActive { get; protected set; }
         
-        protected bool MoveNextFlag => buttonListType switch
+        protected virtual bool MoveNextFlag => buttonListType switch
         {
             ButtonListType.Vertical => Input.GetKeyDown(KeyCode.UpArrow),
             ButtonListType.Horizontal => Input.GetKeyDown(KeyCode.RightArrow),
             _ => false
         };
         
-        protected bool MoveBackFlag => buttonListType switch
+        protected virtual bool MoveBackFlag => buttonListType switch
         {
             ButtonListType.Vertical => Input.GetKeyDown(KeyCode.DownArrow),
             ButtonListType.Horizontal => Input.GetKeyDown(KeyCode.LeftArrow),
             _ => false
         };
+        
+        protected virtual void Update()
+        {
+            if (!IsActive) return;
+
+            if (MoveNextFlag) MoveNext();
+            if (MoveBackFlag) MoveNext(false);
+            if (Input.GetKeyDown(KeyCode.Space)) PressButton();
+        }
         
 
         public virtual void Init(ButtonListType buttonListType, int index = 0, bool isActive = false)

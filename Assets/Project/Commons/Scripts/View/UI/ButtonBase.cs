@@ -19,7 +19,7 @@ namespace Project.Commons.Scripts.View.UI
         public bool IsActive { get; private set; }
 
 
-        void Awake()
+        protected void Awake()
         {
             _transform = transform;
             _initialScale = _transform.localScale;
@@ -27,7 +27,8 @@ namespace Project.Commons.Scripts.View.UI
 
         public void SetActive(bool active)
         {
-            _transform.DOScale(_initialScale * (active? ScaleRatio : 1), MoveTime).SetEase(Ease.InOutQuart);
+            var endPosition = _initialScale * (active? ScaleRatio : 1);
+            _transform.DOScale(endPosition, MoveTime).SetEase(Ease.InOutQuart);
             IsActive = active;
         }
         
@@ -36,6 +37,13 @@ namespace Project.Commons.Scripts.View.UI
             if (!IsActive) return;
             
             onPressed.OnNext(Unit.Default);
+        }
+
+        public void Move(Vector3 moveDistance)
+        {
+            var currentPosition = _transform.localPosition;
+            var endPosition = currentPosition + moveDistance;
+            _transform.DOLocalMove(endPosition, MoveTime).SetEase(Ease.InOutQuart);
         }
     }
 }

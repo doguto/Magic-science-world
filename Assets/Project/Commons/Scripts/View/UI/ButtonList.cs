@@ -7,15 +7,6 @@ namespace Project.Commons.Scripts.View.UI
 {
     public class ButtonList : ButtonListBase
     {
-        void Update()
-        {
-            if (!IsActive) return;
-
-            if (MoveNextFlag) MoveNext();
-            if (MoveBackFlag) MoveNext(false);
-            if (Input.GetKeyDown(KeyCode.Space)) PressButton();
-        }
-
         public override void Init(ButtonListType buttonListType, int index = 0, bool isActive = false)
         {
             this.buttonListType = buttonListType;
