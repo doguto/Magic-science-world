@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Project.Scenes.BattleWay.Scripts.Presenter
 {
-    using Project.Scenes.BattleWay.Scripts.ScriptableObjects.Waves;
+    using Project.Commons.DataBase.ScriptableObjects;
 
     /// <summary>
     /// 経過時間に応じて SpawnEntry を吐き出す小クラス（ピュア）

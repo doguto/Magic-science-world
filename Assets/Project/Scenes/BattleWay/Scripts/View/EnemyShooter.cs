@@ -5,7 +5,7 @@ using Cysharp.Threading.Tasks;
 
 namespace Project.Scenes.BattleWay.Scripts.View
 {
-    using Project.Scenes.BattleWay.Scripts.ScriptableObjects.BulletPatterns;
+    using Project.Commons.DataBase.Scripts;
     using Project.Scenes.BattleWay.Scripts.View.Pool;
 
     /// <summary>

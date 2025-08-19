@@ -1,4 +1,4 @@
-namespace BattleWay.ScriptableObjects
+namespace Project.Commons.DataBase.Scripts
 {
     /// <summary>
     /// 敵の移動タイプ

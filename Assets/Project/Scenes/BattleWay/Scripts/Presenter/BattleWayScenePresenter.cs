@@ -5,8 +5,7 @@ using UnityEngine;
 
 namespace Project.Scenes.BattleWay.Scripts.Presenter
 {
-    using Project.Scenes.BattleWay.Scripts.ScriptableObjects.Waves;
-    using Project.Scenes.BattleWay.Scripts.ScriptableObjects.BulletPatterns;
+    using Project.Commons.DataBase.Scripts;
     using Project.Scenes.BattleWay.Scripts.View;
     using Project.Scenes.BattleWay.Scripts.View.Pool;
 
@@ -28,6 +27,9 @@ namespace Project.Scenes.BattleWay.Scripts.Presenter
         [Header("弾プール（射撃するなら必須）")]
         [SerializeField] private BulletPool _bulletPool;
 
+        [Header("敵レジストリ")]
+        [SerializeField] private EnemyRegistry _enemyRegistry;
+
         private WaveRunner _waveRunner;
         private readonly List<EnemyView> _spawned = new();
 
@@ -39,6 +41,12 @@ namespace Project.Scenes.BattleWay.Scripts.Presenter
             if (_wave == null)
             {
                 Debug.LogError("[BattleWayScenePresenter] WaveSO が未設定です。");
+                return;
+            }
+
+            if (_enemyRegistry == null)
+            {
+                Debug.LogError("[BattleWayScenePresenter] EnemyRegistry が未設定です。");
                 return;
             }
 
@@ -54,26 +62,39 @@ namespace Project.Scenes.BattleWay.Scripts.Presenter
 
             foreach (var e in due)
             {
-                if (e == null || e.enemyPrefab == null)
+                if (e == null)
                 {
-                    Debug.LogWarning("[BattleWayScenePresenter] SpawnEntry が不正（Prefab未設定など）");
+                    Debug.LogWarning("[BattleWayScenePresenter] SpawnEntry が null です");
+                    continue;
+                }
+
+                // 敵Prefabを取得
+                var enemyPrefab = _enemyRegistry?.GetEnemyPrefab(e.enemyType);
+                if (enemyPrefab == null)
+                {
+                    Debug.LogWarning($"[BattleWayScenePresenter] 敵タイプ {e.enemyType} に対応するPrefabが見つかりません");
                     continue;
                 }
 
                 // 生成
-                var enemy = Instantiate(e.enemyPrefab, (Vector3)e.spawnPosition, Quaternion.identity, _enemiesRoot);
+                var enemy = Instantiate(enemyPrefab, (Vector3)e.spawnPosition, Quaternion.identity, _enemiesRoot);
 
-                // 移動初期化 & 開始
+                // 移動パターンで初期化・開始
                 if (e.movePattern != null)
                 {
-                    enemy.Init(e.movePattern, e.spawnPosition);
+                    enemy.Initialize(e.movePattern, e.spawnPosition);
+                    enemy.StartMovement();
                 }
-                enemy.ApplyMove();
+                else
+                {
+                    // 移動パターンがない場合は位置だけ設定
+                    enemy.transform.position = e.spawnPosition;
+                }
 
-                // 射撃セットアップ（パターン指定があれば）
+                // シューター設定（パターン指定があれば）
                 if (e.bulletPattern != null && _bulletPool != null)
                 {
-                    enemy.SetupShooter(e.bulletPattern, _bulletPool, null);
+                    enemy.ConfigureShooter(e.bulletPattern, _bulletPool);
                 }
 
                 // ヒットイベント購読（R6：ログのみ）

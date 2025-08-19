@@ -1,5 +1,5 @@
 // Assets/Project/Scenes/BattleWay/Scripts/ScriptableObjects/BulletPatterns/BulletSpreadType.cs
-namespace Project.Scenes.BattleWay.Scripts.ScriptableObjects.BulletPatterns
+namespace Project.Commons.DataBase.Scripts
 {
     /// <summary>
     /// 弾の拡散方式

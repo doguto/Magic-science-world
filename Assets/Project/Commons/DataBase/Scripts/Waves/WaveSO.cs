@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Project.Scenes.BattleWay.Scripts.ScriptableObjects.Waves
+namespace Project.Commons.DataBase.Scripts
 {
     /// <summary>
     /// 1ウェーブ分のスポーン指示セット

@@ -1,7 +1,7 @@
 // Assets/Project/Scenes/BattleWay/Scripts/ScriptableObjects/BulletPatterns/BulletPatternSO.cs
 using UnityEngine;
 
-namespace Project.Scenes.BattleWay.Scripts.ScriptableObjects.BulletPatterns
+namespace Project.Commons.DataBase.Scripts
 {
     /// <summary>
     /// 弾発射パターン（第5回でEnemyShooterから使用）

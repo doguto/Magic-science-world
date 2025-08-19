@@ -1,7 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 
-namespace Project.Scenes.BattleWay.Scripts.ScriptableObjects.MovePatterns
+namespace Project.Commons.DataBase.Scripts
 {
     /// <summary>
     /// 敵の移動パターン定義（Presenterは値を読むだけ、ViewがTransformに適用）
