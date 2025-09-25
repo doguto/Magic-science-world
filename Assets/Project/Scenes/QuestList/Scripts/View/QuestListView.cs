@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using Project.Commons.Scripts.View.UI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +7,7 @@ using UnityEngine.UI;
 public class QuestListView : MonoBehaviour
 {
     [SerializeField] ScrollableButtonList scrollableButtonList;
-    [SerializeField] Image charaImage;
+    [SerializeField] SpriteRenderer charaImage;
 
     public IObservable<int> OnButtonChanged => scrollableButtonList.OnButtonChanged;
 
@@ -17,7 +18,9 @@ public class QuestListView : MonoBehaviour
 
     public void SetCharaImage(Sprite charaSprite)
     {
-        charaImage.gameObject.SetActive(true);
+        // TODO: マジックナンバー修正
+        charaImage.DOFade(0f, 0f);
         charaImage.sprite = charaSprite;
+        charaImage.DOFade(1f, 0.25f).SetDelay(0.1f);
     }
 }

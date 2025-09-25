@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageData:
   - id: 1
-    charaStillAddress: CharaImage/Tatsumi.png
+    charaStillAddress: CharaImage/Roko_Still.png
   - id: 2
-    charaStillAddress: 
+    charaStillAddress: CharaImage/Azuma_Still.png
   - id: 3
-    charaStillAddress: 
+    charaStillAddress: CharaImage/Tatsumi.png
   - id: 4
-    charaStillAddress: 
+    charaStillAddress: CharaImage/Ushitora_Still.png
   - id: 5
-    charaStillAddress: 
+    charaStillAddress: CharaImage/Sui_Still.png
   - id: 6
-    charaStillAddress: 
+    charaStillAddress: CharaImage/Hanare_Still.png
   - id: 7
-    charaStillAddress: 
+    charaStillAddress: CharaImage/Kon_Still.png
