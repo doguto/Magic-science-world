@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c48057e9956541cfb3024110ad120984, type: 3}
+  m_Name: StageData
+  m_EditorClassIdentifier: 
+  stageData:
+  - id: 1
+    charaStillAddress: CharaImage/Roko_Still.png
+  - id: 2
+    charaStillAddress: CharaImage/Azuma_Still.png
+  - id: 3
+    charaStillAddress: CharaImage/Tatsumi.png
+  - id: 4
+    charaStillAddress: CharaImage/Ushitora_Still.png
+  - id: 5
+    charaStillAddress: CharaImage/Sui_Still.png
+  - id: 6
+    charaStillAddress: CharaImage/Hanare_Still.png
+  - id: 7
+    charaStillAddress: CharaImage/Kon_Still.png
