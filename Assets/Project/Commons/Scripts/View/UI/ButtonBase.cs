@@ -13,6 +13,8 @@ namespace Project.Commons.Scripts.View.UI
         Transform _transform;
         Vector3 _initialScale;
         
+        Vector2 initialPosition;
+        
         readonly Subject<Unit> onPressed = new();
         public IObservable<Unit> OnPressed => onPressed;
         
@@ -23,6 +25,7 @@ namespace Project.Commons.Scripts.View.UI
         {
             _transform = transform;
             _initialScale = _transform.localScale;
+            initialPosition = _transform.localPosition;
         }
 
         public void SetActive(bool active)
@@ -39,11 +42,11 @@ namespace Project.Commons.Scripts.View.UI
             onPressed.OnNext(Unit.Default);
         }
 
-        public void Move(Vector3 moveDistance)
+
+        public void Move(Vector2 moveDistance)
         {
-            var currentPosition = _transform.localPosition;
-            var endPosition = currentPosition + moveDistance;
-            _transform.DOLocalMove(endPosition, MoveTime).SetEase(Ease.InOutQuart);
+            var targetPosition = initialPosition + moveDistance;
+            _transform.DOLocalMove(targetPosition, MoveTime).SetEase(Ease.InOutQuart);
         }
     }
 }

@@ -5,6 +5,7 @@ namespace Project.Commons.Scripts.View.UI
     public class ScrollableButtonList : ButtonListBase
     {
         [SerializeField] float buttonInterval;
+        float targetPosition;
         
         protected override bool MoveNextFlag => buttonListType switch
         {
@@ -29,11 +30,13 @@ namespace Project.Commons.Scripts.View.UI
             if (ButtonIndex == 0 && isUp) return;
             
             buttons[ButtonIndex].SetActive(false);
+            
+            targetPosition = isUp? targetPosition - buttonInterval : targetPosition + buttonInterval;
             foreach (var button in buttons)
             {
-                button.Move(new(0, isUp ? -buttonInterval : buttonInterval));
+                button.Move(new(0, targetPosition));
             }
-            
+
             SetButtonIndex( isUp ? ButtonIndex - 1 : ButtonIndex + 1 );
             buttons[ButtonIndex].SetActive(true);
         }
