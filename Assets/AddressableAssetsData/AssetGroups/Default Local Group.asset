@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 585a04aa7c6930a46ad0a6b8324af2a3
+    m_Address: Assets/Project/Commons/DataBase/ScriptableObjects/StageData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4cf91a8a89125f14a8e81c72cf0d100d, type: 2}
   m_SchemaSet:

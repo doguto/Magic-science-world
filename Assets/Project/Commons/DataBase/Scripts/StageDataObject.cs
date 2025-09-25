@@ -1,0 +1,19 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Project.Commons.DataBase.Scripts
+{
+    [CreateAssetMenu(fileName = "StageData", menuName = "Database/StageData")]
+    public class StageDataObject : ScriptableObject
+    {
+        public List<StageData> stageData;
+    }
+
+    [Serializable]
+    public class StageData
+    {
+        public int id;
+        public string charaStillAddress;
+    }
+}

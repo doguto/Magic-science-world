@@ -11,6 +11,9 @@ namespace Project.Commons.Scripts.View.UI
 
         protected ButtonListType buttonListType;
         
+        readonly Subject<int> onButtonChanged = new();
+        public IObservable<int> OnButtonChanged => onButtonChanged;
+
         public int ButtonIndex { get; protected set; }
         public bool IsActive { get; protected set; }
         
@@ -76,6 +79,7 @@ namespace Project.Commons.Scripts.View.UI
         
         protected void SetButtonIndex(int index)
         {
+            onButtonChanged.OnNext(index);
             ButtonIndex = (index + buttons.Count) % buttons.Count;
         }
     }
