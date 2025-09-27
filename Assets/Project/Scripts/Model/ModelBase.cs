@@ -1,7 +1,7 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine.AddressableAssets;
 
-namespace Project.Commons.Scripts.Model
+namespace Project.Scripts.Model
 {
     public class ModelBase
     {

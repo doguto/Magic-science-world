@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Project.Commons.DataBase.Scripts
+namespace Project.Scripts.Infra
 {
     [CreateAssetMenu(fileName = "StageData", menuName = "Database/StageData")]
     public class StageDataObject : ScriptableObject

@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Roko_Still_0: 2127231046031397836
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

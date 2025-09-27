@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Hanare_Still_0: -1378415283862351019
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Project.Commons.Scripts.Extensions
+namespace Project.Scripts.Extensions
 {
     public class ReadOnlyAttribute : PropertyAttribute
     {

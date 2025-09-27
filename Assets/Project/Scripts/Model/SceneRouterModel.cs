@@ -1,6 +1,4 @@
-using UnityEngine;
-
-namespace Project.Commons.Scripts.Model
+namespace Project.Scripts.Model
 {
     public class SceneRouterModel
     {

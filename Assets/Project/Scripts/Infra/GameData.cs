@@ -1,8 +1,9 @@
 using Project.Commons.Scripts.Extensions;
+using Project.Scripts.Extensions;
 using UnityEditor;
 using UnityEngine;
 
-namespace Project.Commons.DataBase.Scripts
+namespace Project.Scripts.Infra
 {
     public class GameData : ScriptableObject
     {

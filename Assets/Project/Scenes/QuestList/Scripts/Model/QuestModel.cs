@@ -1,11 +1,8 @@
 using System.Collections.Generic;
-using System.Linq;
-using Cysharp.Threading.Tasks;
-using Project.Commons.DataBase.Scripts;
 using Project.Commons.Scripts.Extensions;
-using Project.Commons.Scripts.Model;
+using Project.Scripts.Model;
+using Project.Scripts.Infra;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 namespace Project.Scenes.QuestList.Scripts.Model
 {

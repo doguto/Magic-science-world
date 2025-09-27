@@ -1,4 +1,4 @@
-using Project.Commons.DataBase.Scripts;
+using Project.Scripts.Infra;
 using UnityEngine;
 
 namespace Project.Scenes.Title.Scripts.Model
