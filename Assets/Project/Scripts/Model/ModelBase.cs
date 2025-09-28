@@ -6,7 +6,7 @@ namespace Project.Scripts.Model
     public class ModelBase
     {
         const string AssetAddressRoot = "Assets/Project/Textures";
-        const string DataAddressRoot = "Assets/Project/Commons/DataBase/ScriptableObjects";
+        const string DataAddressRoot = "Assets/Project/DataStore";
 
         public static T LoadAsset<T>(string assetAddress)
         {
