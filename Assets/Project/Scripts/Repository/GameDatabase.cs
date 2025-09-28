@@ -1,14 +1,11 @@
-using Project.Scripts.Model;
+using Project.Scenes.QuestList.Scripts.Model;
 
 namespace Project.Scripts.Repository
 {
     public class GameDatabase
     {
-        public static GameDatabase Instance { get; private set; }
+        public static GameDatabase Instance { get; private set; } = new();
 
-        public T Find<T>(int id) where T : ModelBase
-        {
-            return null;
-        }
+        public ModelTable<QuestModel> QuestModelTable { get; } = new();
     }
 }
