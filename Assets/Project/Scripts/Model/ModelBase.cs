@@ -16,7 +16,7 @@ namespace Project.Scripts.Model
 
         public async UniTask<T> LoadAssetAsync<T>(string assetAddress)
         {
-            var address = $"{DataAddressRoot}/{assetAddress}";
+            var address = $"{AssetAddressRoot}/{assetAddress}";
             var task = Addressables.LoadAssetAsync<T>(address);
             return await task.Task;
         }
