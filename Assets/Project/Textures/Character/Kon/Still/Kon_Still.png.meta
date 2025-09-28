@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f8eafc710a99e514a93bd5bddf6f0da2
+guid: 2d44fff3443eb694bb960b5fa4414b67
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4170110241613817524
-    second: BackGround_3_0
+      213: 7674493796392373223
+    second: Kon_Still_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BackGround_3_0
+      name: Kon_Still_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 400
-        height: 224
+        y: 169
+        width: 768
+        height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c49d36654dac026c0800000000000000
-      internalID: -4170110241613817524
+      spriteID: 7eb08e45277418a60800000000000000
+      internalID: 7674493796392373223
       vertices: []
       indices: 
       edges: []
@@ -187,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BackGround_3_0: -4170110241613817524
+      Kon_Still_0: 7674493796392373223
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

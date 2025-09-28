@@ -36,7 +36,7 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 585a04aa7c6930a46ad0a6b8324af2a3
-    m_Address: Assets/Project/Commons/DataBase/ScriptableObjects/StageData.asset
+    m_Address: Assets/Project/DataStore/StageData.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

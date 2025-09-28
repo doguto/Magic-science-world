@@ -1,6 +1,5 @@
-using System;
 using UnityEngine;
-using Project.Commons.DataBase.Scripts;
+using Project.Scripts.Infra;
 
 
 namespace Project.Scenes.Title.Scripts.Model
