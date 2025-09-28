@@ -90,11 +90,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6f34654f4a3518c448ca26897d5ec10d
-    m_Address: Assets/Project/Textures/CharaImage/Roko_Still.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 88c3e06e7e3cfb9428216ca27dd39243
     m_Address: Assets/Project/Textures/CharaImage/Hanare_Still.png
     m_ReadOnly: 0
