@@ -1,6 +1,7 @@
 # Magic-science-world
 ## Document
-[Document/Architecture.md](https://github.com/doguto/Magic-science-world/blob/113907695da07726d7660c66d2936dbf3aeac055/Document/Architecture.md)
+* [Architecture.md](Document/Architecture.md) - プロジェクトのアーキテクチャについて
+* [Directory-Structure.md](Document/Directory-Structure.md) - ディレクトリ構造の詳細説明
 
 ## UsedTech
 * UniRx
