@@ -55,6 +55,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fa22633d5c549914f99b9b07097a208e
+    m_Address: Assets/Project/Textures/Character/Hanare/Face/Hanare_Confident_Face.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4cf91a8a89125f14a8e81c72cf0d100d, type: 2}
   m_SchemaSet:
