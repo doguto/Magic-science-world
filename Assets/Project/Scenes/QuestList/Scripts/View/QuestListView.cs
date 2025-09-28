@@ -1,8 +1,7 @@
 using System;
 using DG.Tweening;
-using Project.Commons.Scripts.View.UI;
+using Project.Commons.Button.Scripts.View;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class QuestListView : MonoBehaviour
 {

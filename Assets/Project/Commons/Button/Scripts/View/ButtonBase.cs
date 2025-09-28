@@ -3,7 +3,7 @@ using DG.Tweening;
 using UniRx;
 using UnityEngine;
 
-namespace Project.Commons.Scripts.View.UI
+namespace Project.Commons.Button.Scripts.View
 {
     public class ButtonBase : MonoBehaviour
     {
