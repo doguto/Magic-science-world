@@ -1,18 +1,14 @@
 using UnityEngine;
 using Project.Scripts.Infra;
+using Project.Scripts.Model;
 
 
 namespace Project.Scenes.Title.Scripts.Model
 {
-    public class TitleBackgroundModel
+    public class TitleBackgroundModel : ModelBase
     {
-        GameData _gameData;
+        readonly UserDataObject userDataObject = new();
 
-        public int ClearedStageAmount => _gameData.ClearedStageNumber;
-        
-        public TitleBackgroundModel()
-        {
-            _gameData = Resources.Load<GameData>("ProjectData/GameData");
-        }
+        public int ClearedStageAmount => userDataObject.ClearedStageNumber;
     }
 }
