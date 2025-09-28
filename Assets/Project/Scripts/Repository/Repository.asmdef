@@ -2,9 +2,9 @@
     "name": "Repository",
     "rootNamespace": "",
     "references": [
-        "",
         "UniRx",
-        "Infra"
+        "Infra",
+        "Model"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
