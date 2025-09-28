@@ -1,6 +1,6 @@
 namespace Project.Scripts.Model
 {
-    public class SceneRouterModel
+    public class SceneRouterModel : ModelBase
     {
         public const string Global = "Global";
         public const string Title = "Title";
@@ -8,7 +8,5 @@ namespace Project.Scripts.Model
         public const string Scenario = "Scenario";
         public const string BattleBoss = "BattleBoss";
         public const string BattleWay = "BattleWay";
-
-        public SceneRouterModel() { }
     }
 }
