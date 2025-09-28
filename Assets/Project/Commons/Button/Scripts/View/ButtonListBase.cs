@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
 
-namespace Project.Commons.Scripts.View.UI
+namespace Project.Commons.Button.Scripts.View
 {
     public abstract class ButtonListBase : MonoBehaviour
     {
@@ -82,11 +82,5 @@ namespace Project.Commons.Scripts.View.UI
             onButtonChanged.OnNext(index);
             ButtonIndex = (index + buttons.Count) % buttons.Count;
         }
-    }
-    
-    public enum ButtonListType
-    {
-        Vertical,
-        Horizontal,
     }
 }

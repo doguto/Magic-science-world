@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
-using NUnit.Framework;
-using Project.Commons.Scripts.View.UI;
+using Project.Commons.Button.Scripts.View;
 using UniRx;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Project.Scenes.Title.Scripts.View
 {

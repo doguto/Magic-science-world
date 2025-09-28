@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using UniRx;
-using UnityEngine;
-
-namespace Project.Commons.Scripts.View.UI
+﻿namespace Project.Commons.Button.Scripts.View
 {
     public class ButtonList : ButtonListBase
     {
