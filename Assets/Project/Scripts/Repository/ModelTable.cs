@@ -6,14 +6,9 @@ namespace Project.Scripts.Repository
     {
         T model;
 
-        public T FetchOrCreate()
+        public T Get()
         {
             model ??= new T();
-            return model;
-        }
-
-        public T Fetch()
-        {
             return model;
         }
     }
