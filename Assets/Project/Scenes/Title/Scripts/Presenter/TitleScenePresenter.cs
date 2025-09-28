@@ -1,13 +1,14 @@
 using Project.Scripts.Model;
 using Project.Scenes.Title.Scripts.Model;
 using Project.Scenes.Title.Scripts.View;
+using Project.Scripts.Presenter;
 using UniRx;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Project.Scenes.Title.Scripts.Presenter
 {
-    public class TitleScenePresenter : MonoBehaviour
+    public class TitleScenePresenter : MonoPresenter
     {
         [SerializeField] TitleMenuView titleMenuView;
         [SerializeField] TitleSettingModalView titleSettingModalView;

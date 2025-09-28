@@ -1,11 +1,14 @@
+using System;
 using Cysharp.Threading.Tasks;
 using Project.Scenes.QuestList.Scripts.Model;
+using Project.Scripts.Presenter;
+using Project.Scripts.Repository;
 using UniRx;
 using UnityEngine;
 
 namespace Project.Scenes.QuestList.Scripts.Presenter
 {
-    public class QuestListScenePresenter : MonoBehaviour
+    public class QuestListScenePresenter : MonoPresenter
     {
         [SerializeField] QuestListView questListView;
 
@@ -13,9 +16,9 @@ namespace Project.Scenes.QuestList.Scripts.Presenter
         
         void Awake()
         {
-            questModel = new QuestModel();
+            questModel = gameDatabase.QuestModelTable.Get();
         }
-        
+
         void Start()
         {
             questListView.Init();
