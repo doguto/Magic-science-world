@@ -15,9 +15,9 @@ namespace Project.Scripts.Repository
             return models[index];
         }
 
-        public List<T> All()
+        public IReadOnlyList<T> All()
         {
-            return models;
+            return models.AsReadOnly();
         }
     }
 }
