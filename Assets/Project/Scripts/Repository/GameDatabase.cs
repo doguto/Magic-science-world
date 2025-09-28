@@ -8,8 +8,7 @@ namespace Project.Scripts.Repository
 
         public T Find<T>(int id) where T : ModelBase
         {
-            T t;
-            return t;
+            return null;
         }
     }
 }
