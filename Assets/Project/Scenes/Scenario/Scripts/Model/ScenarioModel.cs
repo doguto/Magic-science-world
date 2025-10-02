@@ -1,5 +1,4 @@
 using System.Linq;
-using Project.Commons.Scripts.Constants;
 
 namespace Project.Scenes.Scenario.Scripts.Model
 {
@@ -42,13 +41,15 @@ namespace Project.Scenes.Scenario.Scripts.Model
 
         public string GetEnemyCharacterKey()
         {
-            string enemyName = _lines.Select(line => line.character).Distinct().Where(character => character != MainCharacter.Me).ToArray()[0];
-            return ScenarioDataSO.CharacterJaNameToKey[enemyName];
+            // string enemyName = _lines.Select(line => line.character).Distinct().Where(character => character != MainCharacter.Me).ToArray()[0];
+            // return ScenarioDataSO.CharacterJaNameToKey[enemyName];
+            return "";
         }
 
         public string GetMainCharacterKey()
         {
-            return ScenarioDataSO.CharacterJaNameToKey[MainCharacter.Me];
+            return "";
+            // return ScenarioDataSO.CharacterJaNameToKey[MainCharacter.Me];
         }
     }
 }
