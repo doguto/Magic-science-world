@@ -1,5 +1,4 @@
 using System.Linq;
-// using Project.Scenes.Scenario.Scripts.Constants;
 
 namespace Project.Scenes.Scenario.Scripts.Model
 {
