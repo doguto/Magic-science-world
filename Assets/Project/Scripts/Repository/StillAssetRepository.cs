@@ -1,5 +1,6 @@
-using UnityEngine.UI;
+using UnityEngine;
 using UnityEngine.AddressableAssets;
+using System.Text;
 
 
 namespace Project.Scripts.Repository
@@ -7,13 +8,12 @@ namespace Project.Scripts.Repository
     public class StillAssetRepository : AssetRepository
     {
 	
-        public Image Load(string charaName, string faceName)
+        public Sprite Load(string charaName, bool isCrazy)
         {
-            string assetPath = $"{TexturePath}/Character/{charaName}/Still";  
-            string assetName = $"{charaName}_{faceName}_Still.png";
-            string address = $"{assetPath}/{assetName}";
+            StringBuilder address = new StringBuilder(TexturePath);
+            address.Append($"/Character/{charaName}/Still");
             
-            var asset = Addressables.LoadAssetAsync<Image>(address).WaitForCompletion();
+            Sprite asset = Addressables.LoadAssetAsync<Sprite>(address).WaitForCompletion();
             return asset;
         }
     }
