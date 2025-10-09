@@ -6,13 +6,13 @@ using UnityEngine;
 
 namespace Project.Scenes.QuestList.Scripts.Model
 {
-    public class QuestModel : ModelBase
+    public class StageModel : ModelBase
     {
         List<StageData> stages;
 
-        public QuestModel()
+        public StageModel(List<StageData> stages)
         {
-            stages = LoadData<StageDataObject>("StageData").stageData;
+            this.stages = stages;
         }
         
         public Sprite GetCharaImage(int stageNumber)

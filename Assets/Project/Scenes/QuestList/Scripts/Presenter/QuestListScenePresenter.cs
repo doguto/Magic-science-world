@@ -12,11 +12,11 @@ namespace Project.Scenes.QuestList.Scripts.Presenter
     {
         [SerializeField] QuestListView questListView;
 
-        QuestModel questModel;
+        StageModel stageModel;
         
         void Awake()
         {
-            questModel = gameDatabase.QuestModelTable.Get();
+            stageModel = StageModelRepository.Instance.Get();
         }
 
         void Start()
@@ -28,7 +28,7 @@ namespace Project.Scenes.QuestList.Scripts.Presenter
 
         void ShowCharaImage(int buttonIndex)
         {
-            var charaImage = questModel.GetCharaImage(buttonIndex + 1);
+            var charaImage = stageModel.GetCharaImage(buttonIndex + 1);
             questListView.SetCharaImage(charaImage);
         }
     }
