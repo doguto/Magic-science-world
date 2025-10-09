@@ -25,5 +25,3 @@ namespace Project.Scripts.Repository
         }
     }
 }
-// Assets/Project/Textures/Character/Ten/Still/Ten_Still.png
-// Assets/Project/Textures/Character/Ten/Still/Ten_Still.png
