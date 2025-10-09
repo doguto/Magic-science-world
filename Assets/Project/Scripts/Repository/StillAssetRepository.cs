@@ -11,10 +11,19 @@ namespace Project.Scripts.Repository
         public Sprite Load(string charaName, bool isCrazy)
         {
             StringBuilder address = new StringBuilder(TexturePath);
-            address.Append($"/Character/{charaName}/Still");
+            address.Append("/Character/");
+            address.Append(charaName);
+            address.Append("/Still/");
+            address.Append(charaName);
+            address.Append(isCrazy ? "_Crazy" : "");
+            address.Append("_Still.png");
             
-            Sprite asset = Addressables.LoadAssetAsync<Sprite>(address).WaitForCompletion();
+            Debug.Log(address);
+            
+            Sprite asset = Addressables.LoadAssetAsync<Sprite>(address.ToString()).WaitForCompletion();
             return asset;
         }
     }
 }
+// Assets/Project/Textures/Character/Ten/Still/Ten_Still.png
+// Assets/Project/Textures/Character/Ten/Still/Ten_Still.png
