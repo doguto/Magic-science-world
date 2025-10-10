@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using System.Text;
+using Cysharp.Text;
 
 
 namespace Project.Scripts.Repository
@@ -10,17 +10,14 @@ namespace Project.Scripts.Repository
 	
         public Sprite Load(string charaName, bool isCrazy)
         {
-            StringBuilder address = new StringBuilder(TexturePath);
-            address.Append("/Character/");
-            address.Append(charaName);
-            address.Append("/Still/");
-            address.Append(charaName);
-            address.Append(isCrazy ? "_Crazy" : "");
-            address.Append("_Still.png");
-            
-            Debug.Log(address);
-            
-            Sprite asset = Addressables.LoadAssetAsync<Sprite>(address.ToString()).WaitForCompletion();
+            string address = ZString.Format(
+                "{0}/Character/{1}/Still/{1}{2}_Still.png",
+                TexturePath,
+                charaName,
+                isCrazy ? "_Crazy" : ""
+            );
+
+            Sprite asset = Addressables.LoadAssetAsync<Sprite>(address).WaitForCompletion();
             return asset;
         }
     }

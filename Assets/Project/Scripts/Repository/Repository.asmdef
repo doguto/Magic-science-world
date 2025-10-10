@@ -6,7 +6,8 @@
         "Unity.Addressables",
         "UniRx",
         "Infra",
-        "Model"
+        "Model",
+        "ZString"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
