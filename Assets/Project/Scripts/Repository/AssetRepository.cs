@@ -2,6 +2,6 @@ namespace Project.Scripts.Repository
 {
     public class AssetRepository
     {
-        protected static readonly string TexturePath = "Assets/Project/Textures";
+        protected const string TexturePath = "Assets/Project/Textures";
     }
 }
