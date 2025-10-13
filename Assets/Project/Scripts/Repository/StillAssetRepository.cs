@@ -7,7 +7,6 @@ namespace Project.Scripts.Repository
 {
     public class StillAssetRepository : AssetRepository
     {
-	
         public Sprite Load(string charaName, bool isCrazy)
         {
             string address = ZString.Format(
