@@ -14,25 +14,25 @@ using UnityEngine;
 
 public class CreateDB : EditorWindow 
 {
-    private string _sObjectName = "";
-    private string _repositoryName = "";
-    private string _menuName = "";
+    private string sObjectName = "";
+    private string repositoryName = "";
+    private string menuName = "";
     
     
     //int,string,List<T>の数と変数名,型を管理
-    private int _intFieldCount = 1;
-    private List<string> _intFieldNames = new(){"id"};
+    private int intFieldCount = 1;
+    private List<string> intFieldNames = new(){"id"};
     
-    private int _stringFieldCount = 1;
-    private List<string> _stringFieldNames = new(){"address"};
+    private int stringFieldCount = 1;
+    private List<string> stringFieldNames = new(){"address"};
     
-    private int _listFieldCount = 1;
-    private List<string> _listFieldNames = new(){"data"};
-    private List<string> _listFieldTypes = new(){"string"};
+    private int listFieldCount = 1;
+    private List<string> listFieldNames = new(){"data"};
+    private List<string> listFieldTypes = new(){"string"};
     
-    private Vector2 _scrollPosition;
+    private Vector2 scrollPosition;
 
-    private bool _shouldCreateAsset = false;
+    private bool shouldCreateAsset = false;
     
     
     //メニュー生成
@@ -46,56 +46,56 @@ public class CreateDB : EditorWindow
     {
         EditorGUILayout.LabelField("ScriptableObject Settings");
         EditorGUIUtility.labelWidth = 250; 
-        _sObjectName = EditorGUILayout.TextField("オブジェクト名 ex:StageDataObject", _sObjectName);
-        _repositoryName = EditorGUILayout.TextField("リポジトリ名 ex:StageModelRepository", _repositoryName);
-        _menuName = EditorGUILayout.TextField("メニュー名 ex:Database/StageData", _menuName);
+        sObjectName = EditorGUILayout.TextField("オブジェクト名 ex:StageDataObject", sObjectName);
+        repositoryName = EditorGUILayout.TextField("リポジトリ名 ex:StageModelRepository", repositoryName);
+        menuName = EditorGUILayout.TextField("メニュー名 ex:Database/StageData", menuName);
         EditorGUIUtility.labelWidth = 0; 
         
         EditorGUILayout.Space(10);
         EditorGUILayout.LabelField("Field Definitions");
-        _scrollPosition = EditorGUILayout.BeginScrollView(_scrollPosition);
+        scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
         
         //int型フィールド定義
-        _intFieldCount = EditorGUILayout.IntField("Number of int fields", _intFieldCount);
-        _intFieldCount = Mathf.Max(0, _intFieldCount);
-        ResizeList(_intFieldNames, _intFieldCount);
-        for (int i = 0; i < _intFieldCount; i++)
+        intFieldCount = EditorGUILayout.IntField("Number of int fields", intFieldCount);
+        intFieldCount = Mathf.Max(0, intFieldCount);
+        ResizeList(intFieldNames, intFieldCount);
+        for (int i = 0; i < intFieldCount; i++)
         {
-            _intFieldNames[i] = EditorGUILayout.TextField($"int name {i+1}",_intFieldNames[i]);
+            intFieldNames[i] = EditorGUILayout.TextField($"int name {i+1}",intFieldNames[i]);
         }
         EditorGUILayout.Space(5);
         
         //string型フィールド定義
-        _stringFieldCount = EditorGUILayout.IntField("Number of string fields", _stringFieldCount);
-        _stringFieldCount = Mathf.Max(0, _stringFieldCount);
-        ResizeList(_stringFieldNames, _stringFieldCount);
-        for (int i = 0; i < _stringFieldCount; i++)
+        stringFieldCount = EditorGUILayout.IntField("Number of string fields", stringFieldCount);
+        stringFieldCount = Mathf.Max(0, stringFieldCount);
+        ResizeList(stringFieldNames, stringFieldCount);
+        for (int i = 0; i < stringFieldCount; i++)
         {
-            _stringFieldNames[i] = EditorGUILayout.TextField($"string name {i+1}", _stringFieldNames[i]);
+            stringFieldNames[i] = EditorGUILayout.TextField($"string name {i+1}", stringFieldNames[i]);
         }
         EditorGUILayout.Space(5);
         
         //list型フィールドと内部型定義
-        _listFieldCount = EditorGUILayout.IntField("Number of list fields", _listFieldCount);
-        _listFieldCount = Mathf.Max(0, _listFieldCount);
-        ResizeList(_listFieldNames, _listFieldCount);
-        ResizeList(_listFieldTypes, _listFieldCount);
-        for (int i = 0; i < _listFieldCount; i++)
+        listFieldCount = EditorGUILayout.IntField("Number of list fields", listFieldCount);
+        listFieldCount = Mathf.Max(0, listFieldCount);
+        ResizeList(listFieldNames, listFieldCount);
+        ResizeList(listFieldTypes, listFieldCount);
+        for (int i = 0; i < listFieldCount; i++)
         {
-            _listFieldNames[i] = EditorGUILayout.TextField($"list name {i+1}", _listFieldNames[i]);
-            _listFieldTypes[i] = EditorGUILayout.TextField($"list type {i+1}", _listFieldTypes[i]);
+            listFieldNames[i] = EditorGUILayout.TextField($"list name {i+1}", listFieldNames[i]);
+            listFieldTypes[i] = EditorGUILayout.TextField($"list type {i+1}", listFieldTypes[i]);
         }
         
         EditorGUILayout.EndScrollView();
         EditorGUILayout.Space(20);
         
         //.assetファイル作るかどうかのチェックボックス
-        _shouldCreateAsset = EditorGUILayout.Toggle("Create .asset file", _shouldCreateAsset);
+        shouldCreateAsset = EditorGUILayout.Toggle("Create .asset file", shouldCreateAsset);
         
         //生成開始ボタン
         if (GUILayout.Button("Generate"))
         {
-            if (string.IsNullOrEmpty(_sObjectName))
+            if (string.IsNullOrEmpty(sObjectName))
             {
                 EditorUtility.DisplayDialog("Error", "empty filename", "Ok");
                 return;
@@ -110,7 +110,7 @@ public class CreateDB : EditorWindow
     
 
     
-    //{_sObjectName}.csと{_repositoryName}.csを生成
+    //{sObjectName}.csと{repositoryName}.csを生成
     private void GenerateFiles()
     {
         string soPath = "Assets/Project/Scripts/Infra";
@@ -120,7 +120,7 @@ public class CreateDB : EditorWindow
         }
 
         string soCode = GenerateScriptableObjectCode();
-        File.WriteAllText($"{soPath}/{_sObjectName}.cs", soCode);
+        File.WriteAllText($"{soPath}/{sObjectName}.cs", soCode);
         
         
         string repoPath = "Assets/Project/Scripts/Repository";
@@ -130,25 +130,25 @@ public class CreateDB : EditorWindow
         }
         
         string repoCode = GenerateRepositoryCode();
-        File.WriteAllText($"{repoPath}/{_repositoryName}.cs", repoCode);
+        File.WriteAllText($"{repoPath}/{repositoryName}.cs", repoCode);
         
         AssetDatabase.Refresh();
 
-        if (_shouldCreateAsset)
+        if (shouldCreateAsset)
         {
             EditorApplication.delayCall += () =>
             {
 
                 string assetPath = EditorUtility.SaveFilePanelInProject(
                     "Save ScriptableObject Asset",
-                    _sObjectName + ".asset",
+                    sObjectName + ".asset",
                     "asset",
                     "assetファイルの名前"
                 );
 
                 if (string.IsNullOrEmpty(assetPath)) return;
                 
-                ScriptableObject instance = CreateInstance(_sObjectName);
+                ScriptableObject instance = CreateInstance(sObjectName);
                 
                 AssetDatabase.CreateAsset(instance, assetPath);
                 AssetDatabase.SaveAssets();
@@ -179,14 +179,14 @@ public class CreateDB : EditorWindow
         sb.AppendLine();
         sb.AppendLine("namespace Project.Scripts.Infra");
         sb.AppendLine("{");
-        sb.AppendLine($"    [CreateAssetMenu(fileName = \"{_sObjectName}\", menuName = \"{_menuName}\")]");
-        sb.AppendLine($"    public class {_sObjectName} : ScriptableObject");
+        sb.AppendLine($"    [CreateAssetMenu(fileName = \"{sObjectName}\", menuName = \"{menuName}\")]");
+        sb.AppendLine($"    public class {sObjectName} : ScriptableObject");
         sb.AppendLine("    {");
-        foreach (var fieldName in _intFieldNames) { if (!string.IsNullOrEmpty(fieldName)) sb.AppendLine($"        public int {fieldName};"); }
+        foreach (var fieldName in intFieldNames) { if (!string.IsNullOrEmpty(fieldName)) sb.AppendLine($"        public int {fieldName};"); }
         sb.AppendLine();
-        foreach (var fieldName in _stringFieldNames) { if (!string.IsNullOrEmpty(fieldName)) sb.AppendLine($"        public string {fieldName};"); }
+        foreach (var fieldName in stringFieldNames) { if (!string.IsNullOrEmpty(fieldName)) sb.AppendLine($"        public string {fieldName};"); }
         sb.AppendLine();
-        for (int i = 0; i < _listFieldCount; i++) { if (!string.IsNullOrEmpty(_listFieldNames[i]) && !string.IsNullOrEmpty(_listFieldTypes[i])) sb.AppendLine($"        public List<{_listFieldTypes[i]}> {_listFieldNames[i]} = new();"); }
+        for (int i = 0; i < listFieldCount; i++) { if (!string.IsNullOrEmpty(listFieldNames[i]) && !string.IsNullOrEmpty(listFieldTypes[i])) sb.AppendLine($"        public List<{listFieldTypes[i]}> {listFieldNames[i]} = new();"); }
         sb.AppendLine("    }");
         sb.AppendLine();
         sb.AppendLine();
@@ -206,10 +206,10 @@ public class CreateDB : EditorWindow
         sb.AppendLine();
         sb.AppendLine("namespace Project.Scripts.Repository");
         sb.AppendLine("{");
-        sb.AppendLine($"    public class {_repositoryName} : ModelRepository");
+        sb.AppendLine($"    public class {repositoryName} : ModelRepository");
         sb.AppendLine("    {");
-        sb.AppendLine($"        public static {_repositoryName} Instance {{ get; }} = new();");
-        sb.AppendLine($"        public {_repositoryName}()");
+        sb.AppendLine($"        public static {repositoryName} Instance {{ get; }} = new();");
+        sb.AppendLine($"        public {repositoryName}()");
         sb.AppendLine("        {");
         sb.AppendLine();
         sb.AppendLine("        }");
