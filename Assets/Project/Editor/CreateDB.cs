@@ -62,19 +62,26 @@ public class CreateDB : EditorWindow
         
         EditorGUILayout.Space(10);
         EditorGUILayout.LabelField("Field Definitions");
+        
         scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
+        
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("型", EditorStyles.boldLabel);
+        EditorGUILayout.LabelField("変数名");
+        EditorGUILayout.EndHorizontal();
         
         //フィールド定義
         for (int i = 0; i < columnFields.Count; i++)
         {
             EditorGUILayout.BeginHorizontal();
-            columnFields[i].name = EditorGUILayout.TextField(columnFields[i].name);
             columnFields[i].type = EditorGUILayout.TextField(columnFields[i].type);
+            columnFields[i].name = EditorGUILayout.TextField(columnFields[i].name);
             EditorGUILayout.EndHorizontal();
         }
-        
         EditorGUILayout.EndScrollView();
         EditorGUILayout.Space(10);
+        
+        //追加・削除ボタン
         EditorGUILayout.BeginHorizontal();
         if (GUILayout.Button("変数を追加"))
         {
@@ -85,8 +92,9 @@ public class CreateDB : EditorWindow
         if (GUILayout.Button("変数を削除"))
         {
             columnFields.RemoveAt(columnFields.Count - 1);
-            columnFields.RemoveAt(columnFields.Count - 1);
         }
+        EditorGUI.EndDisabledGroup();
+        EditorGUILayout.EndHorizontal();
         
         
         //.assetファイル作るかどうかのチェックボックス
@@ -185,7 +193,7 @@ public class CreateDB : EditorWindow
         sb.AppendLine("    {");
         for (int i = 0; i < columnFields.Count; i++)
         {
-            if (!columnFields[i].IsNullOrEmpty) sb.AppendLine($"        public {columnFields[i].type} {columnFields[i].name} = new();");
+            if (!columnFields[i].IsNullOrEmpty) sb.AppendLine($"        public {columnFields[i].type} {columnFields[i].name};");
         }
         sb.AppendLine("    }");
         sb.AppendLine();
