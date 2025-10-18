@@ -1,8 +1,5 @@
-using System;
-using Cysharp.Threading.Tasks;
 using Project.Scenes.QuestList.Scripts.Model;
 using Project.Scripts.Presenter;
-using Project.Scripts.Repository;
 using UniRx;
 using UnityEngine;
 
@@ -13,10 +10,10 @@ namespace Project.Scenes.QuestList.Scripts.Presenter
         [SerializeField] QuestListView questListView;
 
         StageModel stageModel;
-        
+
         void Awake()
         {
-            stageModel = StageModelRepository.Instance.Get();
+            stageModel = StageModelRepository.Get();
         }
 
         void Start()

@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 6356673538044290922}
   - component: {fileID: 7596703202219153677}
   - component: {fileID: 8701667533878580504}
-  - component: {fileID: 6244898825073354880}
+  - component: {fileID: 980986640493761863}
   m_Layer: 5
   m_Name: QuestCard
   m_TagString: Untagged
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questTitle: {fileID: 6600161642945952778}
   questIndexText: {fileID: 5765283315280140259}
---- !u!114 &6244898825073354880
+--- !u!114 &980986640493761863
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -254,7 +254,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4193384719521454248}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 617fa143bd6269a4b9cc263ed67707c7, type: 3}
+  m_Script: {fileID: 11500000, guid: c2419dc7208d14c47a684c8e873bb498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7377360809687448556
