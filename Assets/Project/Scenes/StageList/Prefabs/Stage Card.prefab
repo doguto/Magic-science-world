@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 8701667533878580504}
   - component: {fileID: 980986640493761863}
   m_Layer: 5
-  m_Name: QuestCard
+  m_Name: Stage Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -243,8 +243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 664bee10071c1fa44bc0f0ed421ded96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questTitle: {fileID: 6600161642945952778}
-  questIndexText: {fileID: 5765283315280140259}
+  stageTitle: {fileID: 6600161642945952778}
+  stageIndexText: {fileID: 5765283315280140259}
 --- !u!114 &980986640493761863
 MonoBehaviour:
   m_ObjectHideFlags: 0

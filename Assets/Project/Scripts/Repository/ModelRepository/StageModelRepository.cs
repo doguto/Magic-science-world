@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Project.Scenes.QuestList.Scripts.Model;
+using Project.Scenes.StageList.Scripts.Model;
 using Project.Scripts.Infra;
 using UnityEngine.AddressableAssets;
 

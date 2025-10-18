@@ -5,7 +5,7 @@ using Project.Scripts.Infra;
 using Project.Scripts.Repository.AssetRepository;
 using UnityEngine;
 
-namespace Project.Scenes.QuestList.Scripts.Model
+namespace Project.Scenes.StageList.Scripts.Model
 {
     public class StageModel : ModelBase
     {
