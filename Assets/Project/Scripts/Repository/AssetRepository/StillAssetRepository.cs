@@ -2,10 +2,9 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Cysharp.Text;
 
-
-namespace Project.Scripts.Repository
+namespace Project.Scripts.Repository.AssetRepository
 {
-    public class StillAssetRepository : AssetRepository
+    public class StillAssetRepository : AssetRepositoryBase
     {
         public Sprite Load(string charaName, bool isCrazy)
         {

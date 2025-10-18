@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Project.Scripts.Model;
 
-namespace Project.Scripts.Repository
+namespace Project.Scripts.Repository.ModelRepository
 {
     public class ModelListTable<T> where T : ModelBase, new()
     {

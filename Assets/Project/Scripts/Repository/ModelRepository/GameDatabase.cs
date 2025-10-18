@@ -1,7 +1,6 @@
-using Project.Scenes.QuestList.Scripts.Model;
 using Project.Scripts.Model;
 
-namespace Project.Scripts.Repository
+namespace Project.Scripts.Repository.ModelRepository
 {
     public class GameDatabase
     {

@@ -3,9 +3,9 @@ using Project.Scenes.QuestList.Scripts.Model;
 using Project.Scripts.Infra;
 using UnityEngine.AddressableAssets;
 
-namespace Project.Scripts.Repository
+namespace Project.Scripts.Repository.ModelRepository
 {
-    public class StageModelRepository : ModelRepository
+    public class StageModelRepository : ModelRepositoryBase
     {
         public static StageModelRepository Instance { get; } = new();
         
