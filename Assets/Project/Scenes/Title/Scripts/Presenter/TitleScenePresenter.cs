@@ -1,24 +1,25 @@
-using Project.Commons.Scripts.Model;
+using Project.Scripts.Model;
 using Project.Scenes.Title.Scripts.Model;
 using Project.Scenes.Title.Scripts.View;
+using Project.Scripts.Presenter;
 using UniRx;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Project.Scenes.Title.Scripts.Presenter
 {
-    public class TitleScenePresenter : MonoBehaviour
+    public class TitleScenePresenter : MonoPresenter
     {
         [SerializeField] TitleMenuView titleMenuView;
         [SerializeField] TitleSettingModalView titleSettingModalView;
         
-        TitleBackgroundModel _titleBackgroundModel;
-        TitleGameStartModel _titleGameStartModel;
+        TitleBackgroundModel titleBackgroundModel;
+        TitleGameStartModel titleGameStartModel;
 
         void Start()
         {
-            _titleBackgroundModel = new TitleBackgroundModel();
-            _titleGameStartModel = new TitleGameStartModel();
+            titleBackgroundModel = new TitleBackgroundModel();
+            titleGameStartModel = new TitleGameStartModel();
             
             titleMenuView.OnPressedStart.Subscribe(StartGame);
             titleMenuView.OnPressedExit.Subscribe(ExitGame);
@@ -30,8 +31,10 @@ namespace Project.Scenes.Title.Scripts.Presenter
 
         void StartGame(Unit _)
         {
-            _titleGameStartModel.StartGame();
+            titleGameStartModel.StartGame();
             SceneManager.LoadScene(SceneRouterModel.QuestList, LoadSceneMode.Additive);
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneRouterModel.QuestList));
+            SceneManager.UnloadSceneAsync(gameObject.scene.name);
         }
 
         void ExitGame(Unit _)
@@ -45,7 +48,7 @@ namespace Project.Scenes.Title.Scripts.Presenter
 
         void SetTitleBackGround()
         {
-            var clearedStageAmount = _titleBackgroundModel.ClearedStageAmount;
+            var clearedStageAmount = titleBackgroundModel.ClearedStageAmount;
             titleMenuView.SetBackGround(clearedStageAmount);
         }
     }

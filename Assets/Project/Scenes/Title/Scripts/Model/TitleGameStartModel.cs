@@ -1,21 +1,17 @@
-using Project.Commons.DataBase.Scripts;
+using Project.Scripts.Infra;
+using Project.Scripts.Model;
 using UnityEngine;
 
 namespace Project.Scenes.Title.Scripts.Model
 {
-    public class TitleGameStartModel
+    public class TitleGameStartModel : ModelBase
     {
-        readonly GameData gameData;
-        
-        public TitleGameStartModel()
-        {
-            gameData = Resources.Load<GameData>("ProjectData/GameData");
-        }
+        readonly UserDataObject userDataObject = new();
 
         public void StartGame()
         {
             // クリアステージを初期化
-            gameData.ClearedStageNumber = 0;
+            userDataObject.ClearedStageNumber = 0;
         }
     }
 }

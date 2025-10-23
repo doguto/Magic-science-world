@@ -1,0 +1,42 @@
+[
+  {
+    "character": "テン",
+    "content": "……。",
+    "faceType": "Default"
+  },
+  {
+    "character": "ロコ",
+    "content": "なあに？突然、急ぎの用事？",
+    "faceType": "Default"
+  },
+  {
+    "character": "テン",
+    "content": "何か、変わりないか？",
+    "faceType": "Speak"
+  },
+  {
+    "character": "ロコ",
+    "content": "私は何とも。でも、その様子だと何かあったんだね？",
+    "faceType": "Confused"
+  },
+  {
+    "character": "テン",
+    "content": "どうやら空の様子がおかしい。エネルギーと魔力のバランスが崩れてるんじゃないのか？",
+    "faceType": "Speak"
+  },
+  {
+    "character": "ロコ",
+    "content": "それがホントならみんなエネルギー暴走を起こして大問題じゃない？他の子たちにも知らせなきゃ。",
+    "faceType": "Confused"
+  },
+  {
+    "character": "テン",
+    "content": "ああ、だがまずはロコ、君からだ。",
+    "faceType": "Shout"
+  },
+  {
+    "character": "ロコ",
+    "content": "ふーん、優しいんだね？じゃあ、お言葉に甘えて。",
+    "faceType": "Default"
+  }
+]
