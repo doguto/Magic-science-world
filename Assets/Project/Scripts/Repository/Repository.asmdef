@@ -5,8 +5,7 @@
         "Unity.ResourceManager",
         "Unity.Addressables",
         "UniRx",
-        "Infra",
-        "Model"
+        "ZString"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

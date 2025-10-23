@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Project/Scenes/Title.unity
     guid: 626b50264899e4a4795fc6348cf772ff
   - enabled: 1
-    path: Assets/Project/Scenes/QuestList.unity
+    path: Assets/Project/Scenes/StageList.unity
     guid: b3e867f75d80ab542a2540d1d793c5f9
   - enabled: 1
     path: Assets/Project/Scenes/Scenario.unity
