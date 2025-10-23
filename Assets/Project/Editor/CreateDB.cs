@@ -157,13 +157,17 @@ public class CreateDB : EditorWindow
         sb.AppendLine($"    [CreateAssetMenu(fileName = \"{sObjectName}\", menuName = \"{menuName}\")]");
         sb.AppendLine($"    public class {sObjectName} : ScriptableObject");
         sb.AppendLine("    {");
-        for (int i = 0; i < columnFields.Count; i++)
-        {
-            if (!columnFields[i].IsNullOrEmpty) sb.AppendLine($"        public {columnFields[i].type} {columnFields[i].name};");
-        }
+        sb.AppendLine($"        public List<{soDataName}Data> data = new();");
         sb.AppendLine("    }");
         sb.AppendLine();
-        sb.AppendLine();
+        sb.AppendLine("    [Serializable]");
+        sb.AppendLine($"    public class {soDataName}Data");
+        sb.AppendLine("    {");
+        foreach (var column in columnFields)
+        {
+            if (!column.IsNullOrEmpty) sb.AppendLine($"        public {column.type} {column.name};");
+        }
+        sb.AppendLine("    }");
         sb.AppendLine("}");
         return sb.ToString();
     }
@@ -187,7 +191,7 @@ public class CreateDB : EditorWindow
         sb.AppendLine("        {");
         sb.AppendLine();
         sb.AppendLine("        }");
-        sb.AppendLine("//必要に応じてGetとLoadData");
+        sb.AppendLine("        //必要に応じてGetとLoadData");
         sb.AppendLine("    }");
         sb.AppendLine("}");
 
