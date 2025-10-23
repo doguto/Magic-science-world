@@ -4,29 +4,29 @@ using System.IO;
 
 namespace Project.Editor
 {
-    public class CreateScripts : EditorWindow
+    public class CommonScaffold : EditorWindow
     {
         private string scriptName = "";
 
-        [MenuItem("Tools/CreateScripts")]
+        [MenuItem("Tools/CommonScaffold")]
         public static void ShowWindow()
         {
-            GetWindow<CreateScripts>("CreateScripts");
+            GetWindow<CommonScaffold>("CommonScaffold");
         }
 
         void OnGUI()
         {
-            EditorGUILayout.LabelField("Create Scripts", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("CommonScaffold", EditorStyles.boldLabel);
             EditorGUIUtility.labelWidth = 250;
             scriptName = EditorGUILayout.TextField(scriptName);
             EditorGUILayout.LabelField("");
             EditorGUILayout.Space(5);
 
-            if (GUILayout.Button("Create Script"))
+            if (GUILayout.Button("CommonScaffold"))
             {
                 if (string.IsNullOrEmpty(scriptName))
                 {
-                    EditorUtility.DisplayDialog("Error", "Please enter a script name", "OK");
+                    EditorUtility.DisplayDialog("Error", "Please enter a folder name", "OK");
                     return;
                 }
 
@@ -67,7 +67,6 @@ namespace Project.Editor
             
             AssetDatabase.Refresh();
             EditorUtility.DisplayDialog("Done", $"Assembly References for '{scriptName}' Created!" , "OK");
-
         }
     }
 }
