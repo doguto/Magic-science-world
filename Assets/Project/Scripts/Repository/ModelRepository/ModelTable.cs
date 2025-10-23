@@ -1,6 +1,6 @@
 using Project.Scripts.Model;
 
-namespace Project.Scripts.Repository
+namespace Project.Scripts.Repository.ModelRepository
 {
     public class ModelTable<T> where T : ModelBase, new()
     {
