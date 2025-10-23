@@ -34,8 +34,6 @@ public class CreateDB : EditorWindow
     private List<ColumnField> columnFields = new() {new ColumnField()};
     
     private Vector2 scrollPosition;
-
-    private bool shouldCreateAsset = true;
     
     
     //メニュー生成
@@ -97,8 +95,6 @@ public class CreateDB : EditorWindow
         EditorGUILayout.EndHorizontal();
         
         
-        //.assetファイル作るかどうかのチェックボックス
-        shouldCreateAsset = EditorGUILayout.Toggle("Create .asset file", shouldCreateAsset);
         EditorGUILayout.Space(20);
         
         //生成開始ボタン
@@ -143,38 +139,8 @@ public class CreateDB : EditorWindow
         
         AssetDatabase.Refresh();
 
-        if (shouldCreateAsset)
-        {
-            EditorApplication.delayCall += () =>
-            {
-
-                string assetPath = EditorUtility.SaveFilePanelInProject(
-                    "Save ScriptableObject Asset",
-                    sObjectName + ".asset",
-                    "asset",
-                    "assetファイルの名前"
-                );
-
-                if (string.IsNullOrEmpty(assetPath)) return;
-                
-                ScriptableObject instance = CreateInstance(sObjectName);
-                
-                AssetDatabase.CreateAsset(instance, assetPath);
-                AssetDatabase.SaveAssets();
-                AssetDatabase.Refresh();
-                
-                EditorUtility.FocusProjectWindow();
-                Selection.activeObject = instance;
-                
-                EditorUtility.DisplayDialog("Success", "Generated Scripts and asset successfully", "Ok");
-                this.Close();
-            };
-        }
-        else
-        {
-            EditorUtility.DisplayDialog("Success", "Generated Scripts successfully", "Ok");
-            this.Close();
-        }
+        EditorUtility.DisplayDialog("Success", "Generated Scripts successfully\n Please Create Asset File Yourself", "Ok");
+        this.Close();
     }
 
     //ScriptableObjectの定義コード
