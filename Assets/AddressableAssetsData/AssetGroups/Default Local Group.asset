@@ -35,6 +35,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1255c49dbaa450a46ae44b0aca562feb
+    m_Address: Assets/Project/Textures/Images/Button/btn_stage5.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 150830e75e3cff04fbb51bed55b93ae0
     m_Address: Assets/Project/Textures/Character/Tatsumi/Face/Tatsumi_Embarrassed_Face.png
     m_ReadOnly: 0
@@ -45,6 +50,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1b3f9d9e42dd03a429261efb4b7fe50f
+    m_Address: Assets/Project/Textures/Images/Button/btn_stage3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2415bcef9b544954ca46beb4dc229686
     m_Address: Assets/Project/Textures/Character/Kon/Face/Kon_Default_Face.png
     m_ReadOnly: 0
@@ -52,6 +62,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 255da169ae5c99a4bbbee99113900e50
     m_Address: Assets/Project/Textures/Character/Tatsumi/Still/Tatsumi_Still.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 25bedd6714d8c0743b6f008790b79a89
+    m_Address: Assets/Project/Textures/Images/Button/btn_stage4.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -80,6 +95,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4534c1f1ea6963044b0a58ff21c0052a
+    m_Address: Assets/Project/Textures/Images/Button/btn_frame_color.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 46438523c643fd845a660e75b5e98c72
     m_Address: Assets/Project/Textures/Character/Kon/Face/Kon_Crazy_Face.png
     m_ReadOnly: 0
@@ -105,6 +125,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 56ea0c09229a1074ba2cfa15a9834ab6
+    m_Address: Assets/Project/Textures/Images/Button/btn_stage1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 585a04aa7c6930a46ad0a6b8324af2a3
     m_Address: Assets/Project/DataStore/StageData.asset
     m_ReadOnly: 0
@@ -127,6 +152,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6d27de0a4b52f794f953e337a3f55451
     m_Address: Assets/Project/Textures/Character/Azuma/Face/Azuma_Smile_Face.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 734da8093ecb615419ccc99230bfec94
+    m_Address: Assets/Project/Textures/Images/Button/btn_stage2.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -160,8 +190,23 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96e2e2dd9f43a5d40a2ebce9980e56c5
+    m_Address: Assets/Project/Textures/Images/Decoration/sun.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96fea551388df11429e03c07b766339b
+    m_Address: Assets/Project/Textures/Images/Decoration/ornament2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 99e406a996864584597b117085e01284
     m_Address: Assets/Project/Textures/Character/Tatsumi/Face/Tatsumi_Default.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e481ed35ebfefe41a1c1a2802751047
+    m_Address: Assets/Project/Textures/Images/Button/btn_frame.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -180,6 +225,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b296239c57e84fc4e8030e863e364ae2
+    m_Address: Assets/Project/Textures/Images/Decoration/ornament.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b78f95b0f61462a4392d60e66ee34da9
+    m_Address: Assets/Project/Textures/Images/Button/btn_stage6.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ca1eaaad2d47efb43b5f21fb62f0481a
     m_Address: Assets/Project/Textures/Character/Hanare/Face/Hanare_Smile_Face.png
     m_ReadOnly: 0
@@ -192,6 +247,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d363c41646b9f1d4689c0f35d547268a
     m_Address: Assets/Project/Textures/Character/Loco/Face/Loco_Confused_Face.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d94989fa061267e4a8df3ced2ca6a1db
+    m_Address: Assets/Project/Textures/Images/Button/btn_stageex.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
