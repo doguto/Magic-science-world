@@ -4,17 +4,27 @@ using UnityEngine;
 
 namespace Project.Commons.BossPhaseStateMachine.Scripts.Model
 {
-    public class BossHealthModel
+    public class BossHealthModel: IDisposable
     {
-        private float maxHp;
+        public float MaxHp { get; }
         private ReactiveProperty<float> currentHp = new (100);
-        
-        public float MaxHp => maxHp;
         public IReadOnlyReactiveProperty<float> CurrentHp => currentHp;
-        
+
+        public BossHealthModel(float maxHp)
+        {
+            MaxHp = maxHp;
+            currentHp.Value = maxHp;
+        }
         public void TakeDamage(float damage)
         {
             currentHp.Value = Mathf.Max(0, currentHp.Value - damage);
+        }
+        
+        public bool IsDead => currentHp.Value <= 0;
+        
+        public void Dispose()
+        {
+            currentHp.Dispose();
         }
     }
 }
