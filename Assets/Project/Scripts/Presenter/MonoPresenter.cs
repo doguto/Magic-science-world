@@ -12,7 +12,8 @@ namespace Project.Scripts.Presenter
         // getterで static Instance を呼ぶ。
         protected StageModelRepository StageModelRepository => StageModelRepository.Instance;
 
-        void Awake()
+        // RuntimeInitializeLoadType.BeforeSceneLoad より後に実行したいため、Start()
+        void Start()
         {
             globalScenePresenter = FindFirstObjectByType<GlobalScenePresenter>();
             if (!globalScenePresenter)
