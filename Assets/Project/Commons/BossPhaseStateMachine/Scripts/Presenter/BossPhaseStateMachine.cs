@@ -15,14 +15,14 @@ namespace Project.Commons.BossPhaseStateMachine.Scripts.Presenter
 
         void Update()
         {
+            if (currentState == null) return;
             currentState.Update();
         }
 
         public void TransitionTo(BossPhaseState newState)
         {
-            if (currentState == null) return;
             
-            currentState.Exit();
+            currentState?.Exit();
             currentState = newState;
             currentState.Enter();
             

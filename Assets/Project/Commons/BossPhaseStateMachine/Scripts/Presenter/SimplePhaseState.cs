@@ -20,6 +20,7 @@ namespace Project.Commons.BossPhaseStateMachine.Scripts.Presenter
         
         public override void Enter()
         {
+            timeline.gameObject.SetActive(true);
             timeline.Play();
             Debug.Log($"Timeline started: {timeline.name}");
         }
@@ -33,13 +34,14 @@ namespace Project.Commons.BossPhaseStateMachine.Scripts.Presenter
         public override void Exit()
         {
             timeline.Stop();
+            timeline.gameObject.SetActive(false);
             Debug.Log($"Timeline stopped: {timeline.name}");
         }
         
         public void TriggerTransition()
         {
             if (hasTransitioned) return;
-            Debug.Log($"Transition to {nextState.GetType().Name}");
+            Debug.Log($"Transition to {nextState?.GetType().Name}");
             if (nextState != null)
             {
                 StateMachine.TransitionTo(nextState);

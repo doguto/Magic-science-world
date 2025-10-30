@@ -4,7 +4,7 @@ using Project.Commons.BossPhaseStateMachine.Scripts.Presenter;
 
 namespace Project.Scenes.BossPrototype.Scripts.Presenter
 {
-    public class BossController : MonoBehaviour
+    public class BossDebugController : MonoBehaviour
     {
         private BossPhaseStateMachine stateMachine;
 
