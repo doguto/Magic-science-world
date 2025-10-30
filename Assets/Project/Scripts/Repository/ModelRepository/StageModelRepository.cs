@@ -9,7 +9,7 @@ namespace Project.Scripts.Repository.ModelRepository
     {
         public static StageModelRepository Instance { get; } = new();
         
-        List<StageData> stages;
+        readonly List<StageData> stages;
         StageModel stageModel;
 
         public StageModelRepository()
