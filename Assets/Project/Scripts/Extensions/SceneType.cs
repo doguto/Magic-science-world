@@ -14,4 +14,20 @@
         StageEx,
         Scenario,
     }
+
+    public static class SceneTypeExtension
+    {
+        public static string ToSceneName(this SceneType sceneType)
+        {
+            // StageN系はSceneの名前的には全てBattle
+            return sceneType switch
+            {
+                SceneType.Global => "Global",
+                SceneType.Title => "Title",
+                SceneType.StageList => "StageList",
+                SceneType.Scenario => "Scenario",
+                _ => "Battle"
+            };
+        }
+    }
 }
