@@ -1,8 +1,12 @@
-﻿namespace Project.Scripts.Repository.ModelRepository
+﻿using Cysharp.Text;
+using Project.Scripts.Extensions;
+
+namespace Project.Scripts.Repository.ModelRepository
 {
     public class ModelRepositoryBase
     {
         protected string dataName = "";
-        protected string DataAddress => $"Assets/Project/DataStore/{dataName}.asset";
+        protected string DataAddress 
+            => ZString.Format("{0}/{1}.asset", GamePath.DataStorepath, dataName);
     }
 }
