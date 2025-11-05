@@ -28,7 +28,7 @@ namespace Project.Commons.BossPrototype.Scripts.Presenter
         public override void Update()
         {
             if (hasTransitioned) return;
-            if (HealthModel.CurrentHp.Value <= hpThreshold) TriggerTransition();
+            if (healthModel.CurrentHp.Value <= hpThreshold) TriggerTransition();
         }
         
         public override void Exit()
@@ -44,7 +44,7 @@ namespace Project.Commons.BossPrototype.Scripts.Presenter
             Debug.Log($"Transition to {nextState?.GetType().Name}");
             if (nextState != null)
             {
-                StateMachine.TransitionTo(nextState);
+                stateMachine.TransitionTo(nextState);
                 hasTransitioned = true;
             }
             else

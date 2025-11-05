@@ -4,13 +4,13 @@ namespace Project.Commons.BossPrototype.Scripts.Presenter
 {
     public abstract class BossPhaseState
     {
-        protected BossHealthModel HealthModel;
-        protected BossPhaseStateMachine StateMachine;
+        protected BossHealthModel healthModel;
+        protected BossPhaseStateMachine stateMachine;
         
         protected BossPhaseState(BossPhaseStateMachine stateMachine)
         {
-            this.StateMachine = stateMachine;
-            this.HealthModel = stateMachine.HealthModel;
+            this.stateMachine = stateMachine;
+            this.healthModel = stateMachine.HealthModel;
         }
         
         public virtual void Enter() {}
