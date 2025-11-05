@@ -1,8 +1,8 @@
-using Project.Commons.BossPhaseStateMachine.Scripts.Model;
+using Project.Commons.BossPrototype.Scripts.Model;
 using UnityEngine;
 using UnityEngine.Playables;
 
-namespace Project.Commons.BossPhaseStateMachine.Scripts.Presenter
+namespace Project.Commons.BossPrototype.Scripts.Presenter
 {
     public class SimplePhaseState: BossPhaseState
     {

@@ -1,4 +1,4 @@
-using Project.Commons.BossPhaseStateMachine.Scripts.Presenter;
+using Project.Commons.BossPrototype.Scripts.Presenter;
 using UnityEngine;
 using UnityEngine.Playables;
 

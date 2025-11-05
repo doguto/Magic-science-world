@@ -1,7 +1,7 @@
-using Project.Commons.BossPhaseStateMachine.Scripts.Model;
+using Project.Commons.BossPrototype.Scripts.Model;
 using UnityEngine;
 
-namespace Project.Commons.BossPhaseStateMachine.Scripts.Presenter
+namespace Project.Commons.BossPrototype.Scripts.Presenter
 {
     public class BossPhaseStateMachine: MonoBehaviour
     {

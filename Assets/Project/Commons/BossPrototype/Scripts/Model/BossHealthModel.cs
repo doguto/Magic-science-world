@@ -2,7 +2,7 @@ using System;
 using UniRx;
 using UnityEngine;
 
-namespace Project.Commons.BossPhaseStateMachine.Scripts.Model
+namespace Project.Commons.BossPrototype.Scripts.Model
 {
     public class BossHealthModel: IDisposable
     {

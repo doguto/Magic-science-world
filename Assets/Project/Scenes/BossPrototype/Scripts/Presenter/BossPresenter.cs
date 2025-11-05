@@ -1,7 +1,7 @@
 using UnityEngine;
 using UniRx;
-using Project.Commons.BossPhaseStateMachine.Scripts.Model;
-using Project.Commons.BossPhaseStateMachine.Scripts.Presenter;
+using Project.Commons.BossPrototype.Scripts.Model;
+using Project.Commons.BossPrototype.Scripts.Presenter;
 
 namespace Project.Scenes.BossPrototype.Scripts.Presenter
 {

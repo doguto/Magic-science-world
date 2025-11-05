@@ -1,6 +1,6 @@
-using Project.Commons.BossPhaseStateMachine.Scripts.Model;
+using Project.Commons.BossPrototype.Scripts.Model;
 
-namespace Project.Commons.BossPhaseStateMachine.Scripts.Presenter
+namespace Project.Commons.BossPrototype.Scripts.Presenter
 {
     public abstract class BossPhaseState
     {
