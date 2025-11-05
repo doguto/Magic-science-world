@@ -10,15 +10,11 @@ namespace Project.Scenes.BossPrototype.Scripts.Presenter
         [SerializeField] private PlayableDirector phase2Timeline;
         [SerializeField] private PlayableDirector phase3Timeline;
         
-        private BossPhaseStateMachine stateMachine;
-        private BossPresenter bossPresenter;
+        [SerializeField] private BossPhaseStateMachine stateMachine;
+        [SerializeField] private BossPresenter bossPresenter;
         
         void Start()
         {
-            // 同じGameObjectからコンポーネント取得
-            stateMachine = GetComponent<BossPhaseStateMachine>();
-            bossPresenter = GetComponent<BossPresenter>();
-            
             // 初期化確認
             if (stateMachine == null)
             {
