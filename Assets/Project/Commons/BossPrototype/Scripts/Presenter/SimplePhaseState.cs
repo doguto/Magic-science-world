@@ -28,7 +28,8 @@ namespace Project.Commons.BossPrototype.Scripts.Presenter
         public override void Update()
         {
             if (hasTransitioned) return;
-            if (healthModel.CurrentHp.Value <= hpThreshold) TriggerTransition();
+            if (healthModel.CurrentHp.Value > hpThreshold) return;
+            TriggerTransition();
         }
         
         public override void Exit()
