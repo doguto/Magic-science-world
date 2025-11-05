@@ -26,7 +26,7 @@ namespace Project.Commons.BossPrototype.Scripts.Presenter
             currentState = newState;
             currentState.Enter();
             
-            Debug.Log($"Transition to {newState.GetType().Name}");
+            Debug.Log($"Transition (Type: {newState.GetType().Name})");
         }
     }
 }
