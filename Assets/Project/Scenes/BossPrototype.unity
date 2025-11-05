@@ -402,6 +402,8 @@ MonoBehaviour:
   phase1Timeline: {fileID: 1667614320}
   phase2Timeline: {fileID: 1633168071}
   phase3Timeline: {fileID: 1216098053}
+  stateMachine: {fileID: 971815585}
+  bossPresenter: {fileID: 971815584}
 --- !u!1 &973881969
 GameObject:
   m_ObjectHideFlags: 0
