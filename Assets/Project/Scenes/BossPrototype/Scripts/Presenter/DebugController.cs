@@ -5,7 +5,7 @@ using Project.Scenes.BossPrototype.Scripts.View;
 
 namespace Project.Scenes.BossPrototype.Scripts.Presenter
 {
-    public class BossDebugController : MonoBehaviour
+    public class DebugController : MonoBehaviour
     {
         [SerializeField] BackgroundView backgroundView;
         

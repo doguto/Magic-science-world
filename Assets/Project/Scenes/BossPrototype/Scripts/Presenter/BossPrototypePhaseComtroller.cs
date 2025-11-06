@@ -4,7 +4,7 @@ using UnityEngine.Playables;
 
 namespace Project.Scenes.BossPrototype.Scripts.Presenter
 {
-    public class Boss1Controller : MonoBehaviour
+    public class BossPrototypePhaseController : MonoBehaviour
     {
         [SerializeField] private PlayableDirector phase1Timeline;
         [SerializeField] private PlayableDirector phase2Timeline;
