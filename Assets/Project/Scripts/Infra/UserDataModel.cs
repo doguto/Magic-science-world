@@ -48,20 +48,18 @@ namespace Project.Scripts.Infra
             {
                 return new UserData();
             }
-            else
-            {
-                try
-                {
-                    string json = File.ReadAllText(saveFilePath);
-                    UserData data = JsonUtility.FromJson<UserData>(json);
-                    return data;
-                }
-                catch (System.Exception e)
-                {
-                    Debug.LogError("Failed to load user data: " + e.Message);
-                    return new UserData();
-                }
-            }
+          
+             try
+             {
+                 string json = File.ReadAllText(saveFilePath);
+                 UserData data = JsonUtility.FromJson<UserData>(json);
+                 return data;
+             }
+             catch (System.Exception e)
+             {
+                 Debug.LogError("Failed to load user data: " + e.Message);
+                 return new UserData();
+             }
         }
 
         public void Save()
