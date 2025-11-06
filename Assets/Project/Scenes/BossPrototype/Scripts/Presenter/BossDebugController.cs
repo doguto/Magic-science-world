@@ -1,11 +1,14 @@
 using Project.Commons.BossPrototype.Scripts.Model;
 using UnityEngine;
 using Project.Commons.BossPrototype.Scripts.Presenter;
+using Project.Scenes.BossPrototype.Scripts.View;
 
 namespace Project.Scenes.BossPrototype.Scripts.Presenter
 {
     public class BossDebugController : MonoBehaviour
     {
+        [SerializeField] BackgroundView backgroundView;
+        
         private BossPhaseStateMachine stateMachine;
         private bool isPaused;
 
@@ -29,14 +32,16 @@ namespace Project.Scenes.BossPrototype.Scripts.Presenter
             {
                 if (isPaused)
                 {
-                    Time.timeScale = 1f;
+                    backgroundView.Resume();
                     isPaused = false;
+                    Time.timeScale = 1f;
                     Debug.Log("[Debug] Exit PauseMenu");
                 }
                 else
                 {
-                    Time.timeScale = 0f;
+                    backgroundView.Pause();
                     isPaused = true;
+                    Time.timeScale = 0f;
                     Debug.Log("[Debug] Enter PauseMenu");
                 }
             }
