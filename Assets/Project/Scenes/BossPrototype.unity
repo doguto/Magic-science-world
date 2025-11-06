@@ -897,7 +897,7 @@ PlayableDirector:
   - key: {fileID: 0}
     value: {fileID: 1533781696}
   - key: {fileID: -6459793931302417275, guid: 4bc5d652c71a18b42a3e52599509911f, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1533781698}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1216098054
@@ -981,9 +981,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1ea419917c42d483b44b5c544cdc72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phase1Points: []
-  phase2Points: []
-  phase3Points: []
+  phase1Points:
+  - {fileID: 755945962}
+  - {fileID: 1598238522}
+  - {fileID: 197735247}
+  - {fileID: 37856882}
+  phase2Points:
+  - {fileID: 1024266173}
+  - {fileID: 977134218}
+  - {fileID: 47437875}
+  - {fileID: 1108432840}
+  phase3Points:
+  - {fileID: 141956126}
+  - {fileID: 413865267}
+  - {fileID: 471926733}
+  - {fileID: 1092874799}
+  phase1MoveDuration: 0.5
+  phase2MoveDuration: 0.2
+  phase3MoveDuration: 0.01
 --- !u!114 &1533781698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -999,7 +1014,8 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 19848541f81829e40ab263438c69a07e, type: 2}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: 3a9bb0b53efed694fac7069b9f98c972, type: 2}
+    - {fileID: 11400000, guid: bdc882814dc353e40a8b451e99153058, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -1017,7 +1033,35 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     - m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1533781697}
+          m_TargetAssemblyTypeName: Project.Scenes.BossPrototype.Scripts.View.BossView,
+            View
+          m_MethodName: MoveToPoints
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1533781697}
+          m_TargetAssemblyTypeName: Project.Scenes.BossPrototype.Scripts.View.BossView,
+            View
+          m_MethodName: MoveToPoints
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!212 &1533781699
 SpriteRenderer:
   m_ObjectHideFlags: 0
