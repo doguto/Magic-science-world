@@ -55,7 +55,9 @@ namespace Project.Commons.BossPrototype.Scripts.Presenter
             }
             else
             {
-                Debug.Log("Final phase started!");
+                // シナリオへ
+                this.Exit();
+                Debug.Log("Boss Defeated!");
             }
         }
     }
