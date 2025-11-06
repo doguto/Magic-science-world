@@ -7,6 +7,7 @@ namespace Project.Scenes.BossPrototype.Scripts.Presenter
     public class BossDebugController : MonoBehaviour
     {
         private BossPhaseStateMachine stateMachine;
+        private bool isPaused;
 
         void Start()
         {
@@ -22,6 +23,24 @@ namespace Project.Scenes.BossPrototype.Scripts.Presenter
         void Update()
         {
             if (stateMachine?.HealthModel == null) return;
+            
+            // Escキー: ポーズ
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (isPaused)
+                {
+                    Time.timeScale = 1f;
+                    isPaused = false;
+                    Debug.Log("[Debug] Exit PauseMenu");
+                }
+                else
+                {
+                    Time.timeScale = 0f;
+                    isPaused = true;
+                    Debug.Log("[Debug] Enter PauseMenu");
+                }
+            }
+            if (isPaused) return;
             
             // スペースキー: 10%ダメージ
             if (Input.GetKeyDown(KeyCode.Space))
@@ -52,6 +71,5 @@ namespace Project.Scenes.BossPrototype.Scripts.Presenter
                 Debug.Log($"[Debug] Current HP: {stateMachine.HealthModel.CurrentHp}");
             }
         }
-
     }
 }
