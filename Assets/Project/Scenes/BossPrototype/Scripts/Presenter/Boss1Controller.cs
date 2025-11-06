@@ -33,7 +33,7 @@ namespace Project.Scenes.BossPrototype.Scripts.Presenter
         private void InitializePhases()
         {
             var phase3 = new SimplePhaseState(phase3Timeline, null, 0.0f, 10f, stateMachine);
-            var phase2 = new SimplePhaseState(phase2Timeline, phase3, 200f, 5f, stateMachine);
+            var phase2 = new SimplePhaseState(phase2Timeline, phase3, 200f, 10f, stateMachine);
             var phase1 = new SimplePhaseState(phase1Timeline, phase2, 500f, 10f, stateMachine);
             stateMachine.TransitionTo(phase1);
         }
