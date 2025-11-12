@@ -10,23 +10,22 @@ namespace Project.Scripts.Repository.ModelRepository
     {
         public static StageModelRepository Instance { get; } = new();
         
-        readonly List<StageData> stages;
+        readonly List<StageData> stageData;
         readonly List<StageModel> stageModels = new();
 
         public StageModelRepository()
         {
             dataName = "StageData";
-            stages = LoadData();
-            foreach (var stage in stages)
+            stageData = LoadData();
+            foreach (var data in stageData)
             {
-                stageModels.Add(new StageModel(stage));
+                stageModels.Add(new StageModel(data));
             }
         }
 
         public StageModel Get(int index)
         {
-            if (stageModels.Count >= index) return null;
-            
+            if (stageModels.Count <= index) return null;
             return stageModels[index];
         }
 
