@@ -25,7 +25,7 @@ namespace Project.Scripts.Repository.ModelRepository
 
         public StageModel Get(int index)
         {
-            if (stageModels.Count >= index) return null;
+            if (stageModels.Count <= index) return null;
             
             return stageModels[index];
         }
