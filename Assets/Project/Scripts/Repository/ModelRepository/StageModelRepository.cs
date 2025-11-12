@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-using Project.Scenes.StageList.Scripts.Model;
+using System.Linq;
+using Project.Scripts.Model;
 using Project.Scripts.Infra;
 using UnityEngine.AddressableAssets;
 
@@ -10,22 +11,26 @@ namespace Project.Scripts.Repository.ModelRepository
         public static StageModelRepository Instance { get; } = new();
         
         readonly List<StageData> stages;
-        StageModel stageModel;
+        readonly List<StageModel> stageModels = new();
 
         public StageModelRepository()
         {
             dataName = "StageData";
             stages = LoadData();
+            foreach (var stage in stages)
+            {
+                stageModels.Add(new StageModel(stage));
+            }
         }
 
-        // Get()はModel毎に処理が変わる。
-        // 引数でint idを取ったりするものもあるかも
-        public StageModel Get()
+        public StageModel Get(int index)
         {
-            if (stageModel != null) return stageModel;
-            stageModel = new StageModel(stages);
-            return stageModel;
+            if (stageModels.Count >= index) return null;
+            
+            return stageModels[index];
         }
+
+        public List<StageModel> All() => stageModels;
 
         List<StageData> LoadData()
         {
