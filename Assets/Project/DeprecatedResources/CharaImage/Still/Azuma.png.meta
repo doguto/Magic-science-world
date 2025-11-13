@@ -3,8 +3,8 @@ guid: c5e121563d7778a44a802028ca7d8e37
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8097004626240587494
-    second: Azuma2_0
+      213: 5984328716670386270
+    second: Azuma_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Azuma2_0
+      name: Azuma_0
       rect:
         serializedVersion: 2
         x: 26
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6e6c3cbcec65e5070800000000000000
-      internalID: 8097004626240587494
+      spriteID: e50ce40f24b9c0350800000000000000
+      internalID: 5984328716670386270
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Azuma2_0: 8097004626240587494
+      Azuma_0: 5984328716670386270
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

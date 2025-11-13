@@ -3,8 +3,8 @@ guid: 08048779db14a874895374c5bdd60704
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8157185866725176427
-    second: crazy_confidemt_0
+      213: 6188245772216822366
+    second: Sui_Crazy_Confident_Face_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: crazy_confidemt_0
+      name: Sui_Crazy_Confident_Face_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 59b420f3caadbce80800000000000000
-      internalID: -8157185866725176427
+      spriteID: e5aebcb3eb011e550800000000000000
+      internalID: 6188245772216822366
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      crazy_confidemt_0: -8157185866725176427
+      Sui_Crazy_Confident_Face_0: 6188245772216822366
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

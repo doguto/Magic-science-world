@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using Project.Scripts.Model;
 using Project.Scenes.Title.Scripts.Model;
 using Project.Scenes.Title.Scripts.View;
@@ -20,20 +22,21 @@ namespace Project.Scenes.Title.Scripts.Presenter
         {
             titleBackgroundModel = new TitleBackgroundModel();
             titleGameStartModel = new TitleGameStartModel();
-            
-            titleMenuView.OnPressedStart.Subscribe(StartGame);
+
+            titleMenuView.OnPressedStart.Subscribe(x => StartGame(x).Forget());
             titleMenuView.OnPressedExit.Subscribe(ExitGame);
-            
+
             titleMenuView.Init();
-            
+
             SetTitleBackGround();
         }
 
-        void StartGame(Unit _)
+        async UniTask StartGame(Unit _)
         {
             titleGameStartModel.StartGame();
-            SceneManager.LoadScene(SceneRouterModel.QuestList, LoadSceneMode.Additive);
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneRouterModel.QuestList));
+            await SceneManager.LoadSceneAsync(SceneRouterModel.StageList, LoadSceneMode.Additive).ToUniTask();
+
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneRouterModel.StageList));
             SceneManager.UnloadSceneAsync(gameObject.scene.name);
         }
 

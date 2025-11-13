@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0aecf48b9fb434ab4ddc97602dc9cf5, type: 3}
+  m_Name: CharacterData
+  m_EditorClassIdentifier: 
+  characterData:
+  - id: 1
+    name: "\u30C6\u30F3"
+    englishName: Ten
+  - id: 2
+    name: "\u30ED\u30B3"
+    englishName: Loco
+  - id: 3
+    name: "\u30A2\u30BA\u30DE"
+    englishName: Azuma
+  - id: 4
+    name: "\u30BF\u30C4\u30DF"
+    englishName: Tatsumi
+  - id: 5
+    name: "\u30A6\u30B7\u30C8\u30E9"
+    englishName: Ushitora
+  - id: 6
+    name: "\u30B9\u30A4"
+    englishName: Sui
+  - id: 7
+    name: "\u30CF\u30CA\u30EC"
+    englishName: Hanare
+  - id: 8
+    name: "\u30B3\u30F3"
+    englishName: Kon

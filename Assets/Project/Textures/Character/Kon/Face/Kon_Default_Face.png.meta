@@ -3,8 +3,8 @@ guid: 2415bcef9b544954ca46beb4dc229686
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2369867600477939372
-    second: default_0
+      213: 4949837478434393487
+    second: Kon_Default_Face_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: default_0
+      name: Kon_Default_Face_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4591ec439f98c1fd0800000000000000
-      internalID: -2369867600477939372
+      spriteID: f8d4ff516fa51b440800000000000000
+      internalID: 4949837478434393487
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      default_0: -2369867600477939372
+      Kon_Default_Face_0: 4949837478434393487
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

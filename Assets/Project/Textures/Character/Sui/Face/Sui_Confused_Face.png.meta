@@ -3,8 +3,8 @@ guid: e1cf2388351f900468a7e206cae26cff
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6855159593995054519
-    second: warn_0
+      213: 8219089126640487006
+    second: Sui_Confused_Face_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: warn_0
+      name: Sui_Confused_Face_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 94250516ba49dd0a0800000000000000
-      internalID: -6855159593995054519
+      spriteID: e5a8eaa9302101270800000000000000
+      internalID: 8219089126640487006
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      warn_0: -6855159593995054519
+      Sui_Confused_Face_0: 8219089126640487006
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
