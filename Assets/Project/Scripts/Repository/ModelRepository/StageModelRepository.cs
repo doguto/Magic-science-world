@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Project.Scripts.Model;
 using Project.Scripts.Infra;
 using UnityEngine.AddressableAssets;
@@ -23,18 +24,17 @@ namespace Project.Scripts.Repository.ModelRepository
             }
         }
 
-        public StageModel Get(int stageId)
+        public StageModel GetById(int stageId)
         {
-            var index = stageId - 1;
-            if (index < 0 || stageModels.Count <= index) return null;
-            if (stageModels.Count <= index) return stageModels[index];
+            var model = stageModels.Find(m => m.StageData.id == stageId);
+            if (model != null) return model;
 
-            for (var i = stageModels.Count; i < stageData.Count; i++)
-            {
-                stageModels.Add(new StageModel(stageData[i]));
-            }
+            var data = stageData.Find(m => m.id == stageId);
+            if (data == null) throw new Exception($"StageId {stageId} のデータが存在しません.");
 
-            return stageModels[index];
+            var newModel = new StageModel(data);
+            stageModels.Add(newModel);
+            return newModel;
         }
 
         public List<StageModel> GetAll() => stageModels;
