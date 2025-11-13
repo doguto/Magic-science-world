@@ -2,176 +2,21 @@
 
 Modelクラスの実装をする際の基本的なマニュアル
 
+このマニュアルでは、実際のプロジェクトで使用されているStageModelを例に、Modelの実装方法を解説します。
+
 ## 新規Model実装
 
 ### 1. Modelクラスの作成
 
-Modelクラスは、データとそのデータに関連するロジックを保持する責務を持ちます。
+StageModelは、ステージリスト画面でステージ情報とキャラクターの立ち絵を管理するModelです。
 
 #### 配置場所
 - シーン固有のModel: `Assets/Project/Scenes/[シーン名]/Scripts/Model/`
 - 共通のModel: `Assets/Project/Commons/Scripts/Model/`
 
-#### 基本構造
+StageModelの場合: `Assets/Project/Scenes/StageList/Scripts/Model/StageModel.cs`
 
-```csharp
-using System.Collections.Generic;
-using System.Linq;
-using Project.Scripts.Model;
-using Project.Scripts.Infra;
-using Project.Scripts.Repository.AssetRepository;
-using UnityEngine;
-
-namespace Project.Scenes.[シーン名].Scripts.Model
-{
-    public class [機能名]Model : ModelBase
-    {
-        // データのキャッシュ
-        List<[機能名]Data> dataList;
-        List<Sprite> cachedAssets = new();
-
-        // コンストラクタでデータとアセットを初期化
-        public [機能名]Model(List<[機能名]Data> dataList)
-        {
-            this.dataList = dataList;
-            
-            // AssetRepositoryを使用してアセットを読み込む
-            var assetRepository = new SomeAssetRepository();
-            cachedAssets = dataList
-                .Select(x => assetRepository.Load(x.assetAddress))
-                .ToList();
-        }
-
-        // データを取得するメソッド
-        public Sprite GetAsset(int id)
-        {
-            return cachedAssets[id];
-        }
-    }
-}
-```
-
-#### 重要なポイント
-- `ModelBase`を継承する
-- MonoBehaviourは継承**しない**（画面に依存しない層）
-- データはコンストラクタで受け取る（ModelRepositoryから渡される）
-- アセットの読み込みには`AssetRepository`を使用する
-- 読み込んだアセットはキャッシュしておき、メソッドで提供する
-- データに関連するロジックはModel内に記述する
-
-#### アセット読み込みの例
-
-ModelBase を直接使用する場合:
-
-```csharp
-public class ExampleModel : ModelBase
-{
-    public Sprite CharacterSprite { get; private set; }
-
-    public ExampleModel(string characterAddress)
-    {
-        // 同期読み込み
-        CharacterSprite = LoadAsset<Sprite>(characterAddress);
-    }
-
-    public async UniTask LoadCharacterAsync(string characterAddress)
-    {
-        // 非同期読み込み
-        CharacterSprite = await LoadAssetAsync<Sprite>(characterAddress);
-    }
-}
-```
-
-AssetRepository を使用する場合（推奨）:
-
-```csharp
-using System.Collections.Generic;
-using System.Linq;
-using Project.Scripts.Model;
-using Project.Scripts.Repository.AssetRepository;
-using UnityEngine;
-
-public class ExampleModel : ModelBase
-{
-    List<Sprite> characterSprites = new();
-
-    public ExampleModel(List<string> characterAddresses)
-    {
-        var stillAssetRepository = new StillAssetRepository();
-        characterSprites = characterAddresses
-            .Select(address => stillAssetRepository.Load(address, false))
-            .ToList();
-    }
-
-    public Sprite GetCharacterSprite(int index)
-    {
-        return characterSprites[index];
-    }
-}
-```
-
-### 2. データクラスの作成（必要に応じて）
-
-Modelが扱うデータをScriptableObjectとして定義する場合の手順です。
-
-#### 配置場所
-- `Assets/Project/Scripts/Infra/`
-
-#### ScriptableObjectデータの定義
-
-```csharp
-using System;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace Project.Scripts.Infra
-{
-    // ScriptableObject本体
-    [CreateAssetMenu(fileName = "[機能名]Data", menuName = "Database/[機能名]Data")]
-    public class [機能名]DataObject : ScriptableObject
-    {
-        public List<[機能名]Data> data;
-    }
-
-    // データ構造
-    [Serializable]
-    public class [機能名]Data
-    {
-        public int id;
-        public string name;
-        public string description;
-        // その他必要なフィールド
-    }
-}
-```
-
-#### 実装例：StageDataObject
-
-```csharp
-using System;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace Project.Scripts.Infra
-{
-    [CreateAssetMenu(fileName = "StageData", menuName = "Database/StageData")]
-    public class StageDataObject : ScriptableObject
-    {
-        public List<StageData> stageData;
-    }
-
-    [Serializable]
-    public class StageData
-    {
-        public int id;
-        public string charaStillAddress;
-    }
-}
-```
-
-#### 実装例：StageModel
-
-StageDataを元にキャラクターの立ち絵を管理するModelの実装例です。
+#### StageModelの実装
 
 ```csharp
 using System.Collections.Generic;
@@ -208,47 +53,95 @@ namespace Project.Scenes.StageList.Scripts.Model
 }
 ```
 
-### 3. AssetRepositoryクラスの作成（必要に応じて）
+#### 重要なポイント
+- `ModelBase`を継承する
+- MonoBehaviourは継承**しない**（画面に依存しない層）
+- データはコンストラクタで受け取る（ModelRepositoryから渡される）
+- アセットの読み込みには`AssetRepository`を使用する
+- 読み込んだアセットはキャッシュしておき、メソッドで提供する（`charaImages`）
+- データに関連するロジックはModel内に記述する（`GetCharaImage`メソッド）
 
-AssetRepositoryは、アセットの読み込みロジックを一元管理するためのクラスです。
-複雑なアドレス生成や、複数のModelで共通して使用するアセット読み込みロジックがある場合に作成します。
+#### アセット読み込みの参考
 
-#### 配置場所
-- `Assets/Project/Scripts/Repository/AssetRepository/`
-
-#### 基本構造
+StageModelでは`AssetRepository`を使用してアセットを読み込んでいます。
+別のパターンとして、ModelBaseを直接使用することもできます：
 
 ```csharp
-using UnityEngine;
-using UnityEngine.AddressableAssets;
-using Cysharp.Text;
-using Project.Scripts.Extensions;
-
-namespace Project.Scripts.Repository.AssetRepository
+public class TitleBackgroundModel : ModelBase
 {
-    public class [アセット種類]AssetRepository : AssetRepositoryBase
-    {
-        public Sprite Load(string assetName, bool option)
-        {
-            // アドレスの生成ロジック
-            string address = ZString.Format(
-                "{0}/[カテゴリ]/{1}/[サブパス]/{1}{2}.png",
-                GamePath.TexturesPath,
-                assetName,
-                option ? "_Suffix" : ""
-            );
+    public Sprite BackgroundSprite { get; private set; }
 
-            // Addressablesでアセットを読み込み
-            Sprite asset = Addressables.LoadAssetAsync<Sprite>(address).WaitForCompletion();
-            return asset;
-        }
+    public TitleBackgroundModel(string backgroundAddress)
+    {
+        // ModelBaseの同期読み込みメソッドを使用
+        BackgroundSprite = LoadAsset<Sprite>(backgroundAddress);
+    }
+
+    public async UniTask LoadBackgroundAsync(string backgroundAddress)
+    {
+        // ModelBaseの非同期読み込みメソッドを使用
+        BackgroundSprite = await LoadAssetAsync<Sprite>(backgroundAddress);
     }
 }
 ```
 
-#### 実装例：StillAssetRepository
+ただし、StageModelのように複雑なアドレス生成が必要な場合は、AssetRepositoryを使用することを推奨します。
 
-キャラクターの立ち絵を読み込むAssetRepositoryの実装例です。
+### 2. データクラスの作成（必要に応じて）
+
+StageModelが扱うデータをScriptableObjectとして定義します。
+
+#### 配置場所
+- `Assets/Project/Scripts/Infra/`
+
+StageDataの場合: `Assets/Project/Scripts/Infra/StageDataObject.cs`
+
+#### StageDataObjectの実装
+
+```csharp
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Project.Scripts.Infra
+{
+    [CreateAssetMenu(fileName = "StageData", menuName = "Database/StageData")]
+    public class StageDataObject : ScriptableObject
+    {
+        public List<StageData> stageData;
+    }
+
+    [Serializable]
+    public class StageData
+    {
+        public int id;
+        public string charaStillAddress;
+    }
+}
+```
+
+#### 解説
+
+- `StageDataObject`: Unity上で作成・編集できるScriptableObjectのクラス
+  - `[CreateAssetMenu]`属性で、Unityエディタのメニューから作成可能にする
+  - `stageData`リストでステージ情報を保持
+
+- `StageData`: 各ステージの情報を表すデータクラス
+  - `id`: ステージID
+  - `charaStillAddress`: キャラクターの立ち絵のアドレス（アセット名）
+  - `[Serializable]`属性でUnityエディタで編集可能にする
+
+### 3. AssetRepositoryクラスの作成（必要に応じて）
+
+StageModelでは、キャラクターの立ち絵を読み込むために`StillAssetRepository`を使用しています。
+AssetRepositoryは、複雑なアドレス生成ロジックを持つアセットの読み込みを一元管理するためのクラスです。
+
+#### 配置場所
+- `Assets/Project/Scripts/Repository/AssetRepository/`
+
+StillAssetRepositoryの場合: `Assets/Project/Scripts/Repository/AssetRepository/StillAssetRepository.cs`
+
+#### StillAssetRepositoryの実装
 
 ```csharp
 using UnityEngine;
@@ -276,71 +169,28 @@ namespace Project.Scripts.Repository.AssetRepository
 }
 ```
 
-#### 重要なポイント
+#### 解説
+
 - `AssetRepositoryBase`を継承する
-- アドレス生成には`ZString.Format`を使用してメモリ効率を高める
-- `GamePath`を使用してベースパスを取得する
-- 複雑なアドレス生成ロジックを隠蔽し、Modelから簡単に使用できるようにする
+- `Load`メソッドで、キャラクター名(`charaName`)と状態フラグ(`isCrazy`)からアドレスを生成
+- `ZString.Format`を使用してメモリ効率よくアドレスを生成
+- `GamePath.TexturesPath`でテクスチャのベースパスを取得
+- 例: `charaName="Alice"`, `isCrazy=false` の場合
+  - → `"Textures/Character/Alice/Still/Alice_Still.png"`
+- Addressablesで同期的にアセットを読み込んで返す
+
+このように、複雑なアドレス生成ロジックを隠蔽することで、StageModelから簡単に使用できるようになります。
 
 ### 4. ModelRepositoryクラスの作成
 
-ModelRepositoryは、Modelインスタンスの生成と管理を行います。
+StageModelRepositoryは、StageModelインスタンスの生成と管理を行います。
 
 #### 配置場所
 - `Assets/Project/Scripts/Repository/ModelRepository/`
 
-#### 基本構造
+StageModelRepositoryの場合: `Assets/Project/Scripts/Repository/ModelRepository/StageModelRepository.cs`
 
-```csharp
-using Project.Scripts.Infra;
-using UnityEngine.AddressableAssets;
-
-namespace Project.Scripts.Repository.ModelRepository
-{
-    public class [機能名]ModelRepository : ModelRepositoryBase
-    {
-        // シングルトンインスタンス
-        public static [機能名]ModelRepository Instance { get; } = new();
-
-        // データとModelのキャッシュ
-        readonly List<[機能名]Data> dataList;
-        [機能名]Model model;
-
-        // コンストラクタでデータを読み込む
-        public [機能名]ModelRepository()
-        {
-            dataName = "[機能名]Data";
-            dataList = LoadData();
-        }
-
-        // Modelの取得（シングルトンパターン）
-        public [機能名]Model Get()
-        {
-            if (model != null) return model;
-            model = new [機能名]Model(dataList);
-            return model;
-        }
-
-        // データの読み込み
-        List<[機能名]Data> LoadData()
-        {
-            var dataObject = Addressables.LoadAssetAsync<[機能名]DataObject>(DataAddress).WaitForCompletion();
-            return dataObject.data;
-        }
-    }
-}
-```
-
-#### 重要なポイント
-- `ModelRepositoryBase`を継承する
-- シングルトンパターン`Instance`を実装する
-- `dataName`を設定することで`DataAddress`が自動生成される
-- Modelインスタンスをキャッシュし、再利用する
-- データの読み込みはAddressablesを使用する
-
-#### 実装例：StageModelRepository
-
-実際のStageModelRepositoryの実装例です。
+#### StageModelRepositoryの実装
 
 ```csharp
 using System.Collections.Generic;
@@ -381,31 +231,24 @@ namespace Project.Scripts.Repository.ModelRepository
 }
 ```
 
+#### 解説
+
+- `ModelRepositoryBase`を継承する
+- `Instance`プロパティでシングルトンパターンを実装
+  - アプリ全体で1つのインスタンスのみを使用する
+- コンストラクタで`dataName`を設定し、データを読み込む
+  - `dataName = "StageData"`を設定すると、`DataAddress`が自動生成される
+  - `LoadData()`でAddressablesを使用してStageDataObjectを読み込む
+- `Get()`メソッドでStageModelを取得
+  - 初回呼び出し時にStageModelインスタンスを生成
+  - 2回目以降はキャッシュされたインスタンスを返す（シングルトン）
+- `LoadData()`でStageDataObjectから実際のデータリストを取得
+
 ### 5. Presenterからの使用方法
 
-```csharp
-using Project.Scripts.Repository.ModelRepository;
-using UnityEngine;
+ステージリスト画面のPresenterで、StageModelRepositoryを使ってStageModelを取得し、ステージ情報を表示します。
 
-namespace Project.Scenes.[シーン名].Scripts.Presenter
-{
-    public class [シーン名]Presenter : MonoBehaviour
-    {
-        [機能名]Model model;
-
-        void Start()
-        {
-            // Repositoryからモデルを取得
-            model = [機能名]ModelRepository.Instance.Get();
-            
-            // モデルのデータを使用
-            var asset = model.GetAsset(0);
-        }
-    }
-}
-```
-
-#### 実装例：StageListPresenterでの使用
+#### StageListPresenterでの使用例
 
 ```csharp
 using Project.Scripts.Repository.ModelRepository;
@@ -429,6 +272,15 @@ namespace Project.Scenes.StageList.Scripts.Presenter
     }
 }
 ```
+
+#### 解説
+
+1. `StageModelRepository.Instance.Get()`でStageModelを取得
+   - Instanceはシングルトンなので、どこからでも同じインスタンスにアクセス可能
+2. `stageModel.GetCharaImage(1)`でステージ1のキャラクター画像を取得
+3. UI要素に設定して表示
+
+このように、PresenterはModelRepositoryを通じてModelを取得し、Modelが提供するメソッドを使ってデータを取得します。
 
 ## 実装フロー全体例
 
@@ -597,11 +449,16 @@ namespace Project.Scenes.StageList.Scripts.Presenter
 ## ベストプラクティス
 
 ### 命名規則
-- Modelクラス: `[機能名]Model.cs`
-- Repositoryクラス: `[機能名]ModelRepository.cs`
-- AssetRepositoryクラス: `[アセット種類]AssetRepository.cs`
-- DataObjectクラス: `[機能名]DataObject.cs`
-- Dataクラス: `[機能名]Data`
+
+StageModelを例にした命名規則です：
+
+- Modelクラス: `StageModel.cs`
+- Repositoryクラス: `StageModelRepository.cs`
+- AssetRepositoryクラス: `StillAssetRepository.cs`
+- DataObjectクラス: `StageDataObject.cs`
+- Dataクラス: `StageData`
+
+基本パターン: `[機能名]Model.cs`, `[機能名]ModelRepository.cs`, `[機能名]DataObject.cs`
 
 ### 設計原則
 1. **単一責任の原則**: 一つのModelは一つの責務のみを持つ
