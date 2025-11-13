@@ -26,7 +26,7 @@ namespace Project.Scripts.Repository.ModelRepository
         {
             var index = characterId - 1;
             if (index < 0 || characterModels.Count <= index) return null;
-            if (characterModels.Count <= index) return characterModels[index];
+            if (characterModels.Count > index) return characterModels[index];
 
             for (var i = characterModels.Count; i < characterData.Count; i++)
             {
