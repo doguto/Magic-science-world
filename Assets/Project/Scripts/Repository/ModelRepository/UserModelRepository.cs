@@ -1,22 +1,17 @@
-using Project.Scripts.Infra;
+using Project.Scripts.Model;
 
 namespace Project.Scripts.Repository.ModelRepository
 {
     public class UserModelRepository
     {
-        public static UserModelRepository Instance { get; } = new();
+        public static UserModelRepository Instance => new();
 
 
-        UserDataModel userData;
+        UserModel userModel = new();
 
-        public UserModelRepository()
+        public UserModel Get()
         {
-            userData = new UserDataModel();
-        }
-
-        public UserDataModel Get()
-        {
-            return userData ??= new();
+            return userModel ??= new();
         }
 
     }

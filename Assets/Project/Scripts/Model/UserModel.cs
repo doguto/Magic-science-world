@@ -1,23 +1,24 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
+using Project.Scripts.Model;
 using UnityEngine;
 
-namespace Project.Scripts.Infra
+namespace Project.Scripts.Model
 {
-    public class UserDataModel
+    public class UserModel : ModelBase
     {
-        public UserData UserData { get; private set; }
+        UserData UserData { get; set; }
+        public static UserModel Instance => new();
 
-        const string DataAddress = "Assets/Project/DataStore/UserData.json";
-
-        string saveDirectoryPath;
-        string saveFilePath;
+        readonly string saveDirectoryPath;
+        readonly string saveFilePath;
 
 
-        public UserDataModel()
+        public UserModel()
         {
             saveDirectoryPath = Path.Combine(Application.persistentDataPath, "DataStore");
-            saveFilePath = Path.Combine(saveDirectoryPath, "saveData.json");
+            saveFilePath = Path.Combine(saveDirectoryPath, "UserData.json");
             if (!File.Exists(saveFilePath))
             {
                 UserData = new UserData();
@@ -38,9 +39,10 @@ namespace Project.Scripts.Infra
             }
         }
         
-        public void ProgressStage()
+        public void StageClear(int  stageNumber)
         {
-            UserData.clearedStageNumber++;
+            UserData.clearedStageNumber = Math.Max(UserData.clearedStageNumber, stageNumber);
+            Save();
         }
 
         public int GetClearedStageNumber()
