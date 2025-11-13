@@ -14,7 +14,8 @@ namespace Project.Scripts.Model
         public bool IsOpened { get; private set; }
         public bool IsCleared { get; private set; }
 
-
+        
+        
         public StageModel(StageData stageData, bool isOpened = false, bool isCleared = false)
         {
             StageData = stageData;
@@ -35,6 +36,11 @@ namespace Project.Scripts.Model
             if (!IsOpened) throw new Exception("ステージが開放されていません.");
 
             IsCleared = true;
+        }
+
+        public Tuple<string, string> GetIdAndTitle()
+        {
+            return new Tuple<string, string>(StageData.id, StageData.title);
         }
     }
 }
