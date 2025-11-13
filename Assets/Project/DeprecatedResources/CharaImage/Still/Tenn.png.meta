@@ -3,8 +3,8 @@ guid: a89dbbf50207c324da0ce736d0d1983f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4193931472753350287
-    second: tennstand_0
+      213: -5025455588783795103
+    second: Tenn_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tennstand_0
+      name: Tenn_0
       rect:
         serializedVersion: 2
         x: 138
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f865bcd3476d33a30800000000000000
-      internalID: 4193931472753350287
+      spriteID: 1645a0c94cef14ab0800000000000000
+      internalID: -5025455588783795103
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tennstand_0: 4193931472753350287
+      Tenn_0: -5025455588783795103
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
