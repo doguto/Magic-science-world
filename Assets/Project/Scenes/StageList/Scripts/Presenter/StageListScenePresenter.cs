@@ -1,4 +1,5 @@
-using Project.Scenes.StageList.Scripts.Model;
+using System.Collections.Generic;
+using Project.Scripts.Model;
 using Project.Scenes.StageList.Scripts.View;
 using Project.Scripts.Presenter;
 using UniRx;
@@ -10,23 +11,27 @@ namespace Project.Scenes.StageList.Scripts.Presenter
     {
         [SerializeField] StageCardListView stageCardListView;
 
-        StageModel stageModel;
+        List<StageModel> stageModels;
 
         void Awake()
         {
-            stageModel = StageModelRepository.Get();
+            stageModels = StageModelRepository.GetAll();
         }
 
         void Start()
         {
             stageCardListView.Init();
+            for (int i = 0; i < stageModels.Count; i++)
+            {
+                stageCardListView.stageCardViews[i].Setup(stageModels[i].GetIdAndTitle());
+            }
             ShowCharaImage(0);
             stageCardListView.OnButtonChanged.Subscribe(ShowCharaImage);
         }
 
         void ShowCharaImage(int buttonIndex)
         {
-            var charaImage = stageModel.GetCharaImage(buttonIndex + 1);
+            var charaImage = stageModels[buttonIndex].CharaImage;
             stageCardListView.SetCharaImage(charaImage);
         }
     }

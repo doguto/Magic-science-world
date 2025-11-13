@@ -3,8 +3,8 @@ guid: 6a9b73071b614b74a9d44acd521a24c6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -254131194606244618
-    second: confused_0
+      213: -8136494291118303049
+    second: Tatsumi_Confused_Face_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: confused_0
+      name: Tatsumi_Confused_Face_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6fc26236605297cf0800000000000000
-      internalID: -254131194606244618
+      spriteID: 7b856ec1d8d551f80800000000000000
+      internalID: -8136494291118303049
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      confused_0: -254131194606244618
+      Tatsumi_Confused_Face_0: -8136494291118303049
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

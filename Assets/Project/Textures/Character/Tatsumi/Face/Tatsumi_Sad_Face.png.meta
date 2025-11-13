@@ -3,8 +3,8 @@ guid: ff3c343ba52c5a3439ae78b7404e6251
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4597436970944649126
-    second: sad_0
+      213: 2430635130492955575
+    second: Tatsumi_Sad_Face_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sad_0
+      name: Tatsumi_Sad_Face_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a58a895ee6f9230c0800000000000000
-      internalID: -4597436970944649126
+      spriteID: 7bb2e9be5c95bb120800000000000000
+      internalID: 2430635130492955575
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sad_0: -4597436970944649126
+      Tatsumi_Sad_Face_0: 2430635130492955575
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

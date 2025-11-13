@@ -3,8 +3,8 @@ guid: 150830e75e3cff04fbb51bed55b93ae0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7088773284674445156
-    second: embarrassed_0
+      213: 8276709940794816460
+    second: Tatsumi_Embarrassed_Face_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: embarrassed_0
+      name: Tatsumi_Embarrassed_Face_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 46f9c469eb1606260800000000000000
-      internalID: 7088773284674445156
+      spriteID: cc7f40ad6d7ccd270800000000000000
+      internalID: 8276709940794816460
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      embarrassed_0: 7088773284674445156
+      Tatsumi_Embarrassed_Face_0: 8276709940794816460
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

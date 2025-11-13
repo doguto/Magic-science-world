@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Cysharp.Text;
+using Project.Scripts.Extensions;
 
 namespace Project.Scripts.Repository.AssetRepository
 {
@@ -10,7 +11,7 @@ namespace Project.Scripts.Repository.AssetRepository
         {
             string address = ZString.Format(
                 "{0}/Character/{1}/Still/{1}{2}_Still.png",
-                TexturePath,
+                GamePath.TexturesPath,
                 charaName,
                 isCrazy ? "_Crazy" : ""
             );

@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -9,11 +10,10 @@ namespace Project.Scenes.StageList.Scripts.View
         [SerializeField] TextMeshProUGUI stageTitle;
         [SerializeField] TextMeshProUGUI stageIndexText;
  
-        public void Setup(string stageTitle, int stageIndex)
+        public void Setup((string id, string title)stage)
         {
-            this.stageTitle.text = stageTitle;
-            this.stageIndexText.text = $"Stage.{stageIndex}";
+            stageIndexText.text = $"Stage.{stage.id}";
+            stageTitle.text = stage.title;
         }
-    }    
+    }
 }
-

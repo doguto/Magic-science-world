@@ -3,8 +3,8 @@ guid: e81ab00b5eb526a4baada83465191551
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7088773284674445156
-    second: embarrassed_0
+      213: 2308509154808276134
+    second: Loco_Embarrassed_Face_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: embarrassed_0
+      name: Loco_Embarrassed_Face_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 46f9c469eb1606260800000000000000
-      internalID: 7088773284674445156
+      spriteID: 6a4a51568d8790020800000000000000
+      internalID: 2308509154808276134
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      embarrassed_0: 7088773284674445156
+      Loco_Embarrassed_Face_0: 2308509154808276134
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

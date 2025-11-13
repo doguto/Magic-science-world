@@ -13,7 +13,9 @@ namespace Project.Scripts.Infra
     [Serializable]
     public class StageData
     {
-        public int id;
+        public string id;
+        public int stageNumber;  // 文字だと扱いずらいので、int型のステージ番号も持つ
         public string charaStillAddress;
+        public string title;
     }
 }

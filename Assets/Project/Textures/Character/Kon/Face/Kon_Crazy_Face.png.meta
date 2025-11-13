@@ -3,11 +3,11 @@ guid: 46438523c643fd845a660e75b5e98c72
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8539970244480185573
-    second: SecondDefault_0
+      213: -8630307527067548998
+    second: Kon_Crazy_Face_0
   - first:
-      213: 3018847075780537085
-    second: SecondDefault_1
+      213: 1932295116826597166
+    second: Kon_Crazy_Face_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -99,50 +99,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SecondDefault_0
+      name: Kon_Crazy_Face_0
       rect:
         serializedVersion: 2
         x: 0
@@ -157,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b1b4a513f4eeb7980800000000000000
-      internalID: -8539970244480185573
+      spriteID: ab242ca870dfa3880800000000000000
+      internalID: -8630307527067548998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SecondDefault_1
+      name: Kon_Crazy_Face_1
       rect:
         serializedVersion: 2
         x: 191
@@ -179,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dfa202fbb6915e920800000000000000
-      internalID: 3018847075780537085
+      spriteID: e27dba7cb24e0da10800000000000000
+      internalID: 1932295116826597166
       vertices: []
       indices: 
       edges: []
@@ -199,8 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SecondDefault_0: -8539970244480185573
-      SecondDefault_1: 3018847075780537085
+      Kon_Crazy_Face_0: -8630307527067548998
+      Kon_Crazy_Face_1: 1932295116826597166
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
