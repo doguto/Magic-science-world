@@ -15,7 +15,7 @@ namespace Project.Scenes.StageList.Scripts.Presenter
 
         void Awake()
         {
-            stageModels = StageModelRepository.All();
+            stageModels = StageModelRepository.GetAll();
         }
 
         void Start()

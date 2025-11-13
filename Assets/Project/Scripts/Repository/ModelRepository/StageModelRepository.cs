@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using Project.Scripts.Model;
 using Project.Scripts.Infra;
 using UnityEngine.AddressableAssets;
@@ -38,7 +37,7 @@ namespace Project.Scripts.Repository.ModelRepository
             return stageModels[index];
         }
 
-        public List<StageModel> All() => stageModels;
+        public List<StageModel> GetAll() => stageModels;
 
         public void Clear()
         {
