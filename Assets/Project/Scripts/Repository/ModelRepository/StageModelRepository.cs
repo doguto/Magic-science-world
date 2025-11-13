@@ -19,6 +19,7 @@ namespace Project.Scripts.Repository.ModelRepository
             stageData = LoadData();
             foreach (var data in stageData)
             {
+                // TODO: UserModelが実装出来次第、UserModelのステージ進捗度からIsCleared等を取得して渡す
                 stageModels.Add(new StageModel(data));
             }
         }
