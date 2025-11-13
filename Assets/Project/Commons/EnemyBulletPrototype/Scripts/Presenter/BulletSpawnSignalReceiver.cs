@@ -17,9 +17,19 @@ namespace Project.Scenes.BossPrototype.Scripts.View
             {
                 var request = new BulletSpawnRequest(transform.position, Vector2.left, spawnSignal.Speed);
                 
-                _bossView.RequestBulletSpawn(request);
             }
         }
     }
-
+    public class BulletSpawnRequest
+    {
+        public BulletSpawnRequest(Vector2 position, Vector2 direction, float speed)
+        {
+            this.Position = position;
+            this.Direction = direction;
+            this.Speed = speed;
+        }
+        public Vector2 Position;
+        public Vector2 Direction;
+        public float Speed;
+    }
 }
