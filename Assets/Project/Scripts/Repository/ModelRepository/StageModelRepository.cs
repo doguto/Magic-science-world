@@ -13,14 +13,19 @@ namespace Project.Scripts.Repository.ModelRepository
         readonly List<StageData> stageData;
         readonly List<StageModel> stageModels = new();
 
+        readonly UserDataModel userModel;
+
         public StageModelRepository()
         {
             dataName = "StageData";
             stageData = LoadData();
+
+            userModel = UserModelRepository.Instance.Get();
+
             foreach (var data in stageData)
             {
-                // TODO: UserModelが実装出来次第、UserModelのステージ進捗度からIsCleared等を取得して渡す
-                stageModels.Add(new StageModel(data));
+                var stageNumber = data.stageNumber;
+                stageModels.Add(new StageModel(data, userModel.IsOpenedStage(stageNumber), userModel.IsClearedStage(stageNumber)));
             }
         }
 
@@ -32,7 +37,8 @@ namespace Project.Scripts.Repository.ModelRepository
             var data = stageData.Find(m => m.id == stageId);
             if (data == null) throw new Exception($"StageId {stageId} のデータが存在しません.");
 
-            var newModel = new StageModel(data);
+            var stageNumber = data.stageNumber;
+            var newModel = new StageModel(data, userModel.IsOpenedStage(stageNumber), userModel.IsClearedStage(stageNumber));
             stageModels.Add(newModel);
             return newModel;
         }
@@ -43,7 +49,7 @@ namespace Project.Scripts.Repository.ModelRepository
         {
             stageModels.Clear();
         }
-        
+
         List<StageData> LoadData()
         {
             var dataObject = LoadDataObject<StageDataObject>();
