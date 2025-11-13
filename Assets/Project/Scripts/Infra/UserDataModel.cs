@@ -6,19 +6,21 @@ namespace Project.Scripts.Infra
 {
     public class UserDataModel
     {
-        public UserData userData;
+        public UserData UserData { get; private set; }
+
         const string DataAddress = "Assets/Project/DataStore/UserData.json";
+
         string saveDirectoryPath;
         string saveFilePath;
-        
-        
+
+
         public UserDataModel()
         {
             saveDirectoryPath = Path.Combine(Application.persistentDataPath, "DataStore");
             saveFilePath = Path.Combine(saveDirectoryPath, "saveData.json");
             if (!File.Exists(saveFilePath))
             {
-                userData = new UserData();
+                UserData = new UserData();
             }
             else
             {
@@ -26,19 +28,34 @@ namespace Project.Scripts.Infra
                 {
                     string json = File.ReadAllText(saveFilePath);
                     UserData data = JsonUtility.FromJson<UserData>(json);
-                    userData = data;
+                    UserData = data;
                 }
                 catch (System.Exception e)
                 {
                     Debug.LogError("Failed to load user data: " + e.Message);
-                    userData = new UserData();
+                    UserData = new UserData();
                 }
             }
         }
         
         public void ProgressStage()
         {
-            userData.clearedStageNumber++;
+            UserData.clearedStageNumber++;
+        }
+
+        public int GetClearedStageNumber()
+        {
+            return UserData.clearedStageNumber;
+        }
+
+        public bool IsClearedStage(int stageNumber)
+        {
+            return UserData.clearedStageNumber >= stageNumber;
+        }
+
+        public bool IsOpenedStage(int stageNumber)
+        {
+            return UserData.clearedStageNumber >= stageNumber - 1;
         }
 
         
@@ -49,17 +66,17 @@ namespace Project.Scripts.Infra
                 return new UserData();
             }
           
-             try
-             {
-                 string json = File.ReadAllText(saveFilePath);
-                 UserData data = JsonUtility.FromJson<UserData>(json);
-                 return data;
-             }
-             catch (System.Exception e)
-             {
+            try 
+            { 
+                string json = File.ReadAllText(saveFilePath);
+                UserData data = JsonUtility.FromJson<UserData>(json);
+                return data;
+            }
+            catch (System.Exception e)
+            {
                  Debug.LogError("Failed to load user data: " + e.Message);
                  return new UserData();
-             }
+            }
         }
 
         public void Save()
@@ -71,7 +88,7 @@ namespace Project.Scripts.Infra
                     Directory.CreateDirectory(saveDirectoryPath);
                 }
 
-                string json = JsonUtility.ToJson(userData, true);
+                string json = JsonUtility.ToJson(UserData, true);
                 File.WriteAllText(saveFilePath, json);
             }
             catch (System.Exception e)
