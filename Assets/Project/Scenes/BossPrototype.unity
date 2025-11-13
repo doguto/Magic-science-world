@@ -950,6 +950,83 @@ Transform:
   - {fileID: 1108432840}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1481980421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1481980423}
+  - component: {fileID: 1481980422}
+  - component: {fileID: 1481980424}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1481980422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481980421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17cdc3851ffc4961ad3037e1afb639ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simpleBulletPrefab: {fileID: 1293710968252418636, guid: 9af05bdfbe5b3a34ab92d90fd02279e0, type: 3}
+--- !u!4 &1481980423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481980421}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1575015, y: 0.73083913, z: -1.1270236}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1481980424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481980421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 30120a02a778edf479b08729a05388f9, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1481980422}
+          m_TargetAssemblyTypeName: Project.Commons.EnemyBulletPrototype.Scripts.Presenter.BulletManager,
+            Presenter
+          m_MethodName: SpawnBullet
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1533781696
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,6 +1076,7 @@ MonoBehaviour:
   phase1MoveDuration: 0.5
   phase2MoveDuration: 0.2
   phase3MoveDuration: 0.01
+  bulletPrefab: {fileID: 0}
 --- !u!114 &1533781698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1252,6 +1330,8 @@ PlayableDirector:
     value: {fileID: 1533781698}
   - key: {fileID: 0}
     value: {fileID: 0}
+  - key: {fileID: 8920806703865444009, guid: 1fddf7562a0aec640aed14c22b362004, type: 2}
+    value: {fileID: 1533781698}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1667614321
@@ -1461,3 +1541,4 @@ SceneRoots:
   - {fileID: 133285130}
   - {fileID: 1452946880}
   - {fileID: 124975078}
+  - {fileID: 1481980423}

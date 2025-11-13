@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using NUnit.Framework;
 using UnityEngine;
+using UniRx;
 
 namespace Project.Scenes.BossPrototype.Scripts.View
 {
@@ -14,6 +15,10 @@ namespace Project.Scenes.BossPrototype.Scripts.View
         [SerializeField] private float phase1MoveDuration;
         [SerializeField] private float phase2MoveDuration;
         [SerializeField] private float phase3MoveDuration;
+        
+        private Subject<BulletSpawnRequest> onBulletSpawnRequestSubject = new ();
+        public IObservable<BulletSpawnRequest> OnBulletSpawnRequest => onBulletSpawnRequestSubject;
+        
         private int phase1MoveCount;
         private int phase2MoveCount;
         private int phase3MoveCount;
@@ -63,5 +68,22 @@ namespace Project.Scenes.BossPrototype.Scripts.View
                     break;
             }
         }
+
+        public void RequestBulletSpawn(BulletSpawnRequest request)
+        {
+            onBulletSpawnRequestSubject.OnNext(request);
+        }
+    }
+    public class BulletSpawnRequest
+    {
+        public BulletSpawnRequest(Vector2 position, Vector2 direction, float speed)
+        {
+            this.Position = position;
+            this.Direction = direction;
+            this.Speed = speed;
+        }
+        public Vector2 Position;
+        public Vector2 Direction;
+        public float Speed;
     }
 }

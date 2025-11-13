@@ -2,15 +2,21 @@ using UnityEngine;
 using UniRx;
 using Project.Commons.BossPrototype.Scripts.Model;
 using Project.Commons.BossPrototype.Scripts.Presenter;
+using Project.Commons.EnemyBulletPrototype.Scripts.Presenter;
+using Project.Commons.EnemyBulletPrototype.Scripts.Model;
+using Project.Scenes.BossPrototype.Scripts.View;
 
 namespace Project.Scenes.BossPrototype.Scripts.Presenter
 {
     public class BossPresenter : MonoBehaviour
     {
         [SerializeField] private float maxHP = 1000f;
+        [SerializeField] private BossView view;
+        [SerializeField] private BulletManager bulletManager;
         
         private BossHealthModel healthModel;
         private BossPhaseStateMachine stateMachine;
+        private BulletModel bulletModel;    
         
         void Awake()
         {
@@ -38,11 +44,17 @@ namespace Project.Scenes.BossPrototype.Scripts.Presenter
                     }
                 })
                 .AddTo(this);
-        }
 
-        /// <summary>
-        /// フェーズ変更通知（Controller から呼ばれる）
-        /// </summary>
+            view.OnBulletSpawnRequest
+                .Subscribe(request =>
+                {
+                    Debug.Log($"[BossPresenter] Bullet Spawn Requested: {request.Position}, {request.Direction}, {request.Speed}");
+                    bulletModel = new BulletModel(1, 1, request.Direction, 10);
+                    Debug.Log($"[BossPresenter] Bullet Model: {bulletModel.Velocity}");
+                    bulletManager.SpawnBullet(request.Position, bulletModel);
+                }).AddTo(this);
+        }
+        
         public void OnPhaseChanged(int phaseNumber)
         {
             Debug.Log($"[BossPresenter] Phase Changed: Phase {phaseNumber}");
