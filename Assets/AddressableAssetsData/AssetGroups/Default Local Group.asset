@@ -230,6 +230,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b60623cf88904f54482a7ed0c3235895
+    m_Address: Assets/Project/DataStore/CharacterData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b78f95b0f61462a4392d60e66ee34da9
     m_Address: Assets/Project/Textures/Images/Button/btn_stage6.png
     m_ReadOnly: 0
