@@ -46,7 +46,7 @@ namespace Project.Scripts.Repository.ModelRepository
         
         List<StageData> LoadData()
         {
-            var dataObject = Addressables.LoadAssetAsync<StageDataObject>(DataAddress).WaitForCompletion();
+            var dataObject = LoadDataObject<StageDataObject>();
             return dataObject.stageData;
         }
     }
