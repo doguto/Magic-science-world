@@ -24,7 +24,7 @@ namespace Project.Scripts.Repository.ModelRepository
             }
         }
 
-        public StageModel GetById(int stageId)
+        public StageModel GetById(string stageId)
         {
             var model = stageModels.Find(m => m.StageData.id == stageId);
             if (model != null) return model;
