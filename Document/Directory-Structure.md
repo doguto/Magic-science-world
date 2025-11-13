@@ -4,7 +4,7 @@
 
 ## プロジェクト概要
 
-- **Unity バージョン**: 6000.0.23f1
+- **Unity バージョン**: 6000.0.59f2
 - **アーキテクチャ**: MVP (Model-View-Presenter)
 - **使用技術**: UniRx, UniTask, DOTween
 
@@ -83,12 +83,12 @@ Assets/Project/Scenes/
 │       ├── Model/             # グローバルデータ
 │       ├── Presenter/         # グローバル制御
 │       └── View/              # グローバルUI
-├── QuestList/                 # クエスト一覧シーン
-│   ├── Prefabs/               # クエスト関連プレハブ
+├── StageList/                 # ステージ一覧シーン
+│   ├── Prefabs/               # ステージ関連プレハブ
 │   └── Scripts/
-│       ├── Model/             # クエストデータモデル
-│       ├── Presenter/         # クエスト管理ロジック
-│       └── View/              # クエストUI
+│       ├── Model/             # ステージデータモデル
+│       ├── Presenter/         # ステージ管理ロジック
+│       └── View/              # ステージUI
 ├── Scenario/                  # シナリオシーン
 │   └── Scripts/
 │       ├── Model/             # シナリオデータモデル

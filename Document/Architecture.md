@@ -1,4 +1,4 @@
-# Archietcture
+# Architecture
 魔科セカでのアーキテクチャについて解説を書く。
 
 ## Basis
@@ -66,9 +66,9 @@ Unityに依存する層であり、SerializeFieldでその他のコンポーネ�
 ```cs
 namespace Project.Scenes.SampleScene.Scripts.View
 {
-  public class SampleModel : IDisposable
+  public class SampleView : MonoBehaviour
   {
-    [serializeField] ButtonList buttonList;
+    [SerializeField] ButtonList buttonList;
 
     public IObservable<UniRx.Unit> OnPressedStart => buttonList.GetButtonEvent(0);
 

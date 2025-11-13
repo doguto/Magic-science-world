@@ -24,7 +24,7 @@
 - **UniRx** - リアクティブプログラミング
 - **UniTask** - 非同期処理の最適化
 - **DOTween** - トゥイーンアニメーション
-- **ZString** - 高速文字列処理
+- **ZString** - 高速文字列処理（Assets/Scripts/ZString/に配置）
 - **TextMesh Pro** - 高品質テキストレンダリング
 
 ## アーキテクチャ
