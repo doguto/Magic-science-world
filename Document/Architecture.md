@@ -1,4 +1,4 @@
-# Archietcture
+# Architecture
 魔科セカでのアーキテクチャについて解説を書く。
 
 ## Basis
@@ -66,9 +66,9 @@ Unityに依存する層であり、SerializeFieldでその他のコンポーネ�
 ```cs
 namespace Project.Scenes.SampleScene.Scripts.View
 {
-  public class SampleModel : IDisposable
+  public class SampleView : MonoBehaviour
   {
-    [serializeField] ButtonList buttonList;
+    [SerializeField] ButtonList buttonList;
 
     public IObservable<UniRx.Unit> OnPressedStart => buttonList.GetButtonEvent(0);
 
@@ -97,6 +97,126 @@ namespace Project.Scenes.SampleScene.Scripts.View
   }
 }
 ```
+
+### Repository
+Repositoryはデータの取得や永続化を担う層であり、ユーティリティクラス的な役割も持つ重要な層である。
+この層はModelとInfra層の間に位置し、データソースへのアクセスを抽象化する。
+
+Repositoryは主に2つのタイプに分かれる：
+- **AssetRepository**: Addressable Asset Systemを使ったアセット（画像、音声など）のロード処理
+- **ModelRepository**: ScriptableObjectやその他のデータソースからModelインスタンスを取得・管理
+
+この層もMonoBehaviorを継承しないピュアC#クラスとして実装される。
+
+以下にAssetRepositoryのサンプルを書く。
+```cs
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+using Cysharp.Text;
+
+namespace Project.Scripts.Repository.AssetRepository
+{
+    public class StillAssetRepository : AssetRepositoryBase
+    {
+        public Sprite Load(string charaName, bool isCrazy)
+        {
+            string address = ZString.Format(
+                "{0}/Character/{1}/Still/{1}{2}_Still.png",
+                GamePath.TexturesPath,
+                charaName,
+                isCrazy ? "_Crazy" : ""
+            );
+
+            Sprite asset = Addressables.LoadAssetAsync<Sprite>(address).WaitForCompletion();
+            return asset;
+        }
+    }
+}
+```
+
+以下にModelRepositoryのサンプルを書く。
+```cs
+using System.Collections.Generic;
+using UnityEngine.AddressableAssets;
+
+namespace Project.Scripts.Repository.ModelRepository
+{
+    public class StageModelRepository : ModelRepositoryBase
+    {
+        public static StageModelRepository Instance { get; } = new();
+        
+        readonly List<StageData> stages;
+        StageModel stageModel;
+
+        public StageModelRepository()
+        {
+            dataName = "StageData";
+            stages = LoadData();
+        }
+
+        public StageModel Get()
+        {
+            if (stageModel != null) return stageModel;
+            stageModel = new StageModel(stages);
+            return stageModel;
+        }
+
+        List<StageData> LoadData()
+        {
+            var dataObject = Addressables.LoadAssetAsync<StageDataObject>(DataAddress).WaitForCompletion();
+            return dataObject.stageData;
+        }
+    }
+}
+```
+
+Repositoryを使うことで、データの取得ロジックをModelから分離し、テスタビリティと保守性を向上させる。
+
+
+### Infra
+Infraはインフラストラクチャ層であり、永続化されたユーザーデータやゲームの設定データなど、アプリケーション全体で使用される基盤的なデータを管理する。
+
+主にファイルI/Oやデータのシリアライズ/デシリアライズを担当し、ScriptableObjectの定義などもこの層に含まれる。
+
+この層もMonoBehaviorを継承しないピュアC#クラスとして実装される。
+
+以下にサンプルのInfraクラスを書く。
+```cs
+using System.IO;
+using UnityEngine;
+
+namespace Project.Scripts.Infra
+{
+    public class UserDataModel
+    {
+        public UserData userData;
+        string saveFilePath;
+        
+        public UserDataModel()
+        {
+            saveFilePath = Path.Combine(Application.persistentDataPath, "DataStore", "saveData.json");
+            if (!File.Exists(saveFilePath))
+            {
+                userData = new UserData();
+            }
+            else
+            {
+                string json = File.ReadAllText(saveFilePath);
+                userData = JsonUtility.FromJson<UserData>(json);
+            }
+        }
+
+        public void Save()
+        {
+            string json = JsonUtility.ToJson(userData, true);
+            File.WriteAllText(saveFilePath, json);
+        }
+    }
+}
+```
+
+Infraは永続化データの管理に特化し、RepositoryはそれらのデータをModelに提供する役割を担う。
+
 
 ### Presenter
 PresenterはModelとViewを用い、具体的なゲームのロジックを記述する。
