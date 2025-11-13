@@ -22,29 +22,35 @@ namespace Project.Scripts.Repository.ModelRepository
             }
         }
 
-        public CharacterModel Get(int characterId)
+        public CharacterModel GetById(int characterId)
         {
-            var index = characterId - 1;
-            if (index < 0 || characterModels.Count <= index) return null;
-            if (characterModels.Count <= index) return characterModels[index];
+            var model = characterModels.Find(m => m.CharacterData.id == characterId);
+            if (model != null) return model;
 
-            for (var i = characterModels.Count; i < characterData.Count; i++)
-            {
-                characterModels.Add(new CharacterModel(characterData[i]));
-            }
+            var data = characterData.Find(m => m.id == characterId);
+            if (data == null) throw new Exception($"CharacterId {characterId} のキャラクターデータは存在しません.");
 
-            return characterModels[index];
+            var newModel = new CharacterModel(data);
+            characterModels.Add(newModel);
+            
+            return newModel;
         }
 
         public CharacterModel GetByName(string name)
         {
             var model = characterModels.Find(m => m.Name == name);
-            if (model == null) throw new Exception($"キャラクター名 {name} のキャラクターデータは存在しません.");
+            if (model != null) return model;
 
-            return model;
+            var data = characterData.Find(m => m.name == name);
+            if (data == null) throw new Exception($"キャラクター名 {name} のキャラクターデータは存在しません.");
+
+            var newModel = new CharacterModel(data);
+            characterModels.Add(newModel);
+            
+            return newModel;
         }
 
-        public List<CharacterModel> All() => characterModels;
+        public List<CharacterModel> GetAll() => characterModels;
 
         public void Refresh()
         {
