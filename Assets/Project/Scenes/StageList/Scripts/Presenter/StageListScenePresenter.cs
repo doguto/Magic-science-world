@@ -21,6 +21,10 @@ namespace Project.Scenes.StageList.Scripts.Presenter
         void Start()
         {
             stageCardListView.Init();
+            for (int i = 0; i < stageModels.Count; i++)
+            {
+                stageCardListView.stageCardViews[i].Setup(stageModels[i].GetIdAndTitle());
+            }
             ShowCharaImage(0);
             stageCardListView.OnButtonChanged.Subscribe(ShowCharaImage);
         }

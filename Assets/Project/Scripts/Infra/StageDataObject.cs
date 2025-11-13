@@ -13,7 +13,8 @@ namespace Project.Scripts.Infra
     [Serializable]
     public class StageData
     {
-        public int id;
+        public string id;
         public string charaStillAddress;
+        public string title;
     }
 }
