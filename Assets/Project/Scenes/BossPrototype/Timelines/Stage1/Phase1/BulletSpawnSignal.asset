@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1b34472c20455b91723e390e032a8c, type: 3}
   m_Name: BulletSpawnSignal
   m_EditorClassIdentifier: 
-  SpawnOffset: {x: 0, y: 0, z: 0}
-  Direction: {x: 0, y: 0, z: 0}
-  Speed: 0
+  Position: {x: 0, y: 0}
+  Direction: {x: -1, y: 0}
+  Speed: 0.2
