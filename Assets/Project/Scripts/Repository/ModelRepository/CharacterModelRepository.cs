@@ -32,7 +32,7 @@ namespace Project.Scripts.Repository.ModelRepository
 
             var newModel = new CharacterModel(data);
             characterModels.Add(newModel);
-            
+
             return newModel;
         }
 
