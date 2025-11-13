@@ -11,14 +11,14 @@ namespace Project.Scripts.Model
         public StageData StageData { get; }
 
         public Sprite CharaImage { get; }
-        public bool IsOpend { get; private set; }
+        public bool IsOpened { get; private set; }
         public bool IsCleared { get; private set; }
 
 
         public StageModel(StageData stageData, bool isOpened = false, bool isCleared = false)
         {
             StageData = stageData;
-            IsOpend = isOpened;
+            IsOpened = isOpened;
             IsCleared = isCleared && isOpened; // 念のため isOpened と AND する
 
             var stillAssetRepository = new StillAssetRepository();
@@ -27,12 +27,12 @@ namespace Project.Scripts.Model
 
         public void Open()
         {
-            IsOpend = true;
+            IsOpened = true;
         }
 
         public void Clear()
         {
-            if (!IsOpend) throw new Exception("ステージが開放されていません.");
+            if (!IsOpened) throw new Exception("ステージが開放されていません.");
 
             IsCleared = true;
         }
