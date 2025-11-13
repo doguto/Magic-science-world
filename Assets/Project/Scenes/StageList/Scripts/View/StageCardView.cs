@@ -10,11 +10,10 @@ namespace Project.Scenes.StageList.Scripts.View
         [SerializeField] TextMeshProUGUI stageTitle;
         [SerializeField] TextMeshProUGUI stageIndexText;
  
-        public void Setup(Tuple<string, string> stage)
+        public void Setup((string id, string title)stage)
         {
-            this.stageIndexText.text = $"Stage.{stage.Item1}";
-            this.stageTitle.text = stage.Item2;
+            stageIndexText.text = $"Stage.{stage.id}";
+            stageTitle.text = stage.title;
         }
-    }    
+    }
 }
-

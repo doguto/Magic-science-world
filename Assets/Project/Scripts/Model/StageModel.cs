@@ -38,9 +38,9 @@ namespace Project.Scripts.Model
             IsCleared = true;
         }
 
-        public Tuple<string, string> GetIdAndTitle()
+        public (string id, string title) GetIdAndTitle()
         {
-            return new Tuple<string, string>(StageData.id, StageData.title);
+            return (StageData.id, StageData.title);
         }
     }
 }
