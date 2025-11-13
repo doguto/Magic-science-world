@@ -1,9 +1,6 @@
 using System;
-using System.Collections.Generic;
 using DG.Tweening;
-using NUnit.Framework;
 using UnityEngine;
-using UniRx;
 
 namespace Project.Scenes.BossPrototype.Scripts.View
 {

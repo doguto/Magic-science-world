@@ -33,13 +33,16 @@ namespace Project.Commons.EnemyBulletPrototype.Scripts.Presenter
             );
         }
         
-        // Bossから呼ばれる
-        public void SpawnBullet(Vector2 position, BulletModel model)
+        // BulletSpawnSignalReceiverから呼ばれる
+        public void SpawnBullet(Vector2 position, Vector2 direction, float speed)
         {
             var view = simpleBulletPool.Get();
             view.transform.position = position;
             
             var presenter = new EnemyBulletPresenter();
+
+            var model = new BulletModel(1, 1, direction, 10);
+            
             presenter.Init(model, view, this); // 自分を渡す
             
             activeBullets.Add(presenter);

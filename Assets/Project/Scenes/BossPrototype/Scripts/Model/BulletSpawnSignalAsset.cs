@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Timeline;
 
-namespace Project.Scripts.Infra
+namespace Project.Scenes.BossPrototype.Scripts.Model
 {
     [CreateAssetMenu(fileName = "BulletSpawnSignal", menuName = "Signals/BulletSpawn")]
     public class BulletSpawnSignalAsset : SignalAsset
