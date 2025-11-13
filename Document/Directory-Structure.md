@@ -42,20 +42,15 @@ Assets/
 
 ```
 Assets/Project/
-├── AssemblyDifinitions/       # アセンブリ定義
-│   └── Constants/             # 定数定義アセンブリ
 ├── Commons/                   # 共通アセット
-│   ├── Prefabs/              # 共通プレハブ
-│   │   └── Player/           # プレイヤー関連プレハブ
-│   └── Scripts/              # 共通スクリプト
-│       ├── Constants/        # 定数クラス
-│       ├── Extensions/       # 拡張メソッド
-│       ├── Model/           # 共通モデル
-│       ├── Presenter/       # 共通プレゼンター
-│       └── View/            # 共通ビュー
-│           └── UI/          # UI関連ビュー
+│   ├── Button/               # ボタン関連
+│   │   └── Scripts/          # ボタンスクリプト（MVP構造）
+│   └── Player/               # プレイヤー関連
+│       ├── Prefabs/          # プレイヤープレハブ
+│       └── Scripts/          # プレイヤースクリプト（MVP構造）
 ├── DataStore/                 # データ保存領域
 ├── DeprecatedResources/       # 旧リソース（非推奨）
+├── Editor/                    # エディター拡張
 ├── Samples/                   # サンプルコード
 ├── Scenes/                    # シーン関連アセット
 ├── Scripts/                   # グローバルスクリプト
@@ -83,17 +78,17 @@ Assets/Project/Scenes/
 │       ├── Model/             # グローバルデータ
 │       ├── Presenter/         # グローバル制御
 │       └── View/              # グローバルUI
+├── Scenario/                  # シナリオシーン
+│   └── Scripts/
+│       ├── Model/             # シナリオデータモデル
+│       ├── Presenter/         # シナリオ進行制御
+│       └── View/              # シナリオUI
 ├── StageList/                 # ステージ一覧シーン
 │   ├── Prefabs/               # ステージ関連プレハブ
 │   └── Scripts/
 │       ├── Model/             # ステージデータモデル
 │       ├── Presenter/         # ステージ管理ロジック
 │       └── View/              # ステージUI
-├── Scenario/                  # シナリオシーン
-│   └── Scripts/
-│       ├── Model/             # シナリオデータモデル
-│       ├── Presenter/         # シナリオ進行制御
-│       └── View/              # シナリオUI
 └── Title/                     # タイトルシーン
     └── Scripts/
         ├── Model/             # タイトルデータモデル
@@ -114,21 +109,23 @@ Assets/Project/Scripts/
 ├── Model/                     # Model.asmdef
 ├── Presenter/                 # Presenter.asmdef
 ├── Repository/                # Repository.asmdef
+│   ├── AssetRepository/       # アセット読み込み用Repository
+│   └── ModelRepository/       # モデル管理用Repository
 └── View/                      # View.asmdef
 ```
 
-### 共通アセンブリ
+### Editor拡張
 
-```
-Assets/Project/AssemblyDifinitions/
-└── Constants/                 # Constants.asmdef
-```
-
-### Editor ディレクトリ
+プロジェクトには2つのEditor拡張ディレクトリが存在します：
 
 ```
 Assets/Editor/
 └── Novel/                     # ノベルゲーム用エディター拡張
+
+Assets/Project/Editor/
+├── CommonScaffold.cs          # 共通スキャフォールディング
+├── CreateDB.cs                # データベース作成ツール
+└── GlobalSceneAutoLoader.cs   # グローバルシーン自動読み込み
 ```
 
 ### Settings ディレクトリ
