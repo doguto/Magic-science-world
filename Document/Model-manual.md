@@ -30,13 +30,10 @@ namespace Project.Scenes.StageList.Scripts.Model
 {
     public class StageModel : ModelBase
     {
-        List<StageData> stages;
         List<Sprite> charaImages = new();
 
         public StageModel(List<StageData> stages)
         {
-            this.stages = stages;
-
             var stillAssetRepository = new StillAssetRepository();
             charaImages = stages
                 .Select(x => stillAssetRepository.Load(x.charaStillAddress, false))
@@ -57,6 +54,7 @@ namespace Project.Scenes.StageList.Scripts.Model
 - `ModelBase`を継承する
 - MonoBehaviourは継承**しない**（画面に依存しない層）
 - データはコンストラクタで受け取る（ModelRepositoryから渡される）
+- コンストラクタで受け取ったデータは、必要な情報を抽出した後は保持しない（メモリ効率のため）
 - アセットの読み込みには`AssetRepository`を使用する
 - 読み込んだアセットはキャッシュしておき、メソッドで提供する（`charaImages`）
 - データに関連するロジックはModel内に記述する（`GetCharaImage`メソッド）
@@ -379,13 +377,10 @@ namespace Project.Scenes.StageList.Scripts.Model
 {
     public class StageModel : ModelBase
     {
-        List<StageData> stages;
         List<Sprite> charaImages = new();
 
         public StageModel(List<StageData> stages)
         {
-            this.stages = stages;
-
             var stillAssetRepository = new StillAssetRepository();
             charaImages = stages
                 .Select(x => stillAssetRepository.Load(x.charaStillAddress, false))
