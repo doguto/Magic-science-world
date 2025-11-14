@@ -248,26 +248,39 @@ namespace Project.Scripts.Repository.ModelRepository
 
 ステージリスト画面のPresenterで、StageModelRepositoryを使ってStageModelを取得し、ステージ情報を表示します。
 
-#### StageListPresenterでの使用例
+#### StageListScenePresenterでの使用例
 
 ```csharp
-using Project.Scripts.Repository.ModelRepository;
+using Project.Scenes.StageList.Scripts.Model;
+using Project.Scenes.StageList.Scripts.View;
+using Project.Scripts.Presenter;
+using UniRx;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Project.Scenes.StageList.Scripts.Presenter
 {
-    public class StageListPresenter : MonoBehaviour
+    public class StageListScenePresenter : MonoPresenter
     {
-        [SerializeField] Image charaImage;
-        
+        [SerializeField] StageCardListView stageCardListView;
+
+        StageModel stageModel;
+
+        void Awake()
+        {
+            stageModel = StageModelRepository.Get();
+        }
+
         void Start()
         {
-            // StageModelRepositoryからStageModelを取得
-            var stageModel = StageModelRepository.Instance.Get();
-            
-            // ステージ1のキャラクター画像を取得して表示
-            charaImage.sprite = stageModel.GetCharaImage(1);
+            stageCardListView.Init();
+            ShowCharaImage(0);
+            stageCardListView.OnButtonChanged.Subscribe(ShowCharaImage);
+        }
+
+        void ShowCharaImage(int buttonIndex)
+        {
+            var charaImage = stageModel.GetCharaImage(buttonIndex + 1);
+            stageCardListView.SetCharaImage(charaImage);
         }
     }
 }
@@ -275,12 +288,20 @@ namespace Project.Scenes.StageList.Scripts.Presenter
 
 #### 解説
 
-1. `StageModelRepository.Instance.Get()`でStageModelを取得
-   - Instanceはシングルトンなので、どこからでも同じインスタンスにアクセス可能
-2. `stageModel.GetCharaImage(1)`でステージ1のキャラクター画像を取得
-3. UI要素に設定して表示
+1. **MonoPresenterを継承**
+   - `MonoPresenter`を継承することで、protectedプロパティ`StageModelRepository`にアクセス可能
+   - `MonoPresenter`内で`protected StageModelRepository StageModelRepository => StageModelRepository.Instance;`が定義されている
+   
+2. **Awake()でModelを取得**
+   - `StageModelRepository.Get()`でStageModelを取得
+   - `StageModelRepository`はMonoPresenterのprotectedプロパティで、内部的に`StageModelRepository.Instance`を返す
+   - Repository namespaceのimportは不要（MonoPresenterが提供するプロパティを使用）
 
-このように、PresenterはModelRepositoryを通じてModelを取得し、Modelが提供するメソッドを使ってデータを取得します。
+3. **Modelのメソッドを使用**
+   - `stageModel.GetCharaImage(buttonIndex + 1)`でキャラクター画像を取得
+   - 取得した画像をViewに設定して表示
+
+このように、PresenterはMonoPresenterを継承することでModelRepositoryへの便利なアクセス方法を得られ、Modelが提供するメソッドを使ってデータを取得します。
 
 ## 実装フロー全体例
 
@@ -424,23 +445,39 @@ namespace Project.Scripts.Repository.ModelRepository
 
 ### ステップ5: Presenterでの使用
 
-`Assets/Project/Scenes/StageList/Scripts/Presenter/StageListPresenter.cs`
+`Assets/Project/Scenes/StageList/Scripts/Presenter/StageListScenePresenter.cs`
 
 ```csharp
-using Project.Scripts.Repository.ModelRepository;
+using Project.Scenes.StageList.Scripts.Model;
+using Project.Scenes.StageList.Scripts.View;
+using Project.Scripts.Presenter;
+using UniRx;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Project.Scenes.StageList.Scripts.Presenter
 {
-    public class StageListPresenter : MonoBehaviour
+    public class StageListScenePresenter : MonoPresenter
     {
-        [SerializeField] Image charaImage;
-        
+        [SerializeField] StageCardListView stageCardListView;
+
+        StageModel stageModel;
+
+        void Awake()
+        {
+            stageModel = StageModelRepository.Get();
+        }
+
         void Start()
         {
-            var stageModel = StageModelRepository.Instance.Get();
-            charaImage.sprite = stageModel.GetCharaImage(1);
+            stageCardListView.Init();
+            ShowCharaImage(0);
+            stageCardListView.OnButtonChanged.Subscribe(ShowCharaImage);
+        }
+
+        void ShowCharaImage(int buttonIndex)
+        {
+            var charaImage = stageModel.GetCharaImage(buttonIndex + 1);
+            stageCardListView.SetCharaImage(charaImage);
         }
     }
 }
@@ -465,6 +502,40 @@ StageModelを例にした命名規則です：
 2. **データとロジックの分離**: データ構造（Data）とビジネスロジック（Model）を分離
 3. **依存性の管理**: ModelはViewやPresenterに依存しない
 4. **再利用性**: Repositoryでインスタンスを管理し、再利用を促進
+5. **MonoPresenterの活用**: PresenterはMonoPresenterを継承し、protectedプロパティ経由でRepositoryにアクセス
+
+### Presenterでの注意点
+
+#### MonoPresenterを使用する場合（推奨）
+```csharp
+public class YourPresenter : MonoPresenter
+{
+    void Awake()
+    {
+        // MonoPresenterのprotectedプロパティを使用
+        var model = StageModelRepository.Get();
+    }
+}
+```
+
+#### MonoPresenterを使用しない場合
+```csharp
+public class YourPresenter : MonoBehaviour
+{
+    void Start()
+    {
+        // 直接Instance経由でアクセス
+        var model = StageModelRepository.Instance.Get();
+    }
+}
+```
+
+MonoPresenterには以下のコメントがあります：
+```csharp
+// 代入だとMonoランタイムの起動前にStageModelRepositoryのコンストラクタが呼ばれてしまうので、
+// getterで static Instance を呼ぶ。
+protected StageModelRepository StageModelRepository => StageModelRepository.Instance;
+```
 
 ### チェックリスト
 - [ ] Modelクラスは`ModelBase`を継承しているか
@@ -474,6 +545,7 @@ StageModelを例にした命名規則です：
 - [ ] Repositoryクラスは`ModelRepositoryBase`を継承しているか
 - [ ] Repositoryクラスはシングルトンパターンを実装しているか
 - [ ] データの読み込みはAddressablesを使用しているか
+- [ ] Presenterは`MonoPresenter`を継承しているか
 - [ ] 適切なネームスペースが設定されているか
 
 ## 参考資料
