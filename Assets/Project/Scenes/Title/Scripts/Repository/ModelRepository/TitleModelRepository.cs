@@ -8,7 +8,7 @@ namespace Project.Scenes.Title.Scripts.Repository.ModelRepository
     {
         public static TitleModelRepository Instance => new();
         
-        UserModel userModel;
+        readonly UserModel userModel;
         TitleModel titleModel;
 
         public TitleModelRepository()

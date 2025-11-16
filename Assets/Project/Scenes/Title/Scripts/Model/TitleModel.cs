@@ -9,9 +9,7 @@ namespace Project.Scenes.Title.Scripts.Model
         readonly AllCharacterStillAssetRepository allCharacterStillAssetRepository = new();
 
         readonly int clearedStageAmount;
-        Sprite sprite;
-
-        public Sprite MemberStillSprite { get; private set; }
+        Sprite memberStillSprite;
 
         public TitleModel(int clearedStageAmount)
         {
@@ -21,8 +19,8 @@ namespace Project.Scenes.Title.Scripts.Model
         public Sprite GetMemberStillSprite()
         {
             var characterCount = clearedStageAmount + 1;
-            sprite ??= allCharacterStillAssetRepository.Load(characterCount);
-            return sprite;
+            memberStillSprite ??= allCharacterStillAssetRepository.Load(characterCount);
+            return memberStillSprite;
         }
     }
 }
