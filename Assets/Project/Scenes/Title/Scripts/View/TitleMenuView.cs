@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Project.Commons.Button.Scripts.View;
 using UniRx;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Project.Scenes.Title.Scripts.View
 {
@@ -10,13 +11,14 @@ namespace Project.Scenes.Title.Scripts.View
     {
         [SerializeField] ButtonList buttonList;  // 0: Start, 1: Option
         [SerializeField] List<Sprite> backgroundSprites;
-        [SerializeField] SpriteRenderer backgroundRenderer;
+        [SerializeField] SpriteRenderer memberStillRenderer;
 
         public IObservable<Unit> OnPressedStart => buttonList.GetButtonEvent(0);
         public IObservable<Unit> OnPressedExit => buttonList.GetButtonEvent(1);
 
-        public void Init()
+        public void Init(Sprite memberStillSprite)
         {
+            memberStillRenderer.sprite = memberStillSprite;
             buttonList.Init(ButtonListType.Vertical, 0, true);
         }
 
@@ -27,7 +29,7 @@ namespace Project.Scenes.Title.Scripts.View
 
         public void SetBackGround(int clearedStageAmount)
         {
-            backgroundRenderer.sprite = backgroundSprites[clearedStageAmount];
+            memberStillRenderer.sprite = backgroundSprites[clearedStageAmount];
         }
     }
 }
