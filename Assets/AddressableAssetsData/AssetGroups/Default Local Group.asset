@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: db56a748890af944684cc88fd783366d
   m_SerializeEntries:
+  - m_GUID: 04cdcc07797e6d44c87a3bbca1e46a16
+    m_Address: Assets/Project/Textures/Character/All/All_1_Still.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 06db43e4357d4214ebbbb8efdac7d111
     m_Address: Assets/Project/Textures/Character/Azuma/Face/Azuma_Crazy_Confident_Face.png
     m_ReadOnly: 0
@@ -90,6 +95,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a7f778b34986cc48ac2ae3eeec4e6cf
+    m_Address: Assets/Project/Textures/Character/All/All_3_Still.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4083414c2e696874ba12ad16d5197d5b
     m_Address: Assets/Project/Textures/Character/Sui/Still/Sui_Crazy_Still.png
     m_ReadOnly: 0
@@ -100,8 +110,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 45b630f55f3bba24a9cfe0cdd3ba9a62
+    m_Address: Assets/Project/Textures/Character/All/All_2_Still.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 46438523c643fd845a660e75b5e98c72
     m_Address: Assets/Project/Textures/Character/Kon/Face/Kon_Crazy_Face.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4804d20e9ffa95342b6f3fb6039b41fc
+    m_Address: Assets/Project/Textures/Character/All/All_6_Still.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -150,6 +170,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6c073125cc8277b49b2c4c80cf298ef0
+    m_Address: Assets/Project/Textures/Character/All/All_7_Still.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6d27de0a4b52f794f953e337a3f55451
     m_Address: Assets/Project/Textures/Character/Azuma/Face/Azuma_Smile_Face.png
     m_ReadOnly: 0
@@ -177,6 +202,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 88c3e06e7e3cfb9428216ca27dd39243
     m_Address: Assets/Project/Textures/Character/Hanare/Still/Hanare_Still.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9560f7417e5eb8d40954736dc99109b3
+    m_Address: Assets/Project/Textures/Character/All/All_5_Still.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -272,6 +302,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f0cf21d64da2e4f42aee2f5edb580bb0
     m_Address: Assets/Project/Textures/Character/Azuma/Still/Azuma_Still.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1acfec4b9e0b8a4c9a72fe2bd8a5306
+    m_Address: Assets/Project/Textures/Character/All/All_4_Still.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
