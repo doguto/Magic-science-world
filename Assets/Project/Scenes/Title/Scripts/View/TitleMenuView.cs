@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Project.Commons.Button.Scripts.View;
 using UniRx;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Project.Scenes.Title.Scripts.View
 {

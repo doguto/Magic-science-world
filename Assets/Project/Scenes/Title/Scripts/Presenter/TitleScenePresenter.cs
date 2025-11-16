@@ -1,5 +1,3 @@
-using System;
-using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using Project.Scripts.Model;
 using Project.Scenes.Title.Scripts.Model;
