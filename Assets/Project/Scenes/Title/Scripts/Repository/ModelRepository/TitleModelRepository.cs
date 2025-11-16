@@ -22,5 +22,10 @@ namespace Project.Scenes.Title.Scripts.Repository.ModelRepository
             titleModel ??= new(userModel.ClearedStageNumber);
             return titleModel;
         }
+
+        public void Refresh()
+        {
+            titleModel = null;
+        }
     }
 }

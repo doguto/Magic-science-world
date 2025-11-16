@@ -36,7 +36,9 @@ namespace Project.Scenes.Title.Scripts.Presenter
 
         async UniTask StartGame(Unit _)
         {
-            // titleModel.StartGame();
+            // TitleScene 以外で TitleModel は使用しないのでクリアする
+            titleModelRepository.Refresh(); 
+
             await SceneManager.LoadSceneAsync(SceneRouterModel.StageList, LoadSceneMode.Additive).ToUniTask();
 
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneRouterModel.StageList));
