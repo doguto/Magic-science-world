@@ -6,11 +6,11 @@ using UnityEngine.Pool;
 
 namespace Project.Commons.EnemyBulletPrototype.Scripts.Presenter
 {
-    public class BulletManager : MonoBehaviour
+    public class BulletManagerBase : MonoBehaviour
     {
-        [SerializeField] private EnemyBulletView simpleBulletPrefab;
+        [SerializeField] private EnemyBulletViewBase simpleBulletPrefab;
         
-        private ObjectPool<EnemyBulletView> simpleBulletPool;
+        private ObjectPool<EnemyBulletViewBase> simpleBulletPool;
         private List<EnemyBulletPresenter> activeBullets = new();
         
         void Start()
@@ -24,7 +24,7 @@ namespace Project.Commons.EnemyBulletPrototype.Scripts.Presenter
         }
         void InitializePool()
         {
-            simpleBulletPool = new ObjectPool<EnemyBulletView>(
+            simpleBulletPool = new ObjectPool<EnemyBulletViewBase>(
                 createFunc: () => Instantiate(simpleBulletPrefab),
                 actionOnGet: bullet => bullet.gameObject.SetActive(true),
                 actionOnRelease: bullet => bullet.gameObject.SetActive(false),
@@ -34,7 +34,7 @@ namespace Project.Commons.EnemyBulletPrototype.Scripts.Presenter
         }
         
         // BulletSpawnSignalReceiverから呼ばれる
-        public void SpawnBullet(Vector2 position, Vector2 direction, float speed)
+        public virtual void SpawnBullet(Vector2 position, Vector2 direction, float speed)
         {
             var view = simpleBulletPool.Get();
             view.transform.position = position;
@@ -49,7 +49,7 @@ namespace Project.Commons.EnemyBulletPrototype.Scripts.Presenter
         }
         
         // EnemyBulletPresenterから呼ばれる
-        public void ReturnBullet(EnemyBulletView view, EnemyBulletPresenter presenter)
+        public void ReturnBullet(EnemyBulletViewBase view, EnemyBulletPresenter presenter)
         {
             simpleBulletPool.Release(view);
             activeBullets.Remove(presenter);

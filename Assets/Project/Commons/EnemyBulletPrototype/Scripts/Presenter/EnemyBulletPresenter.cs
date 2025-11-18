@@ -9,13 +9,13 @@ namespace Project.Commons.EnemyBulletPrototype.Scripts.Presenter
     public class EnemyBulletPresenter : IDisposable
     {
         private BulletModel model;
-        private EnemyBulletView view;
-        private BulletManager bulletManager;
+        private EnemyBulletViewBase view;
+        private BulletManagerBase bulletManager;
         
         // 購読を管理するCompositeDisposable
         private CompositeDisposable disposables = new CompositeDisposable();
 
-        public void Init(BulletModel model, EnemyBulletView view, BulletManager bulletManager)
+        public void Init(BulletModel model, EnemyBulletViewBase view, BulletManagerBase bulletManager)
         {
             this.model = model;
             this.view = view;

@@ -12,7 +12,7 @@ namespace Project.Scenes.BossPrototype.Scripts.Presenter
     {
         [SerializeField] private float maxHP = 1000f;
         [SerializeField] private BossView view;
-        [SerializeField] private BulletManager bulletManager;
+        [SerializeField] private BulletManagerBase bulletManager;
         
         private BossHealthModel healthModel;
         private BossPhaseStateMachine stateMachine;

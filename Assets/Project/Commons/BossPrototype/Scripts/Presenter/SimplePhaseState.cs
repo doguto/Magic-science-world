@@ -5,15 +5,15 @@ using UnityEngine.Playables;
 
 namespace Project.Commons.BossPrototype.Scripts.Presenter
 {
-    public class SimplePhaseState: BossPhaseState
+    public class SimplePhaseState: BossPhaseStateBase
     {
         private readonly PlayableDirector timeline;
-        private readonly BossPhaseState nextState;
+        private readonly BossPhaseStateBase nextState;
         private readonly float hpThreshold;
         private readonly float timeThreshold;
         private IDisposable phaseDisposable;
         
-        public SimplePhaseState(PlayableDirector timeline, BossPhaseState nextState, float hpThreshold, float timeThreshold, BossPhaseStateMachine stateMachine) : base(stateMachine)
+        public SimplePhaseState(PlayableDirector timeline, BossPhaseStateBase nextState, float hpThreshold, float timeThreshold, BossPhaseStateMachine stateMachine) : base(stateMachine)
         {
             this.timeline = timeline;
             this.nextState = nextState;

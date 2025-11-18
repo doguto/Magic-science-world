@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Project.Commons.EnemyBulletPrototype.Scripts.View
 {
-    public class SimpleBulletView : EnemyBulletView
+    public class SimpleBulletView : EnemyBulletViewBase
     {
         protected override void UpdateMovement()
         {

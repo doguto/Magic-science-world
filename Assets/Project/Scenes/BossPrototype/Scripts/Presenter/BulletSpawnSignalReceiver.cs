@@ -10,7 +10,7 @@ namespace Project.Scenes.BossPrototype.Scripts.Presenter
 {
     public class BulletSpawnSignalReceiver : SignalReceiver
     {
-        [SerializeField] private BulletManager bulletManager;
+        [SerializeField] private BulletManagerBase bulletManager;
 
         public void OnBulletSpawn(SignalAsset signal)
         {

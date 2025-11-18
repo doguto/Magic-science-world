@@ -4,7 +4,7 @@ using System;
 
 namespace Project.Commons.EnemyBulletPrototype.Scripts.View
 {
-    public abstract class EnemyBulletView : MonoBehaviour
+    public abstract class EnemyBulletViewBase : MonoBehaviour
     {
         protected Vector3 Velocity;
         protected float remainingLifeTime;

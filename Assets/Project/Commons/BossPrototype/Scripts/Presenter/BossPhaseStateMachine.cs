@@ -6,7 +6,7 @@ namespace Project.Commons.BossPrototype.Scripts.Presenter
     public class BossPhaseStateMachine: MonoBehaviour
     {
         public BossHealthModel HealthModel { get; private set; }
-        private BossPhaseState currentState;
+        private BossPhaseStateBase currentState;
         
         public void Init(BossHealthModel healthModel)
         {
@@ -19,7 +19,7 @@ namespace Project.Commons.BossPrototype.Scripts.Presenter
             currentState.Update();
         }
 
-        public void TransitionTo(BossPhaseState newState)
+        public void TransitionTo(BossPhaseStateBase newState)
         {
             
             currentState?.Exit();
