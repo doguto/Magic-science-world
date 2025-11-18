@@ -23,7 +23,7 @@ namespace Project.Scripts.Repository.ModelRepository
             foreach (var data in stageData)
             {
                 var stageNumber = data.stageNumber;
-                stageModels.Add(new StageModel(data, UserModelRepository.Get().IsOpenedStage(stageNumber), UserModelRepository.Get().IsClearedStage(stageNumber)));
+                stageModels.Add(new StageModel(data, UserModel.IsOpenedStage(stageNumber), UserModel.IsClearedStage(stageNumber)));
             }
         }
 
@@ -35,7 +35,7 @@ namespace Project.Scripts.Repository.ModelRepository
             var data = stageData.Find(m => m.stageNumber == stageNumber);
             if (data == null) throw new Exception($"StageId {stageNumber} のデータが存在しません.");
 
-            var newModel = new StageModel(data, UserModelRepository.Get().IsOpenedStage(stageNumber), UserModelRepository.Get().IsClearedStage(stageNumber));
+            var newModel = new StageModel(data, UserModel.IsOpenedStage(stageNumber), UserModel.IsClearedStage(stageNumber));
             stageModels.Add(newModel);
             return newModel;
         }

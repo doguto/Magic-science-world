@@ -12,12 +12,12 @@ namespace Project.Scenes.Title.Scripts.Repository.ModelRepository
 
         public TitleModelRepository()
         {
-            titleModel = new(UserModelRepository.Get().ClearedStageNumber);
+            titleModel = new(UserModel.ClearedStageNumber);
         }
 
         public TitleModel Get()
         {
-            titleModel ??= new(UserModelRepository.Get().ClearedStageNumber);
+            titleModel ??= new(UserModel.ClearedStageNumber);
             return titleModel;
         }
 
