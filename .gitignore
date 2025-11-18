@@ -120,4 +120,5 @@ unity_jar_resolver/
 [Aa]ssets/Firebase/Plugins/x86_64/
 x86_64/
 
-
+# local user settings
+Assets/Project/**/UserData.json
