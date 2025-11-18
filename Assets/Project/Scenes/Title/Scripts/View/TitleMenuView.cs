@@ -8,7 +8,7 @@ namespace Project.Scenes.Title.Scripts.View
 {
     public class TitleMenuView : MonoBehaviour
     {
-        [SerializeField] ButtonList buttonList;  // 0: Start, 1: Option
+        [SerializeField] ButtonList buttonList;  // 0: Start, 1: Exit
         [SerializeField] List<Sprite> backgroundSprites;
         [SerializeField] SpriteRenderer memberStillRenderer;
 

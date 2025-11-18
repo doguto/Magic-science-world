@@ -8,18 +8,16 @@ namespace Project.Scenes.Title.Scripts.Repository.ModelRepository
     {
         public static TitleModelRepository Instance => new();
         
-        readonly UserModel userModel;
         TitleModel titleModel;
 
         public TitleModelRepository()
         {
-            userModel = UserModel.Instance;
-            titleModel = new(userModel.ClearedStageNumber);
+            titleModel = new(UserModelRepository.Get().ClearedStageNumber);
         }
 
         public TitleModel Get()
         {
-            titleModel ??= new(userModel.ClearedStageNumber);
+            titleModel ??= new(UserModelRepository.Get().ClearedStageNumber);
             return titleModel;
         }
 

@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Project.Scripts.Model;
 using UnityEngine;
 
 namespace Project.Scripts.Model
@@ -33,7 +32,7 @@ namespace Project.Scripts.Model
                     UserData data = JsonUtility.FromJson<UserData>(json);
                     UserData = data;
                 }
-                catch (System.Exception e)
+                catch (Exception e)
                 {
                     Debug.LogError("Failed to load user data: " + e.Message);
                     UserData = new UserData();
@@ -72,7 +71,7 @@ namespace Project.Scripts.Model
                 UserData data = JsonUtility.FromJson<UserData>(json);
                 return data;
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                  Debug.LogError("Failed to load user data: " + e.Message);
                  return new UserData();
@@ -91,7 +90,7 @@ namespace Project.Scripts.Model
                 string json = JsonUtility.ToJson(UserData, true);
                 File.WriteAllText(saveFilePath, json);
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 Debug.LogError("Failed to save user data: " + e.Message);
             }

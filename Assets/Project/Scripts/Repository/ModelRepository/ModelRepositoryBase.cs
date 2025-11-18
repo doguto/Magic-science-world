@@ -10,6 +10,7 @@ namespace Project.Scripts.Repository.ModelRepository
         protected string dataName = "";
         protected string DataAddress 
             => ZString.Format("{0}/{1}.asset", GamePath.DataStorepath, dataName);
+        protected UserModelRepository UserModelRepository => UserModelRepository.Instance;
 
         protected T LoadDataObject<T>()
         {
