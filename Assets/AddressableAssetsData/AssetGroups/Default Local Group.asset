@@ -190,6 +190,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7eaac3e14264447438c650991327dbfb
+    m_Address: Assets/Project/Textures/Character/All/All_8_Still.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7f78aa68e4df59548a37075a6ca50dbc
     m_Address: Assets/Project/Textures/Character/Ten/Face/Ten_Default_Face.png
     m_ReadOnly: 0
