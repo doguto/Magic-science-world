@@ -10,8 +10,8 @@ namespace Project.Commons.EnemyBulletPrototype.Scripts.Presenter
     {
         [SerializeField] private EnemyBulletViewBase simpleBulletPrefab;
         
-        private ObjectPool<EnemyBulletViewBase> simpleBulletPool;
-        private List<EnemyBulletPresenter> activeBullets = new();
+        protected ObjectPool<EnemyBulletViewBase> simpleBulletPool;
+        protected List<EnemyBulletPresenter> activeBullets = new();
         
         void Start()
         {
@@ -36,16 +36,7 @@ namespace Project.Commons.EnemyBulletPrototype.Scripts.Presenter
         // BulletSpawnSignalReceiverから呼ばれる
         public virtual void SpawnBullet(Vector2 position, Vector2 direction, float speed)
         {
-            var view = simpleBulletPool.Get();
-            view.transform.position = position;
-            
-            var presenter = new EnemyBulletPresenter();
-
-            var model = new BulletModel(1, 1, direction, 10);
-            
-            presenter.Init(model, view, this); // 自分を渡す
-            
-            activeBullets.Add(presenter);
+ 
         }
         
         // EnemyBulletPresenterから呼ばれる
