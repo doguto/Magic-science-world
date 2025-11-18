@@ -10,6 +10,8 @@ namespace Project.Scripts.Model
     {
         UserData UserData { get; set; }
         public static UserModel Instance => new();
+        
+        public int ClearedStageNumber => UserData.clearedStageNumber;
 
         readonly string saveDirectoryPath;
         readonly string saveFilePath;
@@ -45,10 +47,6 @@ namespace Project.Scripts.Model
             Save();
         }
 
-        public int GetClearedStageNumber()
-        {
-            return UserData.clearedStageNumber;
-        }
 
         public bool IsClearedStage(int stageNumber)
         {
