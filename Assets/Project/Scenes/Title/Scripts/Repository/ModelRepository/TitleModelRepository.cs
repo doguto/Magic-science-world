@@ -6,8 +6,8 @@ namespace Project.Scenes.Title.Scripts.Repository.ModelRepository
 {
     public class TitleModelRepository : ModelRepositoryBase
     {
-        public static TitleModelRepository Instance => new();
-        
+        public static TitleModelRepository Instance { get; } = new();
+
         TitleModel titleModel;
 
         public TitleModelRepository()

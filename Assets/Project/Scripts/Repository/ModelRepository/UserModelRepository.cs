@@ -4,8 +4,7 @@ namespace Project.Scripts.Repository.ModelRepository
 {
     public class UserModelRepository
     {
-        public static UserModelRepository Instance => new();
-
+        public static UserModelRepository Instance { get; } = new();
 
         UserModel userModel = new();
 
