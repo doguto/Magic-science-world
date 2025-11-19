@@ -8,8 +8,7 @@ namespace Project.Scripts.Model
     public class UserModel : ModelBase
     {
         UserData UserData { get; set; }
-        public static UserModel Instance => new();
-        
+
         public int ClearedStageNumber => UserData.clearedStageNumber;
 
         readonly string saveDirectoryPath;
