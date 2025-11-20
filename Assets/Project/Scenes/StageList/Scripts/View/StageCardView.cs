@@ -3,17 +3,16 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Project.Scenes.StageList.Scripts.View
+namespace Project.Scenes.StageList.Scripts.View;
+
+public class StageCardView : MonoBehaviour
 {
-    public class StageCardView : MonoBehaviour
+    [SerializeField] TextMeshProUGUI stageTitle;
+    [SerializeField] TextMeshProUGUI stageIndexText;
+
+    public void Setup((string id, string title)stage)
     {
-        [SerializeField] TextMeshProUGUI stageTitle;
-        [SerializeField] TextMeshProUGUI stageIndexText;
- 
-        public void Setup((string id, string title)stage)
-        {
-            stageIndexText.text = $"Stage.{stage.id}";
-            stageTitle.text = stage.title;
-        }
+        stageIndexText.text = $"Stage.{stage.id}";
+        stageTitle.text = stage.title;
     }
 }

@@ -1,9 +1,8 @@
-﻿namespace Project.Scripts.Extensions
+﻿namespace Project.Scripts.Extensions;
+
+public enum BgmType
 {
-    public enum BgmType
-    {
-        Default,
-        BattleWay,
-        BattleBoss,
-    }
+    Default,
+    BattleWay,
+    BattleBoss,
 }

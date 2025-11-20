@@ -3,8 +3,8 @@ using UnityEngine;
 using System.IO;
 using Project.Scenes.Scenario.Scripts.Model;
 
-namespace Project.Scenes.Scenario.Scripts.Model
-{
+namespace Project.Scenes.Scenario.Scripts.Model;
+
 public static class ScenarioJsonImporter
 {
     [MenuItem("Tools/Import Scenario from JSON")]
@@ -57,6 +57,5 @@ public static class ScenarioJsonImporter
     private class ScenarioLineWrapper
     {
         public ScenarioLine[] lines;
-    }
     }
 }

@@ -5,34 +5,33 @@ using Project.Scripts.Presenter;
 using UniRx;
 using UnityEngine;
 
-namespace Project.Scenes.StageList.Scripts.Presenter
+namespace Project.Scenes.StageList.Scripts.Presenter;
+
+public class StageListScenePresenter : MonoPresenter
 {
-    public class StageListScenePresenter : MonoPresenter
+    [SerializeField] StageCardListView stageCardListView;
+
+    List<StageModel> stageModels;
+
+    void Awake()
     {
-        [SerializeField] StageCardListView stageCardListView;
+        stageModels = StageModelRepository.GetAll();
+    }
 
-        List<StageModel> stageModels;
-
-        void Awake()
+    void Start()
+    {
+        stageCardListView.Init();
+        for (int i = 0; i < stageModels.Count; i++)
         {
-            stageModels = StageModelRepository.GetAll();
+            stageCardListView.stageCardViews[i].Setup(stageModels[i].GetIdAndTitle());
         }
+        ShowCharaImage(0);
+        stageCardListView.OnButtonChanged.Subscribe(ShowCharaImage);
+    }
 
-        void Start()
-        {
-            stageCardListView.Init();
-            for (int i = 0; i < stageModels.Count; i++)
-            {
-                stageCardListView.stageCardViews[i].Setup(stageModels[i].GetIdAndTitle());
-            }
-            ShowCharaImage(0);
-            stageCardListView.OnButtonChanged.Subscribe(ShowCharaImage);
-        }
-
-        void ShowCharaImage(int buttonIndex)
-        {
-            var charaImage = stageModels[buttonIndex].CharaImage;
-            stageCardListView.SetCharaImage(charaImage);
-        }
+    void ShowCharaImage(int buttonIndex)
+    {
+        var charaImage = stageModels[buttonIndex].CharaImage;
+        stageCardListView.SetCharaImage(charaImage);
     }
 }

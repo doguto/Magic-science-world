@@ -3,35 +3,34 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 
-namespace Project.Editor
+namespace Project.Editor;
+
+[InitializeOnLoad]
+public class GlobalSceneAutoLoader
 {
-    [InitializeOnLoad]
-    public class GlobalSceneAutoLoader
+    const string GlobalScenePath = "Assets/Project/Scenes/Global.unity";
+
+    static GlobalSceneAutoLoader()
     {
-        const string GlobalScenePath = "Assets/Project/Scenes/Global.unity";
+        EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
+    }
 
-        static GlobalSceneAutoLoader()
+    static void OnPlayModeStateChanged(PlayModeStateChange state)
+    {
+        if (state != PlayModeStateChange.ExitingEditMode) return;
+        EnsureGlobalSceneLoaded();
+    }
+
+    static void EnsureGlobalSceneLoaded()
+    {
+        // 既にGlobalSceneがロードされているかチェック
+        for (var i = 0; i < SceneManager.sceneCount; i++)
         {
-            EditorApplication.playModeStateChanged += OnPlayModeStateChanged;
+            var scene = SceneManager.GetSceneAt(i);
+            if (scene.name == SceneType.Global.ToSceneName()) return;
         }
 
-        static void OnPlayModeStateChanged(PlayModeStateChange state)
-        {
-            if (state != PlayModeStateChange.ExitingEditMode) return;
-            EnsureGlobalSceneLoaded();
-        }
-
-        static void EnsureGlobalSceneLoaded()
-        {
-            // 既にGlobalSceneがロードされているかチェック
-            for (var i = 0; i < SceneManager.sceneCount; i++)
-            {
-                var scene = SceneManager.GetSceneAt(i);
-                if (scene.name == SceneType.Global.ToSceneName()) return;
-            }
-
-            // GlobalSceneをAdditiveモードでロード
-            EditorSceneManager.OpenScene(GlobalScenePath, OpenSceneMode.Additive);
-        }
+        // GlobalSceneをAdditiveモードでロード
+        EditorSceneManager.OpenScene(GlobalScenePath, OpenSceneMode.Additive);
     }
 }

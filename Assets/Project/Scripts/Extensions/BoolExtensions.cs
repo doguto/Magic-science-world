@@ -1,9 +1,8 @@
 using UnityEngine;
 
-namespace Project.Commons.Scripts.Extensions
+namespace Project.Commons.Scripts.Extensions;
+
+public static class BoolExtensions
 {
-    public static class BoolExtensions
-    {
-        public static bool Not(this bool self) => !self;
-    }
+    public static bool Not(this bool self) => !self;
 }

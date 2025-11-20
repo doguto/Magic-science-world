@@ -1,8 +1,7 @@
-﻿namespace Project.Scripts.Extensions
+﻿namespace Project.Scripts.Extensions;
+
+public static class GamePath
 {
-    public static class GamePath
-    {
-        public const string TexturesPath = "Assets/Project/Textures";
-        public const string DataStorepath = "Assets/Project/DataStore";
-    }
+    public const string TexturesPath = "Assets/Project/Textures";
+    public const string DataStorepath = "Assets/Project/DataStore";
 }

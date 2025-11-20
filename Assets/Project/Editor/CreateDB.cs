@@ -152,22 +152,21 @@ public class CreateDB : EditorWindow
         sb.AppendLine("using System.Collections.Generic;");
         sb.AppendLine("using UnityEngine;");
         sb.AppendLine();
-        sb.AppendLine("namespace Project.Scripts.Infra");
-        sb.AppendLine("{");
-        sb.AppendLine($"    [CreateAssetMenu(fileName = \"{sObjectName}\", menuName = \"{menuName}\")]");
-        sb.AppendLine($"    public class {sObjectName} : ScriptableObject");
-        sb.AppendLine("    {");
-        sb.AppendLine($"        public List<{soDataName}Data> data = new();");
-        sb.AppendLine("    }");
+        sb.AppendLine("namespace Project.Scripts.Infra;");
         sb.AppendLine();
-        sb.AppendLine("    [Serializable]");
-        sb.AppendLine($"    public class {soDataName}Data");
-        sb.AppendLine("    {");
+        sb.AppendLine($"[CreateAssetMenu(fileName = \"{sObjectName}\", menuName = \"{menuName}\")]");
+        sb.AppendLine($"public class {sObjectName} : ScriptableObject");
+        sb.AppendLine("{");
+        sb.AppendLine($"    public List<{soDataName}Data> data = new();");
+        sb.AppendLine("}");
+        sb.AppendLine();
+        sb.AppendLine("[Serializable]");
+        sb.AppendLine($"public class {soDataName}Data");
+        sb.AppendLine("{");
         foreach (var column in columnFields)
         {
-            if (!column.IsNullOrEmpty) sb.AppendLine($"        public {column.type} {column.name};");
+            if (!column.IsNullOrEmpty) sb.AppendLine($"    public {column.type} {column.name};");
         }
-        sb.AppendLine("    }");
         sb.AppendLine("}");
         return sb.ToString();
     }
@@ -182,17 +181,16 @@ public class CreateDB : EditorWindow
         sb.AppendLine("using Project.Scripts.Infra;");
         sb.AppendLine("using UnityEngine.AddressableAssets;");
         sb.AppendLine();
-        sb.AppendLine("namespace Project.Scripts.Repository");
-        sb.AppendLine("{");
-        sb.AppendLine($"    public class {repositoryName} : ModelRepository");
-        sb.AppendLine("    {");
-        sb.AppendLine($"        public static {repositoryName} Instance {{ get; }} = new();");
-        sb.AppendLine($"        public {repositoryName}()");
-        sb.AppendLine("        {");
+        sb.AppendLine("namespace Project.Scripts.Repository;");
         sb.AppendLine();
-        sb.AppendLine("        }");
-        sb.AppendLine("        //必要に応じてGetとLoadData");
+        sb.AppendLine($"public class {repositoryName} : ModelRepository");
+        sb.AppendLine("{");
+        sb.AppendLine($"    public static {repositoryName} Instance {{ get; }} = new();");
+        sb.AppendLine($"    public {repositoryName}()");
+        sb.AppendLine("    {");
+        sb.AppendLine();
         sb.AppendLine("    }");
+        sb.AppendLine("    //必要に応じてGetとLoadData");
         sb.AppendLine("}");
 
         return  sb.ToString();

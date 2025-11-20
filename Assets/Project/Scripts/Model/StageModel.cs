@@ -3,43 +3,42 @@ using Project.Scripts.Infra;
 using Project.Scripts.Repository.AssetRepository;
 using UnityEngine;
 
-namespace Project.Scripts.Model
+namespace Project.Scripts.Model;
+
+public class StageModel : ModelBase
 {
-    public class StageModel : ModelBase
+    public StageData StageData { get; }
+
+    public Sprite CharaImage { get; }
+    public bool IsOpened { get; private set; }
+    public bool IsCleared { get; private set; }
+
+    
+    
+    public StageModel(StageData stageData, bool isOpened = false, bool isCleared = false)
     {
-        public StageData StageData { get; }
+        StageData = stageData;
+        IsOpened = isOpened;
+        IsCleared = isCleared && isOpened; // 念のため isOpened と AND する
 
-        public Sprite CharaImage { get; }
-        public bool IsOpened { get; private set; }
-        public bool IsCleared { get; private set; }
+        var stillAssetRepository = new StillAssetRepository();
+        CharaImage = stillAssetRepository.Load(StageData.charaStillAddress, false);
+    }
 
-        
-        
-        public StageModel(StageData stageData, bool isOpened = false, bool isCleared = false)
-        {
-            StageData = stageData;
-            IsOpened = isOpened;
-            IsCleared = isCleared && isOpened; // 念のため isOpened と AND する
+    public void Open()
+    {
+        IsOpened = true;
+    }
 
-            var stillAssetRepository = new StillAssetRepository();
-            CharaImage = stillAssetRepository.Load(StageData.charaStillAddress, false);
-        }
+    public void Clear()
+    {
+        if (!IsOpened) throw new Exception("ステージが開放されていません.");
 
-        public void Open()
-        {
-            IsOpened = true;
-        }
+        IsCleared = true;
+    }
 
-        public void Clear()
-        {
-            if (!IsOpened) throw new Exception("ステージが開放されていません.");
-
-            IsCleared = true;
-        }
-
-        public (string id, string title) GetIdAndTitle()
-        {
-            return (StageData.id, StageData.title);
-        }
+    public (string id, string title) GetIdAndTitle()
+    {
+        return (StageData.id, StageData.title);
     }
 }

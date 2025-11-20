@@ -1,6 +1,5 @@
-namespace Project.Scripts.Repository.AssetRepository
+namespace Project.Scripts.Repository.AssetRepository;
+
+public class AssetRepositoryBase
 {
-    public class AssetRepositoryBase
-    {
-    }
 }

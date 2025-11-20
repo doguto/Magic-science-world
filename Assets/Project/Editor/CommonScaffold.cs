@@ -2,71 +2,70 @@ using UnityEditor;
 using UnityEngine;
 using System.IO;
 
-namespace Project.Editor
+namespace Project.Editor;
+
+public class CommonScaffold : EditorWindow
 {
-    public class CommonScaffold : EditorWindow
+    private string scriptName = "";
+
+    [MenuItem("Tools/CommonScaffold")]
+    public static void ShowWindow()
     {
-        private string scriptName = "";
+        GetWindow<CommonScaffold>("CommonScaffold");
+    }
 
-        [MenuItem("Tools/CommonScaffold")]
-        public static void ShowWindow()
+    void OnGUI()
+    {
+        EditorGUILayout.LabelField("CommonScaffold", EditorStyles.boldLabel);
+        EditorGUIUtility.labelWidth = 250;
+        scriptName = EditorGUILayout.TextField(scriptName);
+        EditorGUILayout.LabelField("");
+        EditorGUILayout.Space(5);
+
+        if (GUILayout.Button("CommonScaffold"))
         {
-            GetWindow<CommonScaffold>("CommonScaffold");
-        }
-
-        void OnGUI()
-        {
-            EditorGUILayout.LabelField("CommonScaffold", EditorStyles.boldLabel);
-            EditorGUIUtility.labelWidth = 250;
-            scriptName = EditorGUILayout.TextField(scriptName);
-            EditorGUILayout.LabelField("");
-            EditorGUILayout.Space(5);
-
-            if (GUILayout.Button("CommonScaffold"))
+            if (string.IsNullOrEmpty(scriptName))
             {
-                if (string.IsNullOrEmpty(scriptName))
-                {
-                    EditorUtility.DisplayDialog("Error", "Please enter a folder name", "OK");
-                    return;
-                }
-
-                CreateAssemblyReferences();
-                this.Close();
+                EditorUtility.DisplayDialog("Error", "Please enter a folder name", "OK");
+                return;
             }
-        }
 
-        void CreateAssemblyReferences()
+            CreateAssemblyReferences();
+            this.Close();
+        }
+    }
+
+    void CreateAssemblyReferences()
+    {
+        const string scriptsBasePath = "Assets/Project/Commons";
+        string[] asmdefNames = { "Model", "Presenter", "View" };
+        
+        string path1 = Path.Combine(scriptsBasePath, scriptName);
+        string path2 =  Path.Combine(path1, "Scripts");
+
+        Directory.CreateDirectory(path2);
+        Directory.CreateDirectory(Path.Combine(path1, "Prefabs"));
+        foreach (string asmdefName in asmdefNames)
         {
-            const string scriptsBasePath = "Assets/Project/Commons";
-            string[] asmdefNames = { "Model", "Presenter", "View" };
-            
-            string path1 = Path.Combine(scriptsBasePath, scriptName);
-            string path2 =  Path.Combine(path1, "Scripts");
-
-            Directory.CreateDirectory(path2);
-            Directory.CreateDirectory(Path.Combine(path1, "Prefabs"));
-            foreach (string asmdefName in asmdefNames)
+            string subFolderPath = Path.Combine(path2, asmdefName);
+            if (Directory.Exists(subFolderPath))
             {
-                string subFolderPath = Path.Combine(path2, asmdefName);
-                if (Directory.Exists(subFolderPath))
-                {
-                    Debug.LogWarning($"{asmdefName} already exists");
-                    continue;
-                }
-                Directory.CreateDirectory(subFolderPath);
-                
-                string asmrefPath = Path.Combine(subFolderPath, asmdefName+".asmref");
-
-                string asmrefContent = 
-                    $@"{{
-                        ""reference"": ""{asmdefName}""
-                    }}";
-                File.WriteAllText(asmrefPath, asmrefContent);
-                Debug.Log($"Created asmref: {asmrefPath}");
+                Debug.LogWarning($"{asmdefName} already exists");
+                continue;
             }
+            Directory.CreateDirectory(subFolderPath);
             
-            AssetDatabase.Refresh();
-            EditorUtility.DisplayDialog("Done", $"Assembly References for '{scriptName}' Created!" , "OK");
+            string asmrefPath = Path.Combine(subFolderPath, asmdefName+".asmref");
+
+            string asmrefContent = 
+                $@"{{
+                    ""reference"": ""{asmdefName}""
+                }}";
+            File.WriteAllText(asmrefPath, asmrefContent);
+            Debug.Log($"Created asmref: {asmrefPath}");
         }
+        
+        AssetDatabase.Refresh();
+        EditorUtility.DisplayDialog("Done", $"Assembly References for '{scriptName}' Created!" , "OK");
     }
 }

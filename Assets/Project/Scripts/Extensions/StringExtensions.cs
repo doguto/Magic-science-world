@@ -1,10 +1,9 @@
-namespace Project.Commons.Scripts.Extensions
+namespace Project.Commons.Scripts.Extensions;
+
+public static class StringExtensions
 {
-    public static class StringExtensions
+    public static bool IsNullOrEmpty(this string str)
     {
-        public static bool IsNullOrEmpty(this string str)
-        {
-            return string.IsNullOrEmpty(str);
-        }
+        return string.IsNullOrEmpty(str);
     }
 }

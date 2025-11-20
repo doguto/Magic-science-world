@@ -8,48 +8,47 @@ using UniRx;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Project.Scenes.Title.Scripts.Presenter
+namespace Project.Scenes.Title.Scripts.Presenter;
+
+public class TitleScenePresenter : MonoPresenter
 {
-    public class TitleScenePresenter : MonoPresenter
+    [SerializeField] TitleMenuView titleMenuView;
+
+    TitleModelRepository titleModelRepository;
+
+    TitleModel titleModel;
+
+    void Awake()
     {
-        [SerializeField] TitleMenuView titleMenuView;
+        titleModelRepository = TitleModelRepository.Instance;
+        titleModel = titleModelRepository.Get();
+        
+        titleMenuView.Init(titleModel.GetMemberStillSprite());
+    }
 
-        TitleModelRepository titleModelRepository;
+    void Start()
+    {
+        titleMenuView.OnPressedStart.Subscribe(x => StartGame(x).Forget());
+        titleMenuView.OnPressedExit.Subscribe(ExitGame);
+    }
 
-        TitleModel titleModel;
+    async UniTask StartGame(Unit _)
+    {
+        // TitleScene 以外で TitleModel は使用しないのでクリアする
+        titleModelRepository.Refresh(); 
 
-        void Awake()
-        {
-            titleModelRepository = TitleModelRepository.Instance;
-            titleModel = titleModelRepository.Get();
-            
-            titleMenuView.Init(titleModel.GetMemberStillSprite());
-        }
+        await SceneManager.LoadSceneAsync(SceneRouterModel.StageList, LoadSceneMode.Additive).ToUniTask();
 
-        void Start()
-        {
-            titleMenuView.OnPressedStart.Subscribe(x => StartGame(x).Forget());
-            titleMenuView.OnPressedExit.Subscribe(ExitGame);
-        }
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneRouterModel.StageList));
+        SceneManager.UnloadSceneAsync(gameObject.scene.name);
+    }
 
-        async UniTask StartGame(Unit _)
-        {
-            // TitleScene 以外で TitleModel は使用しないのでクリアする
-            titleModelRepository.Refresh(); 
-
-            await SceneManager.LoadSceneAsync(SceneRouterModel.StageList, LoadSceneMode.Additive).ToUniTask();
-
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName(SceneRouterModel.StageList));
-            SceneManager.UnloadSceneAsync(gameObject.scene.name);
-        }
-
-        void ExitGame(Unit _)
-        {
+    void ExitGame(Unit _)
+    {
 #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
+        UnityEditor.EditorApplication.isPlaying = false;
 #else
-            Application.Quit(); //ゲームプレイ終了
+        Application.Quit(); //ゲームプレイ終了
 #endif
-        }
     }
 }
