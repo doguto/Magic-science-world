@@ -11,6 +11,7 @@ namespace Project.Scripts.Repository.ModelRepository
         protected string dataName = "";
         protected string DataAddress 
             => ZString.Format("{0}/{1}.asset", GamePath.DataStorepath, dataName);
+
         protected UserModel UserModel => UserModelRepository.Instance.Get();
 
         protected T LoadDataObject<T>()
