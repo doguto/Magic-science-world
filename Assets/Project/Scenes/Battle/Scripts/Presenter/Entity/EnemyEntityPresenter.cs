@@ -96,6 +96,7 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
         CancellationTokenSource lifetimeCts;
         readonly CompositeDisposable disposables = new();
         IDisposable damageFlashSubscription;
+        IDisposable attackTimingSubscription;
         bool isEnteredScreen = false;
 
         public EnemyEntityModel Model => model;
@@ -138,10 +139,7 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
 
             InitializeDeathAttackEntry(getPlayerPos);
 
-            model.AttackStrategy?.OnAttackTiming
-                 .TakeUntil(model.OnDeath)
-                 .Subscribe(ev => HandleAttackEvent(ev))
-                 .AddTo(disposables);
+            SubscribeAttackTiming();
 
             model.OnDeath
                  .Subscribe(_ => HandleDeath())
@@ -215,6 +213,42 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
         {
             await UniTask.Delay(TimeSpan.FromSeconds(lifetime), cancellationToken: ct);
             Destroy(gameObject);
+        }
+
+        /// <summary>
+        /// Initialize後に外部から動きを差し替える。Timeline経由/Attack経由のスポーンで使用。
+        /// StartMovementSequenceが内部でStopMovementするため、Initialize直後に呼んでも安全。
+        /// </summary>
+        public void OverrideMovement(MovementPreset preset)
+        {
+            if (preset == null) return;
+            StartMovementSequence(preset.Steps, GetComponent<Animator>());
+        }
+
+        /// <summary>
+        /// Initialize後に外部から攻撃パターンを差し替える。Timeline経由のスポーンで使用。
+        /// AttackTimelineは内部にSubject/タイマー購読を持つため、差し替え前に旧StrategyをDisposeして後始末する。
+        /// </summary>
+        public void OverrideAttack(AttackPreset preset)
+        {
+            if (preset == null) return;
+
+            model.AttackStrategy?.Dispose();
+
+            var timeline = preset.CreateTimeline();
+            Func<Vector3> getPlayerPos = () => playerPresenter != null ? playerPresenter.transform.position : Vector3.zero;
+            timeline?.InitializeProviders(getPlayerPos, () => transform.position, () => transform.rotation);
+
+            model.SetAttackStrategy(timeline);
+            SubscribeAttackTiming();
+        }
+
+        void SubscribeAttackTiming()
+        {
+            attackTimingSubscription?.Dispose();
+            attackTimingSubscription = model.AttackStrategy?.OnAttackTiming
+                .TakeUntil(model.OnDeath)
+                .Subscribe(ev => HandleAttackEvent(ev));
         }
 
         void StartMovementSequence(IReadOnlyList<IMovementStep> steps, Animator animator)
@@ -335,9 +369,10 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
                 var instance = Instantiate(prefab);
                 instance.transform.SetPositionAndRotation(transform.position + (Vector3)ev.SpawnOffsets[i], GetRotationAt(ev, i));
 
-                if (enemyTracker != null && instance.TryGetComponent<EnemyEntityPresenter>(out var enemyPresenter))
+                if (instance.TryGetComponent<EnemyEntityPresenter>(out var enemyPresenter))
                 {
-                    enemyTracker.RegisterEnemy(enemyPresenter);
+                    if (ev.MovementOverride != null) enemyPresenter.OverrideMovement(ev.MovementOverride);
+                    enemyTracker?.RegisterEnemy(enemyPresenter);
                 }
             }
         }
@@ -392,6 +427,8 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
             lifetimeCts = null;
             damageFlashSubscription?.Dispose();
             damageFlashSubscription = null;
+            attackTimingSubscription?.Dispose();
+            attackTimingSubscription = null;
             disposables.Dispose();
             model?.Dispose();
             model?.AttackStrategy?.Dispose();

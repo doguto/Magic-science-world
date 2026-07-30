@@ -346,9 +346,10 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
                 var instance = Instantiate(prefab);
                 instance.transform.SetPositionAndRotation(transform.position + (Vector3)ev.SpawnOffsets[i], GetRotationAt(ev, i));
 
-                if (enemyTracker != null && instance.TryGetComponent<EnemyEntityPresenter>(out var enemyPresenter))
+                if (instance.TryGetComponent<EnemyEntityPresenter>(out var enemyPresenter))
                 {
-                    enemyTracker.RegisterEnemy(enemyPresenter);
+                    if (ev.MovementOverride != null) enemyPresenter.OverrideMovement(ev.MovementOverride);
+                    enemyTracker?.RegisterEnemy(enemyPresenter);
                 }
             }
         }
