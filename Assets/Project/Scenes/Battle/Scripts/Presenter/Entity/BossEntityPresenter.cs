@@ -195,7 +195,7 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
             }
 
             Func<Vector3> getPlayerPos = () => playerPresenter != null ? playerPresenter.transform.position : Vector3.zero;
-            attackTimeline.InitializeProviders(getPlayerPos, () => transform.position, () => transform.rotation);
+            attackTimeline.InitializeProviders(getPlayerPos, () => transform.position, () => transform.rotation, model.CurrentHp, model.MaxHp);
             model.SetAttackStrategy(attackTimeline);
 
             model.AttackStrategy.OnAttackTiming

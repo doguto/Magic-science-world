@@ -132,7 +132,7 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
 
             if (timeline != null)
             {
-                timeline.InitializeProviders(getPlayerPos, () => transform.position, () => transform.rotation);
+                timeline.InitializeProviders(getPlayerPos, () => transform.position, () => transform.rotation, model.CurrentHp, model.MaxHp);
             }
 
             model.SetAttackStrategy(timeline);
@@ -237,7 +237,7 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
 
             var timeline = preset.CreateTimeline();
             Func<Vector3> getPlayerPos = () => playerPresenter != null ? playerPresenter.transform.position : Vector3.zero;
-            timeline?.InitializeProviders(getPlayerPos, () => transform.position, () => transform.rotation);
+            timeline?.InitializeProviders(getPlayerPos, () => transform.position, () => transform.rotation, model.CurrentHp, model.MaxHp);
 
             model.SetAttackStrategy(timeline);
             SubscribeAttackTiming();

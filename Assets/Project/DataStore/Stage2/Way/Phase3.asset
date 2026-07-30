@@ -22,22 +22,22 @@ MonoBehaviour:
     clips:
     - time: 0
       spawnPosition: {x: 10, y: -1.5, z: 0}
-      prefab: {fileID: 8647684210669646231, guid: 37e28616ac705cc45b77ecef95bd48df, type: 3}
+      prefab: {fileID: 8647684210669646231, guid: 4c40774bba98e4e4eacffe8677ff00bf, type: 3}
       movementOverride: {fileID: 11400000, guid: aabf1ef9ebf6db04bbdf76538bb0dd2a, type: 2}
       attackOverride: {fileID: 11400000, guid: b623ede575f513c4ca0af91f29490a3c, type: 2}
     - time: 1.5
       spawnPosition: {x: 10, y: -1.5, z: 0}
-      prefab: {fileID: 8647684210669646231, guid: 37e28616ac705cc45b77ecef95bd48df, type: 3}
+      prefab: {fileID: 8647684210669646231, guid: 4c40774bba98e4e4eacffe8677ff00bf, type: 3}
       movementOverride: {fileID: 11400000, guid: aabf1ef9ebf6db04bbdf76538bb0dd2a, type: 2}
       attackOverride: {fileID: 11400000, guid: b623ede575f513c4ca0af91f29490a3c, type: 2}
     - time: 3
       spawnPosition: {x: 10, y: 1.5, z: 0}
-      prefab: {fileID: 8647684210669646231, guid: 37e28616ac705cc45b77ecef95bd48df, type: 3}
+      prefab: {fileID: 8647684210669646231, guid: 4c40774bba98e4e4eacffe8677ff00bf, type: 3}
       movementOverride: {fileID: 11400000, guid: aabf1ef9ebf6db04bbdf76538bb0dd2a, type: 2}
       attackOverride: {fileID: 11400000, guid: b623ede575f513c4ca0af91f29490a3c, type: 2}
     - time: 4.5
       spawnPosition: {x: 10, y: 1.5, z: 0}
-      prefab: {fileID: 8647684210669646231, guid: 37e28616ac705cc45b77ecef95bd48df, type: 3}
+      prefab: {fileID: 8647684210669646231, guid: 4c40774bba98e4e4eacffe8677ff00bf, type: 3}
       movementOverride: {fileID: 11400000, guid: aabf1ef9ebf6db04bbdf76538bb0dd2a, type: 2}
       attackOverride: {fileID: 11400000, guid: b623ede575f513c4ca0af91f29490a3c, type: 2}
   bulletClearTracks: []
