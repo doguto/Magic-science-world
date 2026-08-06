@@ -24,6 +24,8 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
         int maxHp = 50;
 
         [SerializeField] int contactDamage = 10;
+        [Tooltip("ONにすると通常攻撃は無効（被ダメージ0）、チャージ攻撃のみ有効")]
+        [SerializeField] bool onlyChargeDamageable = false;
         [SerializeField] float lifetime = 0f;
 
         [Header("Movement")] [SerializeField] MovementPreset movementPreset;
@@ -112,7 +114,7 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
         public void Initialize(Vector3 spawnPosition)
         {
             transform.position = spawnPosition;
-            model = new EnemyEntityModel(maxHp, contactDamage);
+            model = new EnemyEntityModel(maxHp, contactDamage, onlyChargeDamageable);
 
             var animator = GetComponent<Animator>();
 
