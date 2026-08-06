@@ -250,6 +250,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 63507cda052644a43b7e3a4b612b0dd1
+    m_Address: Assets/Project/DataStore/Stage3/Way/Stage3Way.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6518d621495bc694caacbd299c5ec9e8
     m_Address: Assets/Project/Textures/Character/Ten/Face/Ten_Angly_Face.png
     m_ReadOnly: 0
@@ -257,6 +262,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 66bc90fdc161f9845bbfc210d2bc42f0
     m_Address: Assets/Project/Textures/Character/Azuma/Face/Azuma_Crazy_Face.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 69df4aba8c77792439850f95631e8ea5
+    m_Address: Assets/Project/DataStore/Stage3/Way/Stage3WayScenario.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
