@@ -13,7 +13,7 @@ namespace Project.Scenes.Battle.Scripts.Model.Entity
 
         public override bool IsPlayer => false;
 
-        bool IsPlayerChargeBullet { get; set; }
+        public bool IsPlayerChargeBullet { get; private set; }
 
         public int Damage { get; private set; }
 
