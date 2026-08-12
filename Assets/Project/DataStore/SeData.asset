@@ -53,3 +53,7 @@ MonoBehaviour:
     seType: 10
     loopStartSamples: 0
     loopEndSamples: 0
+  - name: Metal
+    seType: 11
+    loopStartSamples: 0
+    loopEndSamples: 0
