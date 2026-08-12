@@ -110,11 +110,12 @@ MonoBehaviour:
   enemySpawnPrefabs: []
   attackPreset: {fileID: 0}
   attackTimeline:
-    loop: 0
-    loopStart: 0
-    loopEnd: 5
-    cycleDuration: 2
-    entries: []
+    phases:
+    - loop: 0
+      loopStart: 0
+      loopEnd: 5
+      cycleDuration: 2
+      entries: []
   view: {fileID: 5041210401996759946}
   spriteRenderer: {fileID: 6449588308833420115}
   references:

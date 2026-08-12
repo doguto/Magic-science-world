@@ -110,31 +110,32 @@ MonoBehaviour:
   enemySpawnPrefabs: []
   attackPreset: {fileID: 0}
   attackTimeline:
-    loop: 0
-    loopStart: 0
-    loopEnd: 5
-    cycleDuration: 2
-    entries:
-    - time: 1
-      signal:
-        rid: 8577112587349262617
-      directionProvider:
-        rid: 8577112587349262582
-      rotationProvider:
-        rid: 1000
-      sourceIndexProvider:
-        rid: 1001
-      seType: 0
-    - time: 3
-      signal:
-        rid: 8577112587349262618
-      directionProvider:
-        rid: 8577112587349262592
-      rotationProvider:
-        rid: 1002
-      sourceIndexProvider:
-        rid: 1003
-      seType: 0
+    phases:
+    - loop: 0
+      loopStart: 0
+      loopEnd: 5
+      cycleDuration: 2
+      entries:
+      - time: 1
+        signal:
+          rid: 8577112587349262617
+        directionProvider:
+          rid: 8577112587349262582
+        rotationProvider:
+          rid: 1000
+        sourceIndexProvider:
+          rid: 1001
+        seType: 0
+      - time: 3
+        signal:
+          rid: 8577112587349262618
+        directionProvider:
+          rid: 8577112587349262592
+        rotationProvider:
+          rid: 1002
+        sourceIndexProvider:
+          rid: 1003
+        seType: 0
   view: {fileID: 5041210401996759946}
   spriteRenderer: {fileID: 6449588308833420115}
   references:
