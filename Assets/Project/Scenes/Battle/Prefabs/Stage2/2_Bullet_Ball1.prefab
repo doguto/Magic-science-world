@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4330750818476369800}
   - component: {fileID: -4487681364143076941}
   m_Layer: 10
-  m_Name: Bullet_Ball1
+  m_Name: 2_Bullet_Ball1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,4 +172,4 @@ MonoBehaviour:
     - rid: 3310600040644083822
       type: {class: InfiniteMovementConfig, ns: Project.Scenes.Battle.Scripts.Model.Movement, asm: Model}
       data:
-        velocity: {x: -1, y: 0, z: 0}
+        velocity: {x: -1.2, y: 0, z: 0}
