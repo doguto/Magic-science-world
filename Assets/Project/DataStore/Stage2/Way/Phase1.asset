@@ -21,17 +21,15 @@ MonoBehaviour:
   - trackName: EnemySpawn
     clips:
     - time: 2.5
-      spawnPosition: {x: 10, y: -3, z: 0}
-      prefab: {fileID: 8647684210669646231, guid: 37e28616ac705cc45b77ecef95bd48df, type: 3}
-    - time: 3.5
-      spawnPosition: {x: 10, y: -1, z: 0}
-      prefab: {fileID: 8647684210669646231, guid: 37e28616ac705cc45b77ecef95bd48df, type: 3}
+      spawnPosition: {x: 10, y: -2, z: 0}
+      prefab: {fileID: 8647684210669646231, guid: 4c40774bba98e4e4eacffe8677ff00bf, type: 3}
+      movementOverride: {fileID: 11400000, guid: 1c50aad9f0cdfe94d97d2c455547084b, type: 2}
+      attackOverride: {fileID: 0}
     - time: 4.5
-      spawnPosition: {x: 10, y: 1, z: 0}
-      prefab: {fileID: 8647684210669646231, guid: 37e28616ac705cc45b77ecef95bd48df, type: 3}
-    - time: 5.5
-      spawnPosition: {x: 10, y: 3, z: 0}
-      prefab: {fileID: 8647684210669646231, guid: 37e28616ac705cc45b77ecef95bd48df, type: 3}
+      spawnPosition: {x: 10, y: 2, z: 0}
+      prefab: {fileID: 8647684210669646231, guid: 4c40774bba98e4e4eacffe8677ff00bf, type: 3}
+      movementOverride: {fileID: 11400000, guid: 1c50aad9f0cdfe94d97d2c455547084b, type: 2}
+      attackOverride: {fileID: 0}
   bulletClearTracks: []
   bossAttackPreset: {fileID: 0}
   bossMovementPreset: {fileID: 0}

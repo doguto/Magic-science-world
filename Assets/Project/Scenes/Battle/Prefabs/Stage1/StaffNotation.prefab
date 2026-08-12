@@ -1226,51 +1226,52 @@ MonoBehaviour:
   enemySpawnPrefabs: []
   attackPreset: {fileID: 0}
   attackTimeline:
-    loop: 1
-    loopStart: 1
-    loopEnd: 20
-    cycleDuration: 0.9
-    entries:
-    - time: 0
-      signal:
-        rid: 454447997575757908
-      directionProvider:
-        rid: 454448117209104624
-      rotationProvider:
-        rid: 1000
-      sourceIndexProvider:
-        rid: 454448117209104486
-      seType: 3
-    - time: 0.15
-      signal:
-        rid: 454448093581279431
-      directionProvider:
-        rid: 454448117209104626
-      rotationProvider:
-        rid: 1001
-      sourceIndexProvider:
-        rid: 454448117209104489
-      seType: 3
-    - time: 0.3
-      signal:
-        rid: 454448093581279357
-      directionProvider:
-        rid: 454448117209104628
-      rotationProvider:
-        rid: 1002
-      sourceIndexProvider:
-        rid: 454448117209104496
-      seType: 3
-    - time: 0.45
-      signal:
-        rid: 454448093581279424
-      directionProvider:
-        rid: 454448117209104630
-      rotationProvider:
-        rid: 1003
-      sourceIndexProvider:
-        rid: 454448117209104498
-      seType: 3
+    phases:
+    - loop: 1
+      loopStart: 1
+      loopEnd: 20
+      cycleDuration: 0.9
+      entries:
+      - time: 0
+        signal:
+          rid: 454447997575757908
+        directionProvider:
+          rid: 454448117209104624
+        rotationProvider:
+          rid: 1000
+        sourceIndexProvider:
+          rid: 454448117209104486
+        seType: 3
+      - time: 0.15
+        signal:
+          rid: 454448093581279431
+        directionProvider:
+          rid: 454448117209104626
+        rotationProvider:
+          rid: 1001
+        sourceIndexProvider:
+          rid: 454448117209104489
+        seType: 3
+      - time: 0.3
+        signal:
+          rid: 454448093581279357
+        directionProvider:
+          rid: 454448117209104628
+        rotationProvider:
+          rid: 1002
+        sourceIndexProvider:
+          rid: 454448117209104496
+        seType: 3
+      - time: 0.45
+        signal:
+          rid: 454448093581279424
+        directionProvider:
+          rid: 454448117209104630
+        rotationProvider:
+          rid: 1003
+        sourceIndexProvider:
+          rid: 454448117209104498
+        seType: 3
   view: {fileID: -5052378354668323182}
   spriteRenderer: {fileID: 6160948689302496514}
   references:
