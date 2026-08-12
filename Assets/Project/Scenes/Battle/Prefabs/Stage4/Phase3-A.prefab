@@ -110,11 +110,12 @@ MonoBehaviour:
   enemySpawnPrefabs: []
   attackPreset: {fileID: 0}
   attackTimeline:
-    loop: 1
-    loopStart: 2
-    loopEnd: 15
-    cycleDuration: 0.75
-    entries: []
+    phases:
+    - loop: 1
+      loopStart: 2
+      loopEnd: 15
+      cycleDuration: 0.75
+      entries: []
   deathAttackEntry:
     time: 0
     signal:

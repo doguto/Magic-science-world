@@ -19,5 +19,5 @@ MonoBehaviour:
   controlTracks: []
   enemySpawnTracks: []
   bulletClearTracks: []
-  bossAttackPreset: {fileID: 11400000, guid: 0c9f593ce8fcd8d47909b9a8aad3a905, type: 2}
-  bossMovementPreset: {fileID: 11400000, guid: a200aaca8e724ea40babb14fea341d5b, type: 2}
+  bossAttackPreset: {fileID: 11400000, guid: b623ede575f513c4ca0af91f29490a3c, type: 2}
+  bossMovementPreset: {fileID: 0}

@@ -112,51 +112,52 @@ MonoBehaviour:
   - {fileID: 7074045735317373604, guid: 0a45ad7ef98a2c34186a45adfdcbf7e9, type: 3}
   attackPreset: {fileID: 0}
   attackTimeline:
-    loop: 0
-    loopStart: 2
-    loopEnd: 15
-    cycleDuration: 0.75
-    entries:
-    - time: 2
-      signal:
-        rid: 2259957373586637400
-      directionProvider:
-        rid: 2259957373586637405
-      rotationProvider:
-        rid: 2259957373586636942
-      sourceIndexProvider:
-        rid: 2259957373586637410
-      seType: 11
-    - time: 4
-      signal:
-        rid: 2259957373586637526
-      directionProvider:
-        rid: 2259957373586637527
-      rotationProvider:
-        rid: 2259957373586637528
-      sourceIndexProvider:
-        rid: 2259957373586637529
-      seType: 11
-    - time: 6
-      signal:
-        rid: 2259957373586637534
-      directionProvider:
-        rid: 2259957373586637535
-      rotationProvider:
-        rid: 2259957373586637536
-      sourceIndexProvider:
-        rid: 2259957373586637537
-      seType: 11
-    - time: 8
-      signal:
-        rid: 2259957373586637542
-      directionProvider:
-        rid: 2259957373586637543
-      rotationProvider:
-        rid: 2259957373586637544
-      sourceIndexProvider:
-        rid: 2259957373586637545
-      seType: 11
+    phases:
+    - loop: 0
+      loopStart: 2
+      loopEnd: 15
+      cycleDuration: 0.75
+      entries:
+      - time: 2
+        signal:
+          rid: 2259957373586637400
+        directionProvider:
+          rid: 2259957373586637405
+        rotationProvider:
+          rid: 2259957373586636942
+        sourceIndexProvider:
+          rid: 2259957373586637410
+        seType: 11
+      - time: 4
+        signal:
+          rid: 2259957373586637526
+        directionProvider:
+          rid: 2259957373586637527
+        rotationProvider:
+          rid: 2259957373586637528
+        sourceIndexProvider:
+          rid: 2259957373586637529
+        seType: 11
+      - time: 6
+        signal:
+          rid: 2259957373586637534
+        directionProvider:
+          rid: 2259957373586637535
+        rotationProvider:
+          rid: 2259957373586637536
+        sourceIndexProvider:
+          rid: 2259957373586637537
+        seType: 11
+      - time: 8
+        signal:
+          rid: 2259957373586637542
+        directionProvider:
+          rid: 2259957373586637543
+        rotationProvider:
+          rid: 2259957373586637544
+        sourceIndexProvider:
+          rid: 2259957373586637545
+        seType: 11
   deathAttackEntry:
     time: 0
     signal:
