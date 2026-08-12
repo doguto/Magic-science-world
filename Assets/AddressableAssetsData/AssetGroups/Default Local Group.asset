@@ -30,6 +30,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0754f89a18388834ab7f45911b6fcfd9
+    m_Address: Assets/Project/Textures/Character/Ushitora/Dot/Ushitora_Dot.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 07b0eb18ea681014d8b5f36097ef0e3b
     m_Address: Assets/Project/Textures/Character/Azuma/Face/Azuma_Smile_Face.png
     m_ReadOnly: 0
@@ -37,6 +42,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 08048779db14a874895374c5bdd60704
     m_Address: Assets/Project/Textures/Character/Sui/Face/Sui_Crazy_Additional_Face.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0a069339f4caace4ab23485585742b38
+    m_Address: Assets/Project/DataStore/Stage4/Boss/Stage4BossScenario.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -82,6 +92,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1ec4915f5d3a0f5468edd7edd102cc45
     m_Address: Assets/Project/Textures/Sounds/Bgm/StageEx_Phase1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20c5c30a445bb3141b4a03dd2de34061
+    m_Address: Assets/Project/Textures/Character/Ushitora/Dot/Ushitora_Attack_Dot.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -155,8 +170,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3bc24ef949925c4428f06c0aa0ca305d
+    m_Address: Assets/Project/DataStore/Stage4/Way/Stage4WayScenario.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4083414c2e696874ba12ad16d5197d5b
     m_Address: Assets/Project/Textures/Character/Sui/Still/Sui_Crazy_Still.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 43a9e83c9fbf93446b8a43d877c8796b
+    m_Address: Assets/Project/Textures/Sounds/Se/Metal
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -425,6 +450,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b335777400934aa41a46e10fb9f8976c
+    m_Address: Assets/Project/DataStore/Stage4/Way/Stage4Way.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b547cf80e35773a4baf5ac4209d10193
     m_Address: Assets/Project/Textures/Sounds/Bgm/Stage5_BattleBoss
     m_ReadOnly: 0
@@ -440,6 +470,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b8818cef2917f2749ba24751751dd54e
+    m_Address: Assets/Project/DataStore/Stage4/Boss/Stage4Boss.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b8e31e6d77d67944d89fa5933e9eaaa1
     m_Address: Assets/Project/DataStore/Stage2/Way/Stage2Way.asset
     m_ReadOnly: 0
@@ -447,6 +482,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ba3094f99685567418497d1026535a42
     m_Address: Assets/Project/Textures/Images/BackGround/BackGround_7.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bd024f4d36664ba48a6d02019ddb5d0f
+    m_Address: Assets/Project/Textures/Sounds/Bgm/Stage4_BattleBoss
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -587,11 +627,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fae7d074caadb584087f71d23765722c
     m_Address: Assets/Project/Textures/Images/BackGround/title_background_enlabeled.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fdb02c29c9f9ebc408c0893225f8c401
-    m_Address: Assets/Project/Textures/Sounds/Bgm/Stage4_BattleBoss
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

@@ -39,8 +39,8 @@ MonoBehaviour:
     charaStillAddress: Ushitora
     backgroundAddress: Assets/Project/Textures/Images/BackGround/BackGround_4.png
     title: "\u4E11\u4E09\u30C4\u523B\u3001\u6697\u591C\u306E\u90FD\u5E02\u306B\u3066"
-    waySequenceAddress: 
-    bossSequenceAddress: 
+    waySequenceAddress: Assets/Project/DataStore/Stage4/Way/Stage4Way.asset
+    bossSequenceAddress: Assets/Project/DataStore/Stage4/Boss/Stage4Boss.asset
   - id: 5
     stageNumber: 5
     charaStillAddress: Sui
