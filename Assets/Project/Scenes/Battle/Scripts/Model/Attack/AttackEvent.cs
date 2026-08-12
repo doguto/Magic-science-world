@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Project.Scenes.Battle.Scripts.Model.Movement;
 using Project.Scripts.Extensions;
 using UnityEngine;
 
@@ -19,8 +20,9 @@ namespace Project.Scenes.Battle.Scripts.Model.Attack
         public readonly IReadOnlyList<Vector2> Directions;
         public readonly IReadOnlyList<Vector2> SpawnOffsets;
         public readonly IReadOnlyList<Quaternion> Rotations;
+        public readonly MovementPreset MovementOverride;
 
-        public AttackEvent(AttackEventType type, IReadOnlyList<Vector2> directions = null, int sourceIndex = 0, IReadOnlyList<Vector2> spawnOffsets = null, SeType seType = SeType.None, IReadOnlyList<Quaternion> rotations = null)
+        public AttackEvent(AttackEventType type, IReadOnlyList<Vector2> directions = null, int sourceIndex = 0, IReadOnlyList<Vector2> spawnOffsets = null, SeType seType = SeType.None, IReadOnlyList<Quaternion> rotations = null, MovementPreset movementOverride = null)
         {
             Type = type;
             SourceIndex = sourceIndex;
@@ -28,13 +30,14 @@ namespace Project.Scenes.Battle.Scripts.Model.Attack
             Directions = directions;
             SpawnOffsets = spawnOffsets;
             Rotations = rotations;
+            MovementOverride = movementOverride;
         }
 
         public static AttackEvent Single(Vector2 direction, Quaternion rotation, int sourceIndex = 0, SeType seType = SeType.None) => new(AttackEventType.Bullet, new[] { direction }, sourceIndex, seType: seType, rotations: new[] { Normalize(rotation) });
 
-        public static AttackEvent Spawn(Vector2 direction, Quaternion rotation, int sourceIndex, Vector2 spawnOffset, SeType seType = SeType.None) => new(AttackEventType.EnemySpawn, new[] { direction }, sourceIndex, new[] { spawnOffset }, seType, new[] { Normalize(rotation) });
+        public static AttackEvent Spawn(Vector2 direction, Quaternion rotation, int sourceIndex, Vector2 spawnOffset, SeType seType = SeType.None, MovementPreset movementOverride = null) => new(AttackEventType.EnemySpawn, new[] { direction }, sourceIndex, new[] { spawnOffset }, seType, new[] { Normalize(rotation) }, movementOverride);
 
-        public static AttackEvent SpawnMulti(IReadOnlyList<Vector2> directions, IReadOnlyList<Quaternion> rotations, int sourceIndex, IReadOnlyList<Vector2> spawnOffsets, SeType seType = SeType.None) => new(AttackEventType.EnemySpawn, directions, sourceIndex, spawnOffsets, seType, rotations);
+        public static AttackEvent SpawnMulti(IReadOnlyList<Vector2> directions, IReadOnlyList<Quaternion> rotations, int sourceIndex, IReadOnlyList<Vector2> spawnOffsets, SeType seType = SeType.None, MovementPreset movementOverride = null) => new(AttackEventType.EnemySpawn, directions, sourceIndex, spawnOffsets, seType, rotations, movementOverride);
 
         // default(Quaternion) は (0,0,0,0) で不正なので identity に補正
         static Quaternion Normalize(Quaternion q) => q.x == 0f && q.y == 0f && q.z == 0f && q.w == 0f ? Quaternion.identity : q;
