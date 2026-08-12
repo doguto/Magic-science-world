@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4330750818476369800}
   - component: {fileID: -4487681364143076941}
   m_Layer: 10
-  m_Name: Bullet_DeathBall1
+  m_Name: 2_Bullet_Ball1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,22 +162,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSteps:
-  - rid: 3310600359757742436
-  - rid: 3310600359757742429
+  - rid: 3310600040644083822
   view: {fileID: 4330750818476369800}
   spriteRenderer: {fileID: 5248511050965479480}
   lifetime: 8
   references:
     version: 2
     RefIds:
-    - rid: 3310600359757742429
+    - rid: 3310600040644083822
       type: {class: InfiniteMovementConfig, ns: Project.Scenes.Battle.Scripts.Model.Movement, asm: Model}
       data:
         velocity: {x: -1, y: 0, z: 0}
-    - rid: 3310600359757742436
-      type: {class: InvincibleFadeMoveMovementConfig, ns: Project.Scenes.Battle.Scripts.Model.Movement, asm: Model}
-      data:
-        duration: 0.2
-        velocity: {x: -0.3, y: 0, z: 0}
-        startAlpha: 0
-        endAlpha: 1

@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 7755563081212230249}
   - component: {fileID: 3327982968228162664}
   m_Layer: 7
-  m_Name: Azuma
+  m_Name: 2_Azuma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
