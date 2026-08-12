@@ -1,6 +1,11 @@
 # the name by which the project can be referenced within Serena/when chatting with the LLM.
 project_name: "Magic-science-world"
 
+# the language(s) used in the project (required by this serena-agent version's schema;
+# newer schemas use `language_servers` below instead, but 1.5.3 still requires this key)
+languages:
+- csharp
+
 # the encoding used by text files in the project
 # For a list of possible encodings, see https://docs.python.org/3.11/library/codecs.html#standard-encodings
 encoding: "utf-8"

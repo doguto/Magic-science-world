@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Project.Scenes.Battle.Scripts.Model.Attack.PhaseTrigger;
 using Project.Scripts.Extensions;
 using UniRx;
 using UnityEngine;
@@ -9,30 +10,34 @@ namespace Project.Scenes.Battle.Scripts.Model.Attack
     [Serializable]
     public class AttackTimeline : IAttackStrategy
     {
-        [SerializeField] bool loop;
-        [SerializeField] float loopStart;
-        [SerializeField] float loopEnd = 5f;
-        [SerializeField, Min(0.01f)] float cycleDuration = 2f;
-        [SerializeField] List<AttackTimelineEntry> entries = new();
+        [SerializeField] List<AttackPhase> phases = new() { new AttackPhase() };
 
         Subject<AttackEvent> onAttackTiming;
         CompositeDisposable disposables;
+        CompositeDisposable phaseDisposables;
         Func<Vector3> getPlayerPosition;
         Func<Vector3> getEnemyPosition;
         Func<Quaternion> getEnemyRotation;
+        IReadOnlyReactiveProperty<int> currentHp;
+        int maxHp;
 
         public IObservable<AttackEvent> OnAttackTiming => onAttackTiming;
         public bool IsCompleted { get; private set; }
 
-        public void InitializeProviders(Func<Vector3> getPlayerPosition, Func<Vector3> getEnemyPosition, Func<Quaternion> getEnemyRotation)
+        public void InitializeProviders(Func<Vector3> getPlayerPosition, Func<Vector3> getEnemyPosition, Func<Quaternion> getEnemyRotation, IReadOnlyReactiveProperty<int> currentHp = null, int maxHp = 0)
         {
             this.getPlayerPosition = getPlayerPosition;
             this.getEnemyPosition = getEnemyPosition;
             this.getEnemyRotation = getEnemyRotation;
+            this.currentHp = currentHp;
+            this.maxHp = maxHp;
 
-            foreach (var entry in entries)
+            foreach (var phase in phases)
             {
-                InitializeEntryProviders(entry);
+                foreach (var entry in phase.entries)
+                {
+                    InitializeEntryProviders(entry);
+                }
             }
         }
 
@@ -48,39 +53,78 @@ namespace Project.Scenes.Battle.Scripts.Model.Attack
             disposables = new CompositeDisposable();
             IsCompleted = false;
 
-            if (entries.Count == 0) return;
+            if (phases.Count == 0) return;
 
-            if (loop)
+            StartPhase(0);
+        }
+
+        // Phaseを配列の先頭から順番に進める。nextPhaseTriggerがSubscribe直後に条件を満たしていれば
+        // (例: 開始済みの敵にいきなり低いHP閾値のPresetを差し替えた場合)そのまま連鎖して先のPhaseまで進む。
+        void StartPhase(int index)
+        {
+            var phase = phases[index];
+
+            if (phaseDisposables != null)
             {
-                int totalCycles = Mathf.FloorToInt((loopEnd - loopStart) / cycleDuration);
+                disposables.Remove(phaseDisposables);
+                phaseDisposables.Dispose();
+            }
+            phaseDisposables = new CompositeDisposable();
+            disposables.Add(phaseDisposables);
+
+            bool isLastPhase = index >= phases.Count - 1;
+            ScheduleEntries(phase, isLastPhase);
+
+            if (!isLastPhase && phase.nextPhaseTrigger != null)
+            {
+                var context = new AttackPhaseTriggerContext(currentHp, maxHp);
+                phase.nextPhaseTrigger.CreateTrigger(context)
+                    .Subscribe(_ => StartPhase(index + 1))
+                    .AddTo(phaseDisposables);
+            }
+        }
+
+        void ScheduleEntries(AttackPhase phase, bool isLastPhase)
+        {
+            if (phase.entries.Count == 0) return;
+
+            if (phase.loop)
+            {
+                int totalCycles = Mathf.FloorToInt((phase.loopEnd - phase.loopStart) / phase.cycleDuration);
 
                 for (int cycle = 0; cycle <= totalCycles; cycle++)
                 {
-                    foreach (var entry in entries)
+                    foreach (var entry in phase.entries)
                     {
-                        float fireTime = loopStart + cycle * cycleDuration + entry.time;
-                        if (fireTime > loopEnd) continue;
+                        float fireTime = phase.loopStart + cycle * phase.cycleDuration + entry.time;
+                        if (fireTime > phase.loopEnd) continue;
 
                         ScheduleEntry(entry, fireTime);
                     }
                 }
 
-                Observable.Timer(TimeSpan.FromSeconds(loopEnd))
-                    .Subscribe(_ => IsCompleted = true)
-                    .AddTo(disposables);
+                if (isLastPhase)
+                {
+                    Observable.Timer(TimeSpan.FromSeconds(phase.loopEnd))
+                        .Subscribe(_ => IsCompleted = true)
+                        .AddTo(phaseDisposables);
+                }
             }
             else
             {
                 float maxTime = 0f;
-                foreach (var entry in entries)
+                foreach (var entry in phase.entries)
                 {
                     ScheduleEntry(entry, entry.time);
                     if (entry.time > maxTime) maxTime = entry.time;
                 }
 
-                Observable.Timer(TimeSpan.FromSeconds(maxTime))
-                    .Subscribe(_ => IsCompleted = true)
-                    .AddTo(disposables);
+                if (isLastPhase)
+                {
+                    Observable.Timer(TimeSpan.FromSeconds(maxTime))
+                        .Subscribe(_ => IsCompleted = true)
+                        .AddTo(phaseDisposables);
+                }
             }
         }
 
@@ -109,16 +153,20 @@ namespace Project.Scenes.Battle.Scripts.Model.Attack
                         onAttackTiming.OnNext(entry.signal.CreateEvent(entry.directionProvider, entry.rotationProvider, sourceIndex, entry.seType));
                     }
                 })
-                .AddTo(disposables);
+                .AddTo(phaseDisposables);
         }
 
         void ExpandPreset(PresetAttackSignal signal, SeType parentSeType, float baseTime, int depth)
         {
             var timeline = signal.Preset.CreateTimeline();
-            if (timeline == null || timeline.entries.Count == 0) return;
+            if (timeline == null) return;
 
-            // 展開したエントリのProviderを初期化
-            foreach (var inner in timeline.entries)
+            // ネストしたプリセットは常に先頭Phase(通常状態)のみを展開する。
+            // プリセット部品自体にHP閾値のフェーズ切替を持たせる使い方は想定していない。
+            var entries = timeline.phases.Count > 0 ? timeline.phases[0].entries : null;
+            if (entries == null || entries.Count == 0) return;
+
+            foreach (var inner in entries)
             {
                 InitializeEntryProviders(inner);
                 // 内側がNoneなら外側のseTypeを引き継ぐ
@@ -131,7 +179,7 @@ namespace Project.Scenes.Battle.Scripts.Model.Attack
             var totalCycles = signal.Loop && signal.LoopCount > 0 ? signal.LoopCount : 1;
             for (var cycle = 0; cycle < totalCycles; cycle++)
             {
-                foreach (var inner in timeline.entries)
+                foreach (var inner in entries)
                 {
                     var innerTime = baseTime + cycle * signal.CycleDuration + inner.time;
                     ScheduleEntry(inner, innerTime, depth);
@@ -143,15 +191,11 @@ namespace Project.Scenes.Battle.Scripts.Model.Attack
         {
             var copy = new AttackTimeline
             {
-                loop = loop,
-                loopStart = loopStart,
-                loopEnd = loopEnd,
-                cycleDuration = cycleDuration,
-                entries = new List<AttackTimelineEntry>(entries.Count)
+                phases = new List<AttackPhase>(phases.Count)
             };
-            foreach (var entry in entries)
+            foreach (var phase in phases)
             {
-                copy.entries.Add(entry.DeepCopy());
+                copy.phases.Add(phase.DeepCopy());
             }
             return copy;
         }
@@ -160,6 +204,7 @@ namespace Project.Scenes.Battle.Scripts.Model.Attack
 
         public void Dispose()
         {
+            phaseDisposables?.Dispose();
             disposables?.Dispose();
             onAttackTiming?.Dispose();
         }

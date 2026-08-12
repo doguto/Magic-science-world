@@ -195,7 +195,7 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
             }
 
             Func<Vector3> getPlayerPos = () => playerPresenter != null ? playerPresenter.transform.position : Vector3.zero;
-            attackTimeline.InitializeProviders(getPlayerPos, () => transform.position, () => transform.rotation);
+            attackTimeline.InitializeProviders(getPlayerPos, () => transform.position, () => transform.rotation, model.CurrentHp, model.MaxHp);
             model.SetAttackStrategy(attackTimeline);
 
             model.AttackStrategy.OnAttackTiming
@@ -346,9 +346,10 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
                 var instance = Instantiate(prefab);
                 instance.transform.SetPositionAndRotation(transform.position + (Vector3)ev.SpawnOffsets[i], GetRotationAt(ev, i));
 
-                if (enemyTracker != null && instance.TryGetComponent<EnemyEntityPresenter>(out var enemyPresenter))
+                if (instance.TryGetComponent<EnemyEntityPresenter>(out var enemyPresenter))
                 {
-                    enemyTracker.RegisterEnemy(enemyPresenter);
+                    if (ev.MovementOverride != null) enemyPresenter.OverrideMovement(ev.MovementOverride);
+                    enemyTracker?.RegisterEnemy(enemyPresenter);
                 }
             }
         }
