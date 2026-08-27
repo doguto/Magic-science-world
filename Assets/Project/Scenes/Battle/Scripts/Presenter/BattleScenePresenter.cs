@@ -334,6 +334,11 @@ namespace Project.Scenes.Battle.Scripts.Presenter
             bossSequence = LoadSequence(stageModel.BossSequenceAddress);
 
             var startSituation = RuntimeModelRepository.Instance.Get().CurrentSituation;
+
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+            ApplyDebugStartPhase(startSituation);
+#endif
+
             if (startSituation == BattleSituation.Boss && bossSequence != null)
             {
                 SpawnBoss();
@@ -350,6 +355,22 @@ namespace Project.Scenes.Battle.Scripts.Presenter
                 Debug.LogError("No battle sequences are configured for this stage.", this);
             }
         }
+
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+        // デバッグ起動で指定された開始フェーズを、起動対象のシーケンスにのみ適用する。
+        // Way から Boss へ遷移した場合、Boss 側は常に先頭から再生される。
+        void ApplyDebugStartPhase(BattleSituation startSituation)
+        {
+            var startPhaseIndex = RuntimeModelRepository.Instance.Get().DebugStartPhaseIndex;
+            if (startPhaseIndex <= 0) return;
+
+            var targetSequence = startSituation == BattleSituation.Boss ? bossSequence : waySequence;
+            if (targetSequence == null) return;
+
+            targetSequence.SetStartPhaseByFlatIndex(startPhaseIndex);
+            Debug.Log($"[BattleScenePresenter] Debug start phase index {startPhaseIndex} applied to {startSituation} sequence.", this);
+        }
+#endif
 
         public void PlayBossBgm()
         {

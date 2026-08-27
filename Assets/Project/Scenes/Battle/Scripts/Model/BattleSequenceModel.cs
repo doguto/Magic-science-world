@@ -17,6 +17,10 @@ namespace Project.Scenes.Battle.Scripts.Model
         int currentLoopIteration;
         BattlePhaseModelBase currentPhase;
 
+        // Reset() 時に巻き戻す位置。通常は先頭(0, 0)だが、デバッグ起動時のみ途中を指す。
+        int startGroupIndex;
+        int startPhaseInGroup;
+
         public BattleSequenceModel(
             BattleSituation situation,
             IReadOnlyList<SequenceGroupRuntime> groups,
@@ -86,11 +90,40 @@ namespace Project.Scenes.Battle.Scripts.Model
 
         public void Reset()
         {
-            currentGroupIndex = -1;
-            currentPhaseInGroup = -1;
+            currentGroupIndex = startGroupIndex;
+            currentPhaseInGroup = startPhaseInGroup - 1;
             currentLoopIteration = 0;
             currentPhase = null;
         }
+
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+        /// <summary>
+        /// デバッグ用: 全グループを通した連番でシーケンスの開始フェーズを指定する。
+        /// 指定後は Reset() のたびにその位置から再生される（リトライ時も同じ位置から）。
+        /// </summary>
+        public void SetStartPhaseByFlatIndex(int flatIndex)
+        {
+            startGroupIndex = 0;
+            startPhaseInGroup = 0;
+            if (flatIndex <= 0) return;
+
+            var remaining = flatIndex;
+            for (var i = 0; i < groups.Count; i++)
+            {
+                var phaseCount = groups[i].Phases.Count;
+                if (remaining < phaseCount)
+                {
+                    startGroupIndex = i;
+                    startPhaseInGroup = remaining;
+                    return;
+                }
+
+                remaining -= phaseCount;
+            }
+
+            Debug.LogWarning($"[BattleSequenceModel] Start phase index {flatIndex} is out of range. Falling back to the first phase.");
+        }
+#endif
     }
 
     public class SequenceGroupRuntime
