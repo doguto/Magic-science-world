@@ -165,24 +165,17 @@ namespace Project.Editor
             }
         }
 
-        // シーケンス内の全グループを平坦化し、実行順の通し番号でラベル化する。
-        // phaseId は実行順とは無関係な識別子なので、あくまで補助表示として添える。
+        // シーケンス内の全グループを平坦化し、TimelineBuilderアセット名をそのままラベルにする。
+        // Popupの選択値は「実行順の通し番号」なので、ラベルが重複していても選択自体は破綻しない。
         static string[] BuildPhaseLabels(BattleSequenceAsset sequenceAsset)
         {
-            var groups = sequenceAsset.SequenceGroups;
-            var hasMultipleGroups = groups.Count > 1;
             var labels = new List<string>();
 
-            for (var groupIndex = 0; groupIndex < groups.Count; groupIndex++)
+            foreach (var group in sequenceAsset.SequenceGroups)
             {
-                var phases = groups[groupIndex].Phases;
-                for (var phaseIndex = 0; phaseIndex < phases.Count; phaseIndex++)
+                foreach (var phase in group.Phases)
                 {
-                    var phase = phases[phaseIndex];
-                    var groupPrefix = hasMultipleGroups ? $"[G{groupIndex}] " : string.Empty;
-                    var phaseId = string.IsNullOrEmpty(phase.PhaseId) ? "-" : phase.PhaseId;
-                    var timelineName = phase.TimelineBuilder != null ? phase.TimelineBuilder.name : "(no timeline)";
-                    labels.Add($"{labels.Count}: {groupPrefix}Phase {phaseId} - {timelineName}");
+                    labels.Add(phase.TimelineBuilder != null ? phase.TimelineBuilder.name : "(no timeline)");
                 }
             }
 
