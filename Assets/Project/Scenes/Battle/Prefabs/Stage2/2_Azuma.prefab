@@ -383,8 +383,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03ed9e7a71bb104da997bf4950beaec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 200
-  contactDamage: 20
+  maxHp: 1000
+  contactDamage: 30
   strongHpRatio: 0.5
   overflowDamageMultiplier: 0
   bulletPools:

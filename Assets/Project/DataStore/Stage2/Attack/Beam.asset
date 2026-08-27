@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f72a693ccbf2a7488b40c3962407986, type: 3}
-  m_Name: CrossBeam
+  m_Name: Beam
   m_EditorClassIdentifier: 
   attackTimeline:
     phases:
-    - loop: 1
+    - loop: 0
       loopStart: 0
-      loopEnd: 30
+      loopEnd: 6
       cycleDuration: 6
       entries:
-      - time: 0
+      - time: 0.6
         signal:
           rid: 9205483607032594520
         directionProvider:
@@ -29,7 +29,7 @@ MonoBehaviour:
         sourceIndexProvider:
           rid: 9205483607032594523
         seType: 0
-      - time: 1
+      - time: 1.6
         signal:
           rid: 9205483607032594524
         directionProvider:

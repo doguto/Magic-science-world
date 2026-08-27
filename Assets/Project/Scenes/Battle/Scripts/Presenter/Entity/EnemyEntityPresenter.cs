@@ -7,6 +7,7 @@ using UniRx;
 using UnityEngine;
 using Project.Scenes.Battle.Scripts.Model;
 using Project.Scenes.Battle.Scripts.Model.Entity;
+using Project.Scenes.Battle.Scripts.View;
 using Project.Scenes.Battle.Scripts.View.Entity;
 using Project.Scenes.Battle.Scripts.Model.Movement;
 using Project.Scenes.Battle.Scripts.Model.Attack;
@@ -342,14 +343,20 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
             }
             for (int i = 0; i < ev.Directions.Count; i++)
             {
-                pool.SpawnBullet(bulletDamage, GetSpawnPosition(ev, pool.transform.position, i), ev.Directions[i], rotation: GetRotationAt(ev, i));
+                pool.SpawnBullet(bulletDamage, GetSpawnPosition(ev, pool.transform.position, i), ev.Directions[i], rotation: GetRotationAt(ev, i), range: ev.Range);
             }
         }
 
         Vector3 GetSpawnPosition(AttackEvent ev, Vector3 basePosition, int index)
         {
             if (ev.SpawnOffsets == null || index >= ev.SpawnOffsets.Count) return basePosition;
-            return basePosition + (Vector3)ev.SpawnOffsets[index];
+
+            var offset = ev.SpawnOffsets[index];
+            // World指定のとき SpawnOffsets は発射元からの相対ではなくワールド座標そのもの。
+            // zは発射元のものを引き継いで、描画順が変わらないようにする。
+            if (ev.SpawnSpace == AttackSpawnSpace.World) return new Vector3(offset.x, offset.y, basePosition.z);
+
+            return basePosition + (Vector3)offset;
         }
 
         BulletPool GetBulletPool(int index)
@@ -374,7 +381,13 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
             {
                 // Instantiateの3引数版ではrotationが反映されないため、生成後にSetPositionAndRotationで明示的に設定する
                 var instance = Instantiate(prefab);
-                instance.transform.SetPositionAndRotation(transform.position + (Vector3)ev.SpawnOffsets[i], GetRotationAt(ev, i));
+                instance.transform.SetPositionAndRotation(GetSpawnPosition(ev, transform.position, i), GetRotationAt(ev, i));
+
+                // 予告線のように「線分の長さ」を生成後に教える必要があるViewへ、Startが走る前に流し込む
+                if (instance.TryGetComponent<IBeamVisualReceiver>(out var beamVisual))
+                {
+                    beamVisual.ConfigureBeam(ev.Range, ev.Duration);
+                }
 
                 if (instance.TryGetComponent<EnemyEntityPresenter>(out var enemyPresenter))
                 {

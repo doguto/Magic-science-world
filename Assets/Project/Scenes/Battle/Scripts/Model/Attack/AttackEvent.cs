@@ -12,6 +12,16 @@ namespace Project.Scenes.Battle.Scripts.Model.Attack
         EnemySpawn,
     }
 
+    /// <summary>SpawnOffsets の解釈方法。</summary>
+    public enum AttackSpawnSpace
+    {
+        /// <summary>発射元(BulletPoolや敵本体)からの相対オフセット</summary>
+        Source,
+
+        /// <summary>ワールド座標そのもの。ビームのように発射元と無関係な位置から出す場合に使う</summary>
+        World,
+    }
+
     public readonly struct AttackEvent
     {
         public readonly AttackEventType Type;
@@ -21,8 +31,15 @@ namespace Project.Scenes.Battle.Scripts.Model.Attack
         public readonly IReadOnlyList<Vector2> SpawnOffsets;
         public readonly IReadOnlyList<Quaternion> Rotations;
         public readonly MovementPreset MovementOverride;
+        public readonly AttackSpawnSpace SpawnSpace;
 
-        public AttackEvent(AttackEventType type, IReadOnlyList<Vector2> directions = null, int sourceIndex = 0, IReadOnlyList<Vector2> spawnOffsets = null, SeType seType = SeType.None, IReadOnlyList<Quaternion> rotations = null, MovementPreset movementOverride = null)
+        /// <summary>ビームの射程(ワールド単位)。0で無制限。弾の消滅距離と予告線の長さの両方に使う</summary>
+        public readonly float Range;
+
+        /// <summary>ビームの予告時間(秒)。0で未指定。予告線Viewの表示時間として使う</summary>
+        public readonly float Duration;
+
+        public AttackEvent(AttackEventType type, IReadOnlyList<Vector2> directions = null, int sourceIndex = 0, IReadOnlyList<Vector2> spawnOffsets = null, SeType seType = SeType.None, IReadOnlyList<Quaternion> rotations = null, MovementPreset movementOverride = null, AttackSpawnSpace spawnSpace = AttackSpawnSpace.Source, float range = 0f, float duration = 0f)
         {
             Type = type;
             SourceIndex = sourceIndex;
@@ -31,6 +48,9 @@ namespace Project.Scenes.Battle.Scripts.Model.Attack
             SpawnOffsets = spawnOffsets;
             Rotations = rotations;
             MovementOverride = movementOverride;
+            SpawnSpace = spawnSpace;
+            Range = range;
+            Duration = duration;
         }
 
         public static AttackEvent Single(Vector2 direction, Quaternion rotation, int sourceIndex = 0, SeType seType = SeType.None) => new(AttackEventType.Bullet, new[] { direction }, sourceIndex, seType: seType, rotations: new[] { Normalize(rotation) });
@@ -38,6 +58,27 @@ namespace Project.Scenes.Battle.Scripts.Model.Attack
         public static AttackEvent Spawn(Vector2 direction, Quaternion rotation, int sourceIndex, Vector2 spawnOffset, SeType seType = SeType.None, MovementPreset movementOverride = null) => new(AttackEventType.EnemySpawn, new[] { direction }, sourceIndex, new[] { spawnOffset }, seType, new[] { Normalize(rotation) }, movementOverride);
 
         public static AttackEvent SpawnMulti(IReadOnlyList<Vector2> directions, IReadOnlyList<Quaternion> rotations, int sourceIndex, IReadOnlyList<Vector2> spawnOffsets, SeType seType = SeType.None, MovementPreset movementOverride = null) => new(AttackEventType.EnemySpawn, directions, sourceIndex, spawnOffsets, seType, rotations, movementOverride);
+
+        /// <summary>ワールド座標の一点に生成する。ビームの予告線のように発射元から切り離したい生成物で使う。</summary>
+        public static AttackEvent SpawnAtWorld(Vector2 worldPosition, Vector2 direction, Quaternion rotation, int sourceIndex, float range = 0f, float duration = 0f, SeType seType = SeType.None) =>
+            new(AttackEventType.EnemySpawn, new[] { direction }, sourceIndex, new[] { worldPosition }, seType, new[] { Normalize(rotation) }, null, AttackSpawnSpace.World, range, duration);
+
+        /// <summary>
+        /// 発射位置をワールド座標の origin 基準に差し替えたコピーを返す。
+        /// 元の SpawnOffsets は origin からの相対として温存するので、NWayの散らしオフセットも保たれる。
+        /// </summary>
+        public AttackEvent WithWorldOrigin(Vector2 origin, float range)
+        {
+            var count = Directions?.Count ?? 1;
+            var origins = new Vector2[count];
+            for (var i = 0; i < count; i++)
+            {
+                var offset = SpawnOffsets != null && i < SpawnOffsets.Count ? SpawnOffsets[i] : Vector2.zero;
+                origins[i] = origin + offset;
+            }
+
+            return new AttackEvent(Type, Directions, SourceIndex, origins, SeType, Rotations, MovementOverride, AttackSpawnSpace.World, range, Duration);
+        }
 
         // default(Quaternion) は (0,0,0,0) で不正なので identity に補正
         static Quaternion Normalize(Quaternion q) => q.x == 0f && q.y == 0f && q.z == 0f && q.w == 0f ? Quaternion.identity : q;

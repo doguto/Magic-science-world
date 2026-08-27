@@ -10,8 +10,11 @@ namespace Project.Scenes.Battle.Scripts.View
     ///
     /// dotSprite 未設定でも実行時に白い正方形スプライトを生成して動くので、
     /// GameObject に本コンポーネントを付けるだけで予告線として成立する。
+    ///
+    /// 起点終点指定のビーム(BeamAttackSignal)から生成された場合は、
+    /// ConfigureBeam() で length と duration が上書きされる。
     /// </summary>
-    public class WarningLineView : MonoBehaviour
+    public class WarningLineView : MonoBehaviour, IBeamVisualReceiver
     {
         [Header("Shape")]
         [SerializeField, Tooltip("未設定なら白い正方形を実行時生成する")]
@@ -59,6 +62,29 @@ namespace Project.Scenes.Battle.Scripts.View
 
         void Start()
         {
+            BuildDots();
+        }
+
+        /// <summary>
+        /// ビームの線分に合わせて長さと表示時間を差し替える。
+        /// 通常は Instantiate 直後(Start前)に呼ばれるが、生成後に呼ばれても破綻しないよう点を作り直す。
+        /// </summary>
+        public void ConfigureBeam(float range, float duration)
+        {
+            if (range > 0f) length = range;
+            if (duration > 0f) this.duration = duration;
+
+            if (dots.Count > 0) RebuildDots();
+        }
+
+        void RebuildDots()
+        {
+            foreach (var dot in dots)
+            {
+                if (dot != null) Destroy(dot.gameObject);
+            }
+            dots.Clear();
+
             BuildDots();
         }
 

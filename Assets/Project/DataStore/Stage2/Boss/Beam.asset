@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e9eb2c7bf1b4174a965e674148ccd2f, type: 3}
-  m_Name: CrossBeamTest
+  m_Name: Beam
   m_EditorClassIdentifier: 
   signalTracks: []
   animationTracks: []
@@ -20,4 +20,4 @@ MonoBehaviour:
   enemySpawnTracks: []
   bulletClearTracks: []
   bossAttackPreset: {fileID: 11400000, guid: 9ccf8af599bd2284abb5fd1d9fc7b882, type: 2}
-  bossMovementPreset: {fileID: 0}
+  bossMovementPreset: {fileID: 11400000, guid: 87152cfcd5d04f94f96e3009f08a0d5d, type: 2}
