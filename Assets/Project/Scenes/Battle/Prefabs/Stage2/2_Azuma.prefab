@@ -383,10 +383,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e03ed9e7a71bb104da997bf4950beaec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 200
-  contactDamage: 20
+  maxHp: 1000
+  contactDamage: 30
   strongHpRatio: 0.5
-  overflowDamageMultiplier: 0
+  overflowDamageMultiplier: 1
   bulletPools:
   - {fileID: 743844790675660966}
   - {fileID: 7795660870535667501}
@@ -412,8 +412,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodySpriteRenderer: {fileID: 5423549007835280800}
   flashColor: {r: 0, g: 0, b: 0, a: 1}
-  normalHpBarFillImage: {fileID: 0}
-  strongHpBarFillImage: {fileID: 0}
+  normalHpBarFillImage: {fileID: 3611147746750342594}
+  strongHpBarFillImage: {fileID: 146972774354305482}
 --- !u!114 &2522827274938751839
 MonoBehaviour:
   m_ObjectHideFlags: 0

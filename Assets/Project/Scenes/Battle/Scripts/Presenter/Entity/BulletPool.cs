@@ -24,10 +24,11 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
             );
         }
 
-        public BulletEntityPresenter SpawnBullet(int damage, Vector3 position, Vector2 direction = default, bool isPlayerBullet = false, Quaternion rotation = default)
+        /// <param name="range">飛距離の上限(ワールド単位)。0以下で無制限。ビームの終点表現に使う</param>
+        public BulletEntityPresenter SpawnBullet(int damage, Vector3 position, Vector2 direction = default, bool isPlayerBullet = false, Quaternion rotation = default, float range = 0f)
         {
             var bullet = pool.Get();
-            bullet.Initialize(damage, position, direction, pool, isPlayerBullet, rotation);
+            bullet.Initialize(damage, position, direction, pool, isPlayerBullet, rotation, range);
             return bullet;
         }
 

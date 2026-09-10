@@ -144,16 +144,88 @@ namespace Project.Scenes.Battle.Scripts.Model.Attack
                 return;
             }
 
+            if (entry.signal is BeamAttackSignal beamSignal)
+            {
+                if (depth >= MaxPresetDepth)
+                {
+                    Debug.LogError("[AttackTimeline] Preset nesting depth limit reached. Circular reference?");
+                    return;
+                }
+                ExpandBeam(beamSignal, entry.seType, fireTime, depth + 1);
+                return;
+            }
+
             Observable.Timer(TimeSpan.FromSeconds(fireTime))
                 .Subscribe(_ =>
                 {
                     if (entry.signal != null)
                     {
                         var sourceIndex = entry.sourceIndexProvider?.Get() ?? 0;
-                        onAttackTiming.OnNext(entry.signal.CreateEvent(entry.directionProvider, entry.rotationProvider, sourceIndex, entry.seType));
+                        var attackEvent = entry.signal.CreateEvent(entry.directionProvider, entry.rotationProvider, sourceIndex, entry.seType);
+                        onAttackTiming.OnNext(ApplyBeamOrigin(attackEvent, entry.directionProvider));
                     }
                 })
                 .AddTo(phaseDisposables);
+        }
+
+        /// <summary>
+        /// directionProvider がビーム線を持っている弾イベントは、発射口ではなく線分の起点から出し、
+        /// 終点で消えるよう射程を持たせる。シグナル側にビームを意識させないための後処理。
+        /// </summary>
+        static AttackEvent ApplyBeamOrigin(AttackEvent attackEvent, IDirectionProvider directionProvider)
+        {
+            if (attackEvent.Type != AttackEventType.Bullet) return attackEvent;
+            if (directionProvider is not IBeamLineProvider beamProvider) return attackEvent;
+
+            var line = beamProvider.Line;
+            return attackEvent.WithWorldOrigin(line.Start, line.Length);
+        }
+
+        /// <summary>
+        /// ビーム1本を「予告線 → 連射」に展開する。
+        /// 起点・終点は展開時に確定して全弾で共有するため、予告線と弾の軌道がズレることはない。
+        /// </summary>
+        void ExpandBeam(BeamAttackSignal signal, SeType parentSeType, float baseTime, int depth)
+        {
+            var line = signal.Line;
+
+            if (signal.ShowWarning)
+            {
+                Observable.Timer(TimeSpan.FromSeconds(baseTime))
+                    .Subscribe(_ => onAttackTiming.OnNext(AttackEvent.SpawnAtWorld(
+                        line.Start, line.Direction, line.Rotation, signal.WarningSourceIndex, line.Length, signal.WarningDuration)))
+                    .AddTo(phaseDisposables);
+            }
+
+            if (signal.BulletPreset == null) return;
+
+            var timeline = signal.BulletPreset.CreateTimeline();
+            if (timeline == null) return;
+
+            // ネストしたプリセットと同じく、先頭Phaseのみを1周期分として展開する
+            var entries = timeline.phases.Count > 0 ? timeline.phases[0].entries : null;
+            if (entries == null || entries.Count == 0) return;
+
+            foreach (var inner in entries)
+            {
+                // 起点・射程はここで刺した directionProvider 経由で ApplyBeamOrigin に伝わる
+                inner.directionProvider = new BeamLineDirectionConfig(line.Clone());
+                InitializeEntryProviders(inner);
+
+                if (inner.seType == SeType.None && parentSeType != SeType.None)
+                {
+                    inner.seType = parentSeType;
+                }
+            }
+
+            var fireStartTime = baseTime + signal.WarningDuration;
+            for (var shot = 0; shot < signal.ShotCount; shot++)
+            {
+                foreach (var inner in entries)
+                {
+                    ScheduleEntry(inner, fireStartTime + shot * signal.ShotInterval + inner.time, depth);
+                }
+            }
         }
 
         void ExpandPreset(PresetAttackSignal signal, SeType parentSeType, float baseTime, int depth)

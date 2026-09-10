@@ -33,6 +33,9 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
 
         BulletEntityModel model;
         IObjectPool<BulletEntityPresenter> pool;
+        Vector3 travelOrigin;
+        Vector2 travelAxis;
+        float travelRange;
         Tween currentTween;
         CancellationTokenSource movementCts;
         CancellationTokenSource lifetimeCts;
@@ -40,11 +43,16 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
 
         public BulletEntityModel Model => model;
 
-        public void Initialize(int damage, Vector3 position, Vector2 direction, IObjectPool<BulletEntityPresenter> objectPool, bool isPlayerBullet = false, Quaternion rotation = default)
+        /// <param name="range">飛距離の上限(ワールド単位)。0以下で無制限</param>
+        public void Initialize(int damage, Vector3 position, Vector2 direction, IObjectPool<BulletEntityPresenter> objectPool, bool isPlayerBullet = false, Quaternion rotation = default, float range = 0f)
         {
             pool = objectPool;
             var resolvedRotation = rotation == default ? Quaternion.identity : rotation;
             transform.SetPositionAndRotation(position, resolvedRotation);
+
+            travelOrigin = position;
+            travelAxis = direction.normalized;
+            travelRange = travelAxis == Vector2.zero ? 0f : range;
 
             if (model == null)
                 model = new BulletEntityModel(damage, isPlayerBullet);
@@ -117,10 +125,20 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
 
             view.UpdatePosition(transform.position);
 
-            if (IsOutOfScreen())
+            if (IsOutOfScreen() || HasReachedRangeLimit())
             {
                 ReturnToPool();
             }
+        }
+
+        bool HasReachedRangeLimit()
+        {
+            if (travelRange <= 0f) return false;
+
+            // ジグザグ移動は軸の左右に蛇行するため、起点からの直線距離だと終点より手前で消えてしまう。
+            // ビーム軸へ射影した「軸方向の進捗」で判定することで、終点をきっちり揃える。
+            var traveled = Vector2.Dot((Vector2)(transform.position - travelOrigin), travelAxis);
+            return traveled >= travelRange;
         }
 
         bool IsOutOfScreen()

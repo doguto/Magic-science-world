@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e9eb2c7bf1b4174a965e674148ccd2f, type: 3}
-  m_Name: Phase1
+  m_Name: BeamStorm
   m_EditorClassIdentifier: 
   signalTracks: []
   animationTracks: []
@@ -19,5 +19,5 @@ MonoBehaviour:
   controlTracks: []
   enemySpawnTracks: []
   bulletClearTracks: []
-  bossAttackPreset: {fileID: 11400000, guid: b623ede575f513c4ca0af91f29490a3c, type: 2}
+  bossAttackPreset: {fileID: 11400000, guid: 0b957be78673f7b4a82cbbfc3ae59cfb, type: 2}
   bossMovementPreset: {fileID: 11400000, guid: b7c9d6276378447419e5d2917fe3bfde, type: 2}

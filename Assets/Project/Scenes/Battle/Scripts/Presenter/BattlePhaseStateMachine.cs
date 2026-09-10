@@ -74,11 +74,20 @@ namespace Project.Scenes.Battle.Scripts.Presenter
             }
 
             activePhase = nextPhase;
-            ApplyTimeline(activePhase);
-            activePhase.Enter(playableDirector);
-            phaseStarted.OnNext(activePhase);
 
-            exitSubscription = activePhase.OnExitPhase.Subscribe(_ => MoveNextPhase());
+            // Enter() 内で ExitCondition が即座に満たされ CompletePhase が同期発火するケースがあるため、
+            // 購読を Enter() より先に済ませておく。後から購読すると OnExitPhase の通知を取りこぼし、
+            // シーケンスがそのフェーズで止まったままになる。
+            exitSubscription = nextPhase.OnExitPhase.Subscribe(_ => MoveNextPhase());
+            ApplyTimeline(nextPhase);
+            nextPhase.Enter(playableDirector);
+
+            // Enter() 中に即完了して MoveNextPhase が再帰済みの場合、activePhase は既に
+            // 後続フェーズへ進んでいるため、このフェーズ分の開始通知は出さない。
+            if (activePhase == nextPhase)
+            {
+                phaseStarted.OnNext(nextPhase);
+            }
         }
 
         void ApplyTimeline(BattlePhaseModelBase phase)
