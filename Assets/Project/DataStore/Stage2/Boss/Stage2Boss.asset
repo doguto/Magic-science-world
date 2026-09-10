@@ -27,11 +27,16 @@ MonoBehaviour:
       timelineBuilderStrong: {fileID: 0}
       exitConditionConfig:
         rid: 9205483607032594528
+    - phaseId: 3-Way2
+      timelineBuilder: {fileID: 11400000, guid: 87ea8837b6bf7e44d9411ae89d3b99db, type: 2}
+      timelineBuilderStrong: {fileID: 0}
+      exitConditionConfig:
+        rid: 9205483607032594598
     - phaseId: BeamStorm
       timelineBuilder: {fileID: 11400000, guid: 1ca7996f69e26324fac2a81eb83dc61b, type: 2}
       timelineBuilderStrong: {fileID: 0}
       exitConditionConfig:
-        rid: 9205483607032594571
+        rid: 9205483607032594599
   bossPrefab: {fileID: 5846423284816155308, guid: 2547cec9d2b889841984267e5a4822ec, type: 3}
   bossSpawnPosition: {x: 10, y: 0, z: 0}
   bossEntranceMovement:
@@ -79,7 +84,11 @@ MonoBehaviour:
       type: {class: TimeLimitExitConditionConfig, ns: Project.Scenes.Battle.Scripts.Model.ExitCondition, asm: Model}
       data:
         timeLimitSeconds: 5
-    - rid: 9205483607032594571
-      type: {class: TimeLimitExitConditionConfig, ns: Project.Scenes.Battle.Scripts.Model.ExitCondition, asm: Model}
+    - rid: 9205483607032594598
+      type: {class: BossHpThresholdExitConditionConfig, ns: Project.Scenes.Battle.Scripts.Model.ExitCondition, asm: Model}
       data:
-        timeLimitSeconds: 22
+        hpThresholdPercent: 30
+    - rid: 9205483607032594599
+      type: {class: BossHpThresholdExitConditionConfig, ns: Project.Scenes.Battle.Scripts.Model.ExitCondition, asm: Model}
+      data:
+        hpThresholdPercent: 0
