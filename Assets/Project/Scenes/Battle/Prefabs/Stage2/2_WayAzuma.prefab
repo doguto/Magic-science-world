@@ -94,6 +94,53 @@ MonoBehaviour:
   bulletPrefab: {fileID: -4487681364143076941, guid: 2f84b37d6bc0e69478aaeead72a2ca4f, type: 3}
   defaultCapacity: 20
   maxSize: 100
+--- !u!1 &5977663987878238314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1000512355249730129}
+  - component: {fileID: 6728408408449301442}
+  m_Layer: 7
+  m_Name: TriUp BulletPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1000512355249730129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5977663987878238314}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8336679572688203221}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6728408408449301442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5977663987878238314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d57fc07a0d26e47a6b2e9f582edd33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: -4487681364143076941, guid: 4ce7897fbed8238408a60313c2e27b3e, type: 3}
+  defaultCapacity: 20
+  maxSize: 100
 --- !u!1 &8647684210669646231
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,6 +177,8 @@ Transform:
   m_Children:
   - {fileID: 630620121836037546}
   - {fileID: 3373547090656816974}
+  - {fileID: 1000512355249730129}
+  - {fileID: 5403319683045139744}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-1398847312205411817
@@ -146,6 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 300
   contactDamage: 10
+  onlyChargeDamageable: 0
   lifetime: 0
   movementPreset: {fileID: 0}
   movementSteps:
@@ -154,8 +204,11 @@ MonoBehaviour:
   bulletPools:
   - {fileID: 9019268799263188701}
   - {fileID: 2727554368135854049}
+  - {fileID: 6728408408449301442}
+  - {fileID: 8343511918773248778}
   bulletDamage: 10
-  enemySpawnPrefabs: []
+  enemySpawnPrefabs:
+  - {fileID: 5888170941882211794, guid: 8f439dc00bd56d044b2c7618ab0167cf, type: 3}
   attackPreset: {fileID: 0}
   attackTimeline:
     phases:
@@ -175,15 +228,15 @@ MonoBehaviour:
           rid: -2
         seType: 0
       nextPhaseTrigger:
-        rid: 3310600516686315774
-    - loop: 1
+        rid: 8800763986918768744
+    - loop: 0
       loopStart: 0
       loopEnd: 3
       cycleDuration: 0.1
       entries:
       - time: 0
         signal:
-          rid: 3310600516686315860
+          rid: 8800763986918768719
         directionProvider:
           rid: 3310600518646104145
         rotationProvider:
@@ -224,10 +277,6 @@ MonoBehaviour:
       type: {class: InfiniteMovementConfig, ns: Project.Scenes.Battle.Scripts.Model.Movement, asm: Model}
       data:
         velocity: {x: 0, y: 0, z: 0}
-    - rid: 3310600516686315774
-      type: {class: HpThresholdPhaseTriggerConfig, ns: Project.Scenes.Battle.Scripts.Model.Attack.PhaseTrigger, asm: Model}
-      data:
-        hpThreshold: 150
     - rid: 3310600516686315791
       type: {class: NWaySignal, ns: Project.Scenes.Battle.Scripts.Model.Attack, asm: Model}
       data:
@@ -273,12 +322,6 @@ MonoBehaviour:
           m_RotationOrder: 4
         curvePreset: {fileID: 0}
         isRelative: 1
-    - rid: 3310600516686315860
-      type: {class: NWaySignal, ns: Project.Scenes.Battle.Scripts.Model.Attack, asm: Model}
-      data:
-        wayCount: 3
-        spreadAngle: 1
-        radius: 0
     - rid: 3310600516686315898
       type: {class: FixedRotationConfig, ns: Project.Scenes.Battle.Scripts.Model.Attack, asm: Model}
       data:
@@ -287,6 +330,22 @@ MonoBehaviour:
       type: {class: FixedDirectionConfig, ns: Project.Scenes.Battle.Scripts.Model.Attack, asm: Model}
       data:
         direction: {x: -1, y: 0}
+    - rid: 8800763986918768719
+      type: {class: BeamAttackSignal, ns: Project.Scenes.Battle.Scripts.Model.Attack, asm: Model}
+      data:
+        line:
+          start: {x: 7, y: 0}
+          end: {x: -9, y: 0}
+        bulletPreset: {fileID: 11400000, guid: 6215b3edb4a467149bac1a334a9469c9, type: 2}
+        shotCount: 24
+        shotInterval: 0.0833
+        showWarning: 1
+        warningDuration: 3
+        warningSourceIndex: 0
+    - rid: 8800763986918768744
+      type: {class: HpPercentThresholdPhaseTriggerConfig, ns: Project.Scenes.Battle.Scripts.Model.Attack.PhaseTrigger, asm: Model}
+      data:
+        hpThresholdPercent: 5
 --- !u!114 &9001089155439849903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,3 +488,50 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &8742649930761472472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5403319683045139744}
+  - component: {fileID: 8343511918773248778}
+  m_Layer: 7
+  m_Name: TriDown BulletPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5403319683045139744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8742649930761472472}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8336679572688203221}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8343511918773248778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8742649930761472472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d57fc07a0d26e47a6b2e9f582edd33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: -4487681364143076941, guid: 0adeecb1d4988fe4f88247da027fccc8, type: 3}
+  defaultCapacity: 20
+  maxSize: 100
