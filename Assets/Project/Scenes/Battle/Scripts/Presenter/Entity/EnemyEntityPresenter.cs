@@ -147,6 +147,11 @@ namespace Project.Scenes.Battle.Scripts.Presenter.Entity
                  .Subscribe(_ => HandleDeath())
                  .AddTo(disposables);
 
+            model.OnIneffectiveHit
+                 .TakeUntil(model.OnDeath)
+                 .Subscribe(_ => soundManager?.PlaySE(SeType.Metal))
+                 .AddTo(disposables);
+
             SubscribeToDamageFlash();
 
             view.UpdatePosition(transform.position);

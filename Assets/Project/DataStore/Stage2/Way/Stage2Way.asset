@@ -37,6 +37,26 @@ MonoBehaviour:
       timelineBuilderStrong: {fileID: 0}
       exitConditionConfig:
         rid: 3310600516686315839
+    - phaseId: 5
+      timelineBuilder: {fileID: 11400000, guid: c5a6deb9d8cde0c419ddbd9a39adbbb6, type: 2}
+      timelineBuilderStrong: {fileID: 0}
+      exitConditionConfig:
+        rid: 9205483267810394318
+    - phaseId: 6
+      timelineBuilder: {fileID: 11400000, guid: ed7465e885707ab40b3aa6ed077d5a72, type: 2}
+      timelineBuilderStrong: {fileID: 0}
+      exitConditionConfig:
+        rid: 9205483267810394319
+    - phaseId: 7
+      timelineBuilder: {fileID: 11400000, guid: 39c1922674d8c044c8f14ac3a643d637, type: 2}
+      timelineBuilderStrong: {fileID: 0}
+      exitConditionConfig:
+        rid: 9205483267810394320
+    - phaseId: 8
+      timelineBuilder: {fileID: 11400000, guid: 6d6caa19414f17d489b2a94dfe7be870, type: 2}
+      timelineBuilderStrong: {fileID: 0}
+      exitConditionConfig:
+        rid: 9205483267810394321
   bossPrefab: {fileID: 0}
   bossSpawnPosition: {x: 0, y: 0, z: 0}
   bossEntranceMovement: []
@@ -53,5 +73,17 @@ MonoBehaviour:
       type: {class: AllEnemiesDefeatedExitConditionConfig, ns: Project.Scenes.Battle.Scripts.Model.ExitCondition, asm: Model}
       data: 
     - rid: 7905056689295196395
+      type: {class: AllEnemiesDefeatedExitConditionConfig, ns: Project.Scenes.Battle.Scripts.Model.ExitCondition, asm: Model}
+      data: 
+    - rid: 9205483267810394318
+      type: {class: AllEnemiesDefeatedExitConditionConfig, ns: Project.Scenes.Battle.Scripts.Model.ExitCondition, asm: Model}
+      data: 
+    - rid: 9205483267810394319
+      type: {class: AllEnemiesDefeatedExitConditionConfig, ns: Project.Scenes.Battle.Scripts.Model.ExitCondition, asm: Model}
+      data: 
+    - rid: 9205483267810394320
+      type: {class: AllEnemiesDefeatedExitConditionConfig, ns: Project.Scenes.Battle.Scripts.Model.ExitCondition, asm: Model}
+      data: 
+    - rid: 9205483267810394321
       type: {class: AllEnemiesDefeatedExitConditionConfig, ns: Project.Scenes.Battle.Scripts.Model.ExitCondition, asm: Model}
       data: 

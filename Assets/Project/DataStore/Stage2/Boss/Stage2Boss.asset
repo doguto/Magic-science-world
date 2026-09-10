@@ -22,6 +22,11 @@ MonoBehaviour:
       timelineBuilderStrong: {fileID: 0}
       exitConditionConfig:
         rid: 3310600040644083838
+    - phaseId: CrossBeamTest
+      timelineBuilder: {fileID: 11400000, guid: 0a7fab46d82bc604aac8a5a8375ab26f, type: 2}
+      timelineBuilderStrong: {fileID: 0}
+      exitConditionConfig:
+        rid: 9205483607032594528
   bossPrefab: {fileID: 5846423284816155308, guid: 2547cec9d2b889841984267e5a4822ec, type: 3}
   bossSpawnPosition: {x: 10, y: 0, z: 0}
   bossEntranceMovement:
@@ -65,3 +70,7 @@ MonoBehaviour:
           m_RotationOrder: 4
         curvePreset: {fileID: 0}
         isRelative: 0
+    - rid: 9205483607032594528
+      type: {class: TimeLimitExitConditionConfig, ns: Project.Scenes.Battle.Scripts.Model.ExitCondition, asm: Model}
+      data:
+        timeLimitSeconds: 30
